@@ -1,0 +1,30 @@
+services:
+
+  wayfarer-auth:
+    build:
+      context: .
+      dockerfile: ./apps/wayfarer-auth/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - wayfarer-network
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: ./apps/api-gateway/Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - wayfarer-auth
+    environment:
+      - NODE_ENV=production
+      - AUTH_SERVICE_URL=http://wayfarer-auth:3001
+    networks:
+      - wayfarer-network
+
+networks:
+  wayfarer-network:
+    driver: bridge

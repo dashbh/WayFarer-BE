@@ -7,11 +7,11 @@ async function bootstrap() {
     WayfarerAuthModule,
     {
       transport: Transport.TCP,
-      options: { host: 'localhost', port: 3002 },
+      options: { host: '0.0.0.0', port: 3001 },
     },
   );
 
   await app.listen();
-  console.log('WayFarer Auth Service is running on TCP port 3002');
+  console.log('WayFarer Auth Service is running on TCP port 3001');
 }
 bootstrap();
