@@ -6,8 +6,6 @@ export class AuthService {
   constructor(private jwtService: JwtService) {}
 
   async validateUser(username: string): Promise<any> {
-    // Simulate user lookup
-    // Replace with real DB logic
     const user = { username, password: 'password' }; 
     if (user) {
       return user;
