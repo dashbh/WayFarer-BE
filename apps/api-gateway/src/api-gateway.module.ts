@@ -3,6 +3,7 @@ import { ApiGatewayController } from './api-gateway.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ApiGatewayService } from './api-gateway.service';
+import { CatalogGatewayController } from './catalog/catalog-gateway.controller';
 
 @Module({
   imports: [
@@ -20,9 +21,21 @@ import { ApiGatewayService } from './api-gateway.service';
           },
         }),
       },
+      {
+        name: 'CATALOG_SERVICE',
+        imports: [ConfigModule],
+        inject: [ConfigService],
+        useFactory: (configService: ConfigService) => ({
+          transport: Transport.TCP,
+          options: {
+            host: configService.get<string>('CATALOG_SERVICE_HOST', 'localhost'),
+            port: configService.get<number>('CATALOG_SERVICE_PORT', 3002),
+          },
+        }),
+      },
     ]),
   ],
-  controllers: [ApiGatewayController],
+  controllers: [ApiGatewayController, CatalogGatewayController],
   providers: [ApiGatewayService],
 })
 

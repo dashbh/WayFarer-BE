@@ -1,17 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
-import { AuthModule } from './auth.module';
+import { CatalogModule } from './catalog.module';
 
 async function bootstrap() {
-  const appContext = await NestFactory.create(AuthModule); // Create app context
+  const appContext = await NestFactory.create(CatalogModule); // Create app context
   const configService = appContext.get(ConfigService); // Retrieve ConfigService
 
-  const host = configService.get<string>('AUTH_SERVICE_HOST', 'localhost');
-  const port = configService.get<number>('AUTH_SERVICE_PORT', 3001);
+  const host = configService.get<string>('CATALOG_SERVICE_HOST', 'localhost');
+  const port = configService.get<number>('CATALOG_SERVICE_PORT', 3002);
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    AuthModule,
+    CatalogModule,
     {
       transport: Transport.TCP,
       options: { host, port },
@@ -19,6 +19,6 @@ async function bootstrap() {
   );
 
   await app.listen();
-  console.log(`✅ WayFarer Auth Service is running on TCP ${host}:${port}`);
+  console.log(`✅ WayFarer Catalog Service is running on TCP ${host}:${port}`);
 }
 bootstrap();

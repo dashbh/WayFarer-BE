@@ -1,5 +1,5 @@
 # Dockerfile for wayfarer-auth
-FROM node:20
+FROM node:alpine
 
 # Set working directory
 WORKDIR /usr/src/app

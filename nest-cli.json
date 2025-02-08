@@ -19,6 +19,15 @@
         "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
       }
     },
+    "wayfarer-catalog": {
+      "type": "application",
+      "root": "apps/wayfarer-catalog",
+      "entryFile": "main",
+      "sourceRoot": "apps/wayfarer-catalog/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wayfarer-catalog/tsconfig.app.json"
+      }
+    },
     "wayfarer-auth": {
       "type": "application",
       "root": "apps/wayfarer-auth",

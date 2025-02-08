@@ -18,6 +18,24 @@ services:
       - wayfarer-network
     restart: always
 
+  wayfarer-catalog:
+    build:
+      context: .
+      dockerfile: ./apps/wayfarer-catalog/Dockerfile
+    container_name: wayfarer-catalog
+    env_file:
+      - .env.docker
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./apps/wayfarer-catalog:/usr/src/app/apps/wayfarer-catalog
+      - /usr/src/app/node_modules
+    networks:
+      - wayfarer-network
+    restart: always
+
   api-gateway:
     build:
       context: .
@@ -29,9 +47,9 @@ services:
       - "3000:3000"
     depends_on:
       - wayfarer-auth
+      - wayfarer-catalog
     environment:
       - NODE_ENV=production
-      - AUTH_SERVICE_URL=http://wayfarer-auth:3001
     volumes:
       - ./apps/api-gateway:/usr/src/app/apps/api-gateway
       - /usr/src/app/node_modules

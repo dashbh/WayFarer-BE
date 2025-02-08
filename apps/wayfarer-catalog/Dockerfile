@@ -1,4 +1,4 @@
-# Dockerfile for api-gateway
+# Dockerfile for wayfarer-auth
 FROM node:alpine
 
 # Set working directory
@@ -21,7 +21,7 @@ ENV NODE_ENV=${NODE_ENV}
 # RUN npm run build
 
 # Expose the port the service will run on
-EXPOSE 3000
+EXPOSE 3002
 
 # Start the service
-CMD ["npm", "run", "start:gateway"]
+CMD ["npm", "run", "start:catalog"]
