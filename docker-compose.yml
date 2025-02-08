@@ -4,19 +4,25 @@ services:
     build:
       context: .
       dockerfile: ./apps/wayfarer-auth/Dockerfile
+    container_name: wayfarer-auth
     env_file:
       - .env.docker
     ports:
       - "3001:3001"
     environment:
       - NODE_ENV=production
+    volumes:
+      - ./apps/wayfarer-auth:/usr/src/app/apps/wayfarer-auth
+      - /usr/src/app/node_modules
     networks:
       - wayfarer-network
+    restart: always
 
   api-gateway:
     build:
       context: .
       dockerfile: ./apps/api-gateway/Dockerfile
+    container_name: api-gateway
     env_file:
       - .env.docker
     ports:
@@ -26,8 +32,12 @@ services:
     environment:
       - NODE_ENV=production
       - AUTH_SERVICE_URL=http://wayfarer-auth:3001
+    volumes:
+      - ./apps/api-gateway:/usr/src/app/apps/api-gateway
+      - /usr/src/app/node_modules
     networks:
       - wayfarer-network
+    restart: always
 
 networks:
   wayfarer-network:

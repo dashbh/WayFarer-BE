@@ -18,7 +18,7 @@ ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 # Build the project (optional, if using TypeScript)
-RUN npm run build
+# RUN npm run build
 
 # Expose the port the service will run on
 EXPOSE 3000

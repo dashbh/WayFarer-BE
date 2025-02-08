@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AuthService {
   async login({ username, password }: { username: string; password: string }) {
     if (username === 'admin' && password === 'password') {
-      return { token: 'mock-jwt-token' };
+      return { token: 'login-success -> mock-jwt-token' };
     }
     return { error: 'Invalid credentials' };
   }
