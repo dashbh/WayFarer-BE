@@ -4,10 +4,12 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ApiGatewayService } from './api-gateway.service';
 import { CatalogGatewayController } from './catalog/catalog-gateway.controller';
+import { JwtAuthModule } from './auth/jwt-auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // Load environment variables
+    ConfigModule.forRoot({ isGlobal: true }),
+    JwtAuthModule,
     ClientsModule.registerAsync([ // registerAsyc used to make config module available in this context
       {
         name: 'AUTH_SERVICE',

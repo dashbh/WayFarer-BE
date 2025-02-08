@@ -7,7 +7,16 @@ export class AuthController {
   constructor(private readonly authService: AuthService) { }
 
   @MessagePattern({ cmd: 'login' })
-  login(data: { username: string; password: string }) {
-    return this.authService.login({username: data.username, password: data.password});
+  async login(data: { username: string; password: string }) {
+    const user = await this.authService.validateUser(data.username);
+    if (user && data.password === 'password') {
+      return this.authService.login(user);
+    }
+    return { message: 'Invalid credentials' };
+  }
+
+  @MessagePattern('validate_user')
+  async validateUser(payload: any) {
+    return this.authService.validateUser(payload);
   }
 }
