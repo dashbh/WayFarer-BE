@@ -19,7 +19,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
             transport: Transport.TCP,
             options: {
                 host: this.configService.get<string>('AUTH_SERVICE_HOST', 'localhost'),
-                port: this.configService.get<number>('AUTH_SERVICE_PORT', 3001),
+                port: this.configService.get<number>('AUTH_SERVICE_PORT', 9001),
             },
         });
     }
@@ -28,7 +28,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         // Fetch user details from Auth Service via microservice communication
         try {
             const user = await this.authClient.send('validate_user', payload).toPromise();
-            console.log(user)
             return user;
         } catch (error) {
             throw new Error('Unauthorized');

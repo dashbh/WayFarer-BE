@@ -8,7 +8,7 @@ services:
     env_file:
       - .env.docker
     ports:
-      - "3001:3001"
+      - "9001:9001"
     environment:
       - NODE_ENV=production
     volumes:
@@ -26,7 +26,7 @@ services:
     env_file:
       - .env.docker
     ports:
-      - "3002:3002"
+      - "9002:9002"
     environment:
       - NODE_ENV=production
     volumes:
@@ -44,7 +44,7 @@ services:
     env_file:
       - .env.docker
     ports:
-      - "3000:3000"
+      - "9000:9000"
     depends_on:
       - wayfarer-auth
       - wayfarer-catalog

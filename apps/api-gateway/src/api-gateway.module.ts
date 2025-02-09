@@ -19,7 +19,7 @@ import { JwtAuthModule } from './auth/jwt-auth.module';
           transport: Transport.TCP,
           options: {
             host: configService.get<string>('AUTH_SERVICE_HOST', 'localhost'),
-            port: configService.get<number>('AUTH_SERVICE_PORT', 3001),
+            port: configService.get<number>('AUTH_SERVICE_PORT', 9001),
           },
         }),
       },
@@ -31,7 +31,7 @@ import { JwtAuthModule } from './auth/jwt-auth.module';
           transport: Transport.TCP,
           options: {
             host: configService.get<string>('CATALOG_SERVICE_HOST', 'localhost'),
-            port: configService.get<number>('CATALOG_SERVICE_PORT', 3002),
+            port: configService.get<number>('CATALOG_SERVICE_PORT', 9002),
           },
         }),
       },

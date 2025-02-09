@@ -8,8 +8,8 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
 
-  const host = configService.get<string>('API_GATEWAY_HOST', 'localhost'); // Default to 0.0.0.0 for Docker
-  const port = configService.get<number>('API_GATEWAY_PORT', 3000); // Default port 3000
+  const host = configService.get<string>('API_GATEWAY_HOST', 'localhost');
+  const port = configService.get<number>('API_GATEWAY_PORT', 9000);
 
   await app.startAllMicroservices();
   await app.listen(port, host);

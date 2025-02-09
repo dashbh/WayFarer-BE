@@ -21,7 +21,7 @@ ENV NODE_ENV=${NODE_ENV}
 # RUN npm run build
 
 # Expose the port the service will run on
-EXPOSE 3000
+EXPOSE 9000
 
 # Start the service
 CMD ["npm", "run", "start:gateway"]

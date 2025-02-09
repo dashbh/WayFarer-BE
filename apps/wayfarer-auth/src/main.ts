@@ -8,7 +8,7 @@ async function bootstrap() {
   const configService = appContext.get(ConfigService); // Retrieve ConfigService
 
   const host = configService.get<string>('AUTH_SERVICE_HOST', 'localhost');
-  const port = configService.get<number>('AUTH_SERVICE_PORT', 3001);
+  const port = configService.get<number>('AUTH_SERVICE_PORT', 9001);
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AuthModule,

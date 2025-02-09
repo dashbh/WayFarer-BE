@@ -8,7 +8,7 @@ async function bootstrap() {
   const configService = appContext.get(ConfigService); // Retrieve ConfigService
 
   const host = configService.get<string>('CATALOG_SERVICE_HOST', 'localhost');
-  const port = configService.get<number>('CATALOG_SERVICE_PORT', 3002);
+  const port = configService.get<number>('CATALOG_SERVICE_PORT', 9002);
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     CatalogModule,
