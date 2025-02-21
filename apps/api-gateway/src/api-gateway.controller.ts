@@ -9,4 +9,9 @@ export class ApiGatewayController {
   async login(@Body() data: { email: string; password: string }) {
     return this.authClient.send({ cmd: 'login' }, data);
   }
+
+  @Post('register')
+  async register(@Body() data: { email: string; password: string }) {
+    return this.authClient.send({ cmd: 'register_user' }, data);
+  }
 }
