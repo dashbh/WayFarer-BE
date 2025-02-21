@@ -50,7 +50,7 @@ The backend follows a **microservices architecture** with the following componen
    ```
 3. Run the development server:
    ```sh
-   npm run start:dev
+   npm run start:all
    ```
 
 ### Running with Docker
