@@ -23,7 +23,6 @@ export class UserService {
     // Check if the user already exists
     const existingUser = await this.findByUserName(username);
     if (existingUser) {
-      // throw new HttpException('Invalid Request', HttpStatus.BAD_REQUEST);
       throw new ConflictException('Username already in use');
     }
 
@@ -34,7 +33,6 @@ export class UserService {
     // Create the user
     const user = this.userRepository.create({ username, password: hashedPassword });
     await this.userRepository.insert(user);
-    // return user;
      return HttpResponse.success({}, 'User registered successfully');
   }
 }
