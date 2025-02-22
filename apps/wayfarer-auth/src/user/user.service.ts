@@ -2,6 +2,7 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { HttpResponse } from '@wayfarer/common';
 import { User } from './user.entity';
 import { RegisterDto } from './register.dto';
 
@@ -22,6 +23,7 @@ export class UserService {
     // Check if the user already exists
     const existingUser = await this.findByUserName(username);
     if (existingUser) {
+      // throw new HttpException('Invalid Request', HttpStatus.BAD_REQUEST);
       throw new ConflictException('Username already in use');
     }
 
@@ -32,6 +34,7 @@ export class UserService {
     // Create the user
     const user = this.userRepository.create({ username, password: hashedPassword });
     await this.userRepository.insert(user);
-    return { message: 'User registered successfully' };
+    // return user;
+     return HttpResponse.success({}, 'User registered successfully');
   }
 }
