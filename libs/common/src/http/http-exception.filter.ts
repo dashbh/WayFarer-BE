@@ -7,7 +7,6 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { RpcException } from '@nestjs/microservices';
 import { HttpResponse } from './http-response.dto';
 
 @Catch()
@@ -15,15 +14,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(HttpExceptionFilter.name);
 
   catch(exception: any, host: ArgumentsHost) {
-    const ctxType = host.getType();
-
-    if (ctxType === 'http') {
-      return this.handleHttpException(exception, host);
-    } else if (ctxType === 'rpc') {
-      return this.handleRpcException(exception);
-    }
-
-    this.logger.error(`Unhandled exception: ${exception.message}`, exception.stack);
+    this.handleHttpException(exception, host);
   }
 
   private handleHttpException(exception: any, host: ArgumentsHost) {
@@ -47,19 +38,5 @@ export class HttpExceptionFilter implements ExceptionFilter {
 
     this.logger.error(`HTTP Exception: ${status} - ${message}`, exception.stack);
     response.status(status).json(HttpResponse.error(message, errorDetails, status));
-  }
-
-  private handleRpcException(exception: any) {
-    let message = 'Something went wrong!';
-    let errorDetails: any = exception.message;
-
-    if (exception instanceof HttpException) {
-      const responseObj = exception.getResponse();
-      message = typeof responseObj === 'string' ? responseObj : responseObj['message'] || message;
-      errorDetails = responseObj['error'] || errorDetails;
-    }
-
-    this.logger.error(`Microservice Exception: ${message}`, exception.stack);
-    throw new RpcException(HttpResponse.error(message, errorDetails));
   }
 }
