@@ -16,6 +16,7 @@ services:
     volumes:
       - ./apps/wayfarer-auth:/usr/src/app/apps/wayfarer-auth
       - /usr/src/app/node_modules
+      - /usr/src/app/dist
       - /usr/src/app/libs/common
     networks:
       - wayfarer-network
@@ -35,6 +36,8 @@ services:
     volumes:
       - ./apps/wayfarer-catalog:/usr/src/app/apps/wayfarer-catalog
       - /usr/src/app/node_modules
+      - /usr/src/app/dist
+      - /usr/src/app/libs/common
     networks:
       - wayfarer-network
     restart: always
@@ -56,6 +59,8 @@ services:
     volumes:
       - ./apps/api-gateway:/usr/src/app/apps/api-gateway
       - /usr/src/app/node_modules
+      - /usr/src/app/dist
+      - /usr/src/app/libs/common
     networks:
       - wayfarer-network
     restart: always

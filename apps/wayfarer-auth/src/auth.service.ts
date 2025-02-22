@@ -28,7 +28,6 @@ export class AuthService {
   }
 
   async validateJWT(payload: any) {
-    console.log('payload', payload)
     const user = await this.userService.findByUserName(payload.username);
     if (!user) {
       throw new UnauthorizedException('User not found');
