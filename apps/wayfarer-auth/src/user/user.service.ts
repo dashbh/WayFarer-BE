@@ -2,6 +2,7 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { HttpResponse } from '@wayfarer/common';
 import { User } from './user.entity';
 import { RegisterDto } from './register.dto';
 
@@ -32,6 +33,6 @@ export class UserService {
     // Create the user
     const user = this.userRepository.create({ username, password: hashedPassword });
     await this.userRepository.insert(user);
-    return { message: 'User registered successfully' };
+     return HttpResponse.success({}, 'User registered successfully');
   }
 }

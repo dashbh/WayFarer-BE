@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@wayfarer/common": [
+        "libs/common/src"
+      ],
+      "@wayfarer/common/*": [
+        "libs/common/src/*"
+      ],
+    }
   }
 }

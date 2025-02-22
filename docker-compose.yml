@@ -16,6 +16,7 @@ services:
     volumes:
       - ./apps/wayfarer-auth:/usr/src/app/apps/wayfarer-auth
       - /usr/src/app/node_modules
+      - /usr/src/app/libs/common
     networks:
       - wayfarer-network
     restart: always
