@@ -2,9 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UserService } from '../user/user.service';
-import { RegisterDto } from '../user/register.dto';
-import { User } from '../user/user.entity';
-import { HttpResponse } from '@wayfarer/common';
+import { HttpResponse, UserEntity,  RegisterDto} from '@wayfarer/common';
 
 describe('AuthController', () => {
   let authController: AuthController;
@@ -39,7 +37,7 @@ describe('AuthController', () => {
 
   describe('login', () => {
     it('should return a token if user is valid', async () => {
-      const mockUser = { id: 1, username: 'testuser' } as User;
+      const mockUser = { id: 1, username: 'testuser' } as UserEntity;
       const mockToken = { accessToken: 'mocked-token' };
 
       (authServiceMock.validateUser as jest.Mock).mockResolvedValue(mockUser);
@@ -99,12 +97,12 @@ describe('AuthController', () => {
         password: 'securepassword',
       };
 
-      const mockUser: User = {
+      const mockUser: UserEntity = {
         id: 1,
         username: 'newuser',
         role: 'newuser@example.com',
         password: 'hashedpassword',
-      } as User;
+      } as UserEntity;
 
       (userServiceMock.registerUser as jest.Mock).mockResolvedValue(mockUser);
 

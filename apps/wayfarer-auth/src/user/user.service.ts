@@ -2,18 +2,17 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { HttpResponse } from '@wayfarer/common';
-import { User } from './user.entity';
-import { RegisterDto } from './register.dto';
+import { HttpResponse, UserEntity } from '@wayfarer/common';
+import { RegisterDto } from '../../../../libs/common/src/dtos/register.dto';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
+    @InjectRepository(UserEntity)
+    private userRepository: Repository<UserEntity>,
   ) {}
 
-  async findByUserName(username: string): Promise<User | null> {
+  async findByUserName(username: string): Promise<UserEntity | null> {
     return this.userRepository.findOne({ where: { username } });
   }
 

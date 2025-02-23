@@ -8,6 +8,7 @@
   "scripts": {
     "build": "npm run build:common && nest build",
     "build:common": "nest build common",
+    "build:proto": "npx protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=libs/common/src/proto --proto_path=libs/common/src/proto libs/common/src/proto/*.proto",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -35,6 +36,8 @@
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^11.0.8",
     "@nestjs/typeorm": "^11.0.0",
+    "@protobuf-ts/plugin": "^2.9.4",
+    "@protobuf-ts/runtime": "^2.9.4",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.14.1",

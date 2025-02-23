@@ -1,10 +1,9 @@
 import { Body, Controller } from '@nestjs/common';
-import { GrpcMethod, MessagePattern } from '@nestjs/microservices';
-import { HttpResponse } from '@wayfarer/common';
+import { GrpcMethod, RpcException } from '@nestjs/microservices';
+import { HttpResponse, RegisterDto, UserEntity } from '@wayfarer/common';
+import { status } from '@grpc/grpc-js';
 
 import { AuthService } from './auth.service';
-import { RegisterDto } from '../user/register.dto';
-import { User } from '../user/user.entity';
 import { UserService } from '../user/user.service';
 
 @Controller()
@@ -22,7 +21,11 @@ export class AuthController {
     );
 
     if (!user) {
-      return HttpResponse.error('Invalid credentials', 'Unauthorized', 401);
+      throw new RpcException({
+        code: status.UNAUTHENTICATED,
+        message: 'Invalid credentials',
+      });
+      // throw new RpcException(HttpResponse.error('Invalid credentials', 'Unauthorized', status.UNAUTHENTICATED));
     }
 
     if (user) {
@@ -36,7 +39,7 @@ export class AuthController {
   }
 
   @GrpcMethod('AuthGrpcService', 'RegisterUser')
-  async registerUser(@Body() registerDto: RegisterDto): Promise<User> {
+  async registerUser(@Body() registerDto: RegisterDto): Promise<UserEntity> {
     return this.userService.registerUser(registerDto);
   }
 }
