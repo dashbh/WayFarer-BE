@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { join } from 'path';
+import { AUTH_PROTO_PATH } from '@wayfarer/common';
 
 @Module({
   imports: [
@@ -22,10 +22,7 @@ import { join } from 'path';
             transport: Transport.GRPC,
             options: {
               package: 'wayfarer.auth',
-              protoPath: join(
-                process.cwd(),
-                'apps/api-gateway/src/proto/auth.proto',
-              ),
+              protoPath: AUTH_PROTO_PATH,
               url: `${host}:${port}`,
             },
           };

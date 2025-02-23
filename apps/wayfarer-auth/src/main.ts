@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
-import { join } from 'path';
+import { AUTH_PROTO_PATH } from '@wayfarer/common';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -17,7 +17,7 @@ async function bootstrap() {
       transport: Transport.GRPC,
       options: {
         package: 'wayfarer.auth',
-        protoPath: join(process.cwd(), 'apps/api-gateway/src/proto/auth.proto'),
+        protoPath: AUTH_PROTO_PATH,
         url: `${host}:${port}`,
       },
     },
