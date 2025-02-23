@@ -22,7 +22,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<Response>();
 
     let status = HttpStatus.INTERNAL_SERVER_ERROR;
-    let message = 'Something went wrong!';
+    let message = 'Something went wrong. Please try again.';
     let errorDetails: any = exception.message;
 
     if (exception instanceof HttpException) {

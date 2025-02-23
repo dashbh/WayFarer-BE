@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
+import { join } from 'path';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -13,8 +14,12 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
     {
-      transport: Transport.TCP,
-      options: { host, port },
+      transport: Transport.GRPC,
+      options: {
+        package: 'wayfarer.auth',
+        protoPath: join(process.cwd(), 'apps/api-gateway/src/proto/auth.proto'),
+        url: `${host}:${port}`,
+      },
     },
   );
 

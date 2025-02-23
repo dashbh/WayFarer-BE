@@ -1,5 +1,5 @@
 import { Body, Controller } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
+import { GrpcMethod, MessagePattern } from '@nestjs/microservices';
 import { HttpResponse } from '@wayfarer/common';
 
 import { AuthService } from './auth.service';
@@ -14,7 +14,7 @@ export class AuthController {
     private readonly userService: UserService,
   ) {}
 
-  @MessagePattern({ cmd: 'login' })
+  @GrpcMethod('wayfarer.auth.AuthGrpcService', 'Login')
   async login(data: { username: string; password: string }) {
     const user = await this.authService.validateUser(
       data.username,
@@ -30,12 +30,12 @@ export class AuthController {
     }
   }
 
-  @MessagePattern('validate_user')
+  @GrpcMethod('wayfarer.auth.AuthGrpcService', 'ValidateUser')
   async validateUser(payload: any) {
     return this.authService.validateJWT(payload);
   }
 
-  @MessagePattern({ cmd: 'register_user' })
+  @GrpcMethod('AuthGrpcService', 'RegisterUser')
   async registerUser(@Body() registerDto: RegisterDto): Promise<User> {
     return this.userService.registerUser(registerDto);
   }
