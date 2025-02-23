@@ -5,7 +5,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    ClientsModule.registerAsync([ // registerAsyc used to make config module available in this context
+    ClientsModule.registerAsync([
+      // registerAsyc used to make config module available in this context
       {
         name: 'CATALOG_SERVICE',
         imports: [ConfigModule],
@@ -13,7 +14,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         useFactory: (configService: ConfigService) => ({
           transport: Transport.TCP,
           options: {
-            host: configService.get<string>('CATALOG_SERVICE_HOST', 'localhost'),
+            host: configService.get<string>(
+              'CATALOG_SERVICE_HOST',
+              'localhost',
+            ),
             port: configService.get<number>('CATALOG_SERVICE_PORT', 9002),
           },
         }),
@@ -23,5 +27,4 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
   controllers: [CatalogController],
   providers: [],
 })
-
-export class CatalogModule { }
+export class CatalogModule {}

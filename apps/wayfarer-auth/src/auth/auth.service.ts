@@ -5,7 +5,10 @@ import { UserService } from '../user/user.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private jwtService: JwtService, private userService: UserService) {}
+  constructor(
+    private jwtService: JwtService,
+    private userService: UserService,
+  ) {}
 
   async validateUser(username: string, password: string): Promise<any> {
     // First Check -> Valid User
@@ -16,7 +19,9 @@ export class AuthService {
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) return null;
 
-    const { password: _, ...result } = user; // Exclude password
+    const result = { ...user };
+    delete result.password;
+    // Exclude password
     return result;
   }
 

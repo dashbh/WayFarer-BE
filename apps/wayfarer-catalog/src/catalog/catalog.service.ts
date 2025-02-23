@@ -15,6 +15,6 @@ export class CatalogService {
       { id: '2', name: 'Item 2', description: 'Description of Item 2' },
     ];
 
-    return catalogItems.find(item => item.id === data.id);
+    return catalogItems.find((item) => item.id === data.id);
   }
 }

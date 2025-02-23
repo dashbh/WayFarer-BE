@@ -9,10 +9,9 @@ import { CatalogModule } from './catalog/catalog.module';
     ConfigModule.forRoot({ isGlobal: true }),
     JwtAuthModule,
     AuthModule,
-    CatalogModule
+    CatalogModule,
   ],
   controllers: [],
   providers: [],
 })
-
-export class ApiGatewayModule { }
+export class ApiGatewayModule {}

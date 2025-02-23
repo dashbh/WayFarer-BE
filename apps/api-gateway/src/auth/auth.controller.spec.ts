@@ -1,21 +1,45 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
+import { ClientProxy } from '@nestjs/microservices';
+import { of } from 'rxjs';
 
 describe('AuthController', () => {
   let authController: AuthController;
+  let authClientMock: ClientProxy;
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
+    authClientMock = {
+      send: jest.fn(() => of({ success: true })), // Mock send method
+    } as any;
+
+    const module: TestingModule = await Test.createTestingModule({
       controllers: [AuthController],
-      providers: [],
+      providers: [
+        {
+          provide: 'AUTH_SERVICE',
+          useValue: authClientMock,
+        },
+      ],
     }).compile();
 
-    authController = app.get<AuthController>(AuthController);
+    authController = module.get<AuthController>(AuthController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      // expect(authController.auth()).toBe('Hello World!');
-    });
+  it('should be defined', () => {
+    expect(authController).toBeDefined();
+  });
+
+  it('should call authClient.send() on login', async () => {
+    const data = { email: 'test@example.com', password: '123456' };
+    await authController.login(data);
+
+    expect(authClientMock.send).toHaveBeenCalledWith({ cmd: 'login' }, data);
+  });
+
+  it('should call authClient.send() on register', async () => {
+    const data = { email: 'newuser@example.com', password: 'password123' };
+    await authController.register(data);
+
+    expect(authClientMock.send).toHaveBeenCalledWith({ cmd: 'register_user' }, data);
   });
 });

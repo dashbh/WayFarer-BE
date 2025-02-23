@@ -9,11 +9,17 @@ import { UserService } from '../user/user.service';
 
 @Controller()
 export class AuthController {
-  constructor(private readonly authService: AuthService, private readonly userService: UserService) { }
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {}
 
   @MessagePattern({ cmd: 'login' })
   async login(data: { username: string; password: string }) {
-    const user = await this.authService.validateUser(data.username, data.password);
+    const user = await this.authService.validateUser(
+      data.username,
+      data.password,
+    );
 
     if (!user) {
       return HttpResponse.error('Invalid credentials', 'Unauthorized', 401);
