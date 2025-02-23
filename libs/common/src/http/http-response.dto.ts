@@ -11,11 +11,19 @@ export class HttpResponse<T> {
     this.error = error;
   }
 
-  static success<T>(data: T, message = 'Success', statusCode = 200): HttpResponse<T> {
+  static success<T>(
+    data: T,
+    message = 'Success',
+    statusCode = 200,
+  ): HttpResponse<T> {
     return new HttpResponse<T>(statusCode, message, data);
   }
 
-  static error(message = 'Something went wrong', error?: string, statusCode = 500): HttpResponse<null> {
+  static error(
+    message = 'Something went wrong',
+    error?: string,
+    statusCode = 500,
+  ): HttpResponse<null> {
     return new HttpResponse<null>(statusCode, message, undefined, error);
   }
 }

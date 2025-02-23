@@ -1,5 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { HttpExceptionFilter } from '@wayfarer/common';
 import { ApiGatewayModule } from './api-gateway.module';

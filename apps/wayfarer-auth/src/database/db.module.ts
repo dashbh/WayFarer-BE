@@ -8,9 +8,10 @@ import { databaseConfig } from './db.config';
   imports: [
     TypeOrmModule.forRootAsync({
       inject: [ConfigService], // Inject ConfigService directly
-      useFactory: async (configService: ConfigService) => databaseConfig(configService),
+      useFactory: async (configService: ConfigService) =>
+        databaseConfig(configService),
     }),
-    UserModule
+    UserModule,
   ],
   exports: [TypeOrmModule],
 })

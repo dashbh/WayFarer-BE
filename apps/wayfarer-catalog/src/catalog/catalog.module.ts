@@ -10,4 +10,4 @@ import { ConfigModule } from '@nestjs/config';
   controllers: [CatalogController],
   providers: [CatalogService],
 })
-export class CatalogModule { }
+export class CatalogModule {}

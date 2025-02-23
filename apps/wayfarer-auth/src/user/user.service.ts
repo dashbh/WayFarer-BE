@@ -11,7 +11,7 @@ export class UserService {
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   async findByUserName(username: string): Promise<User | null> {
     return this.userRepository.findOne({ where: { username } });
@@ -31,8 +31,11 @@ export class UserService {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // Create the user
-    const user = this.userRepository.create({ username, password: hashedPassword });
+    const user = this.userRepository.create({
+      username,
+      password: hashedPassword,
+    });
     await this.userRepository.insert(user);
-     return HttpResponse.success({}, 'User registered successfully');
+    return HttpResponse.success({}, 'User registered successfully');
   }
 }

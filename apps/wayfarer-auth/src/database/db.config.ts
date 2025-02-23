@@ -1,7 +1,9 @@
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-export const databaseConfig = async (configService: ConfigService): Promise<TypeOrmModuleOptions> => ({
+export const databaseConfig = async (
+  configService: ConfigService,
+): Promise<TypeOrmModuleOptions> => ({
   type: 'postgres',
   host: configService.get<string>('DB_HOST', 'localhost'),
   port: configService.get<number>('DB_PORT', 5432),
