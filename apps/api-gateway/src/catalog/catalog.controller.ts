@@ -3,7 +3,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { JwtAuthGuard } from '../auth/auth.guard';
 
 @Controller('catalog')
-export class CatalogGatewayController {
+export class CatalogController {
   constructor(@Inject('CATALOG_SERVICE') private readonly catalogClient: ClientProxy) {}
 
   @Post()  // POST /catalog - General catalog request

@@ -1,10 +1,11 @@
-import { Body, Controller, UnauthorizedException } from '@nestjs/common';
+import { Body, Controller } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
-import { AuthService } from './auth.service';
-import { RegisterDto } from './user/register.dto';
-import { User } from './user/user.entity';
-import { UserService } from './user/user.service';
 import { HttpResponse } from '@wayfarer/common';
+
+import { AuthService } from './auth.service';
+import { RegisterDto } from '../user/register.dto';
+import { User } from '../user/user.entity';
+import { UserService } from '../user/user.service';
 
 @Controller()
 export class AuthController {
@@ -23,7 +24,7 @@ export class AuthController {
     }
   }
 
-  @MessagePattern('¸')
+  @MessagePattern('validate_user')
   async validateUser(payload: any) {
     return this.authService.validateJWT(payload);
   }

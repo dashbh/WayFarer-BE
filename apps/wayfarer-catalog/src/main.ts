@@ -1,17 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
-import { CatalogModule } from './catalog.module';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const appContext = await NestFactory.create(CatalogModule);
+  const appContext = await NestFactory.create(AppModule);
   const configService = appContext.get(ConfigService);
 
   const host = configService.get<string>('CATALOG_SERVICE_HOST', 'localhost');
   const port = configService.get<number>('CATALOG_SERVICE_PORT', 9002);
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    CatalogModule,
+    AppModule,
     {
       transport: Transport.TCP,
       options: { host, port },

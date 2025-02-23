@@ -3,12 +3,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { DatabaseModule } from './database/db.module';
-import { UserModule } from './user/user.module';
+import { DatabaseModule } from '../database/db.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     UserModule,
     JwtModule.registerAsync({
@@ -19,7 +18,6 @@ import { UserModule } from './user/user.module';
         signOptions: { expiresIn: configService.get<string>('JWT_EXPIRATION') || '1h' },
       }),
     }),
-    UserModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],
