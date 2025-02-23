@@ -21,7 +21,7 @@ The backend follows a **microservices architecture** with the following componen
 - Protected by **AuthGuard**, requiring a valid JWT token for access.
 
 ## Communication Pattern
-- **TCP communication** between **API Gateway** and **Catalog/Auth Services**.
+- **gRPC communication** between **API Gateway** and **Catalog/Auth Services**.
 - Ensures efficient inter-service messaging and decoupling.
 
 ## Authentication
