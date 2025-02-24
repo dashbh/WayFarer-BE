@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package wayfarer.catalog;
+
+service CatalogGrpcService {
+  rpc GetCatalogList (Empty) returns (CatalogListResponse);
+  rpc GetCatalogItem (CatalogItemRequest) returns (CatalogItemResponse);
+}
+message Empty {}
+
+message CatalogItemRequest {
+  string id = 1;
+}
+
+message Catalog {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message CatalogListResponse {
+  repeated Catalog items = 1;
+}
+
+message CatalogItemResponse {
+  Catalog item = 1;
+}

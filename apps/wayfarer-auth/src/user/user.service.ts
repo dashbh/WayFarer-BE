@@ -1,9 +1,10 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { HttpResponse, UserEntity } from '@wayfarer/common';
-import { RegisterDto } from '../../../../libs/common/src/dtos/register.dto';
+import { status as GrpcStatus } from '@grpc/grpc-js';
+import { HttpResponse, UserEntity, RegisterDto } from '@wayfarer/common';
+import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
 export class UserService {
@@ -22,7 +23,10 @@ export class UserService {
     // Check if the user already exists
     const existingUser = await this.findByUserName(username);
     if (existingUser) {
-      throw new ConflictException('Username already in use');
+      throw new RpcException({
+        code: GrpcStatus.ALREADY_EXISTS,
+        message: 'Username already in use',
+      });
     }
 
     // Hash the password before saving

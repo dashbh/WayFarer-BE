@@ -16,7 +16,7 @@ export class AuthController implements OnModuleInit {
   onModuleInit() {
     this.authService = this.client.getService<AuthGrpcService>('AuthGrpcService');
     if (!this.authService || !this.authService.login) {
-      throw new InternalServerErrorException('AuthService not initialized properly');
+      throw new InternalServerErrorException('AuthGrpcService not initialized properly');
     }
   }
 
