@@ -12,7 +12,7 @@ async function bootstrap() {
   const port = configService.get<number>('API_GATEWAY_PORT', 9000);
 
   await app.startAllMicroservices();
-  // app.useGlobalFilters(new HttpExceptionFilter());
+  app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(port, host);
   console.log(`✅ WayFarer API Gateway is running on http://${host}:${port}`);
 }

@@ -22,7 +22,7 @@ async function bootstrap() {
       },
     },
   );
-  app.useGlobalFilters(new HttpExceptionFilter());
+  // app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen();
   console.log(`✅ WayFarer Auth Service is running on TCP ${host}:${port}`);
 }

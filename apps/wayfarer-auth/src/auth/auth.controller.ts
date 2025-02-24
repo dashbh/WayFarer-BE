@@ -1,7 +1,7 @@
 import { Body, Controller } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
-import { HttpResponse, RegisterDto, UserEntity } from '@wayfarer/common';
-import { status } from '@grpc/grpc-js';
+import { RegisterDto, UserEntity } from '@wayfarer/common';
+import { status as GrpcStatus} from '@grpc/grpc-js';
 
 import { AuthService } from './auth.service';
 import { UserService } from '../user/user.service';
@@ -22,10 +22,9 @@ export class AuthController {
 
     if (!user) {
       throw new RpcException({
-        code: status.UNAUTHENTICATED,
+        code: GrpcStatus.UNAUTHENTICATED,
         message: 'Invalid credentials',
       });
-      // throw new RpcException(HttpResponse.error('Invalid credentials', 'Unauthorized', status.UNAUTHENTICATED));
     }
 
     if (user) {
