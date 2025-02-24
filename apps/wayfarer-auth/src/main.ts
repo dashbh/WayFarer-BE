@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
-import { AUTH_PROTO_PATH } from '@wayfarer/common';
+import { AUTH_PROTO_PATH, HttpExceptionFilter } from '@wayfarer/common';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -22,7 +22,7 @@ async function bootstrap() {
       },
     },
   );
-
+  // app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen();
   console.log(`✅ WayFarer Auth Service is running on TCP ${host}:${port}`);
 }

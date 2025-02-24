@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { AppModule } from './app.module';
+import { CATALOG_PROTO_PATH, HttpExceptionFilter } from '@wayfarer/common';
 
 async function bootstrap() {
   const appContext = await NestFactory.create(AppModule);
@@ -13,11 +14,15 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
     {
-      transport: Transport.TCP,
-      options: { host, port },
+      transport: Transport.GRPC,
+      options: {
+        package: 'wayfarer.catalog',
+        protoPath: CATALOG_PROTO_PATH,
+        url: `${host}:${port}`,
+      },
     },
   );
-
+  // app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen();
   console.log(`✅ WayFarer Catalog Service is running on TCP ${host}:${port}`);
 }

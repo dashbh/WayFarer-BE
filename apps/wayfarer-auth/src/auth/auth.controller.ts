@@ -38,7 +38,7 @@ export class AuthController {
     return this.authService.validateJWT(payload);
   }
 
-  @GrpcMethod('AuthGrpcService', 'RegisterUser')
+  @GrpcMethod('wayfarer.auth.AuthGrpcService', 'RegisterUser')
   async registerUser(@Body() registerDto: RegisterDto): Promise<UserEntity> {
     return this.userService.registerUser(registerDto);
   }
