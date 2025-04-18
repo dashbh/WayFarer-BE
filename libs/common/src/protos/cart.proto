@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package wayfarer.cart;
+
+service CartGrpcService {
+  rpc GetCart (Empty) returns (CartResponse);
+}
+
+message Empty {}
+
+message CartItem {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message CartResponse {
+  repeated CartItem items = 1;
+}

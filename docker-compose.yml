@@ -42,6 +42,26 @@ services:
       - wayfarer-network
     restart: always
 
+  wayfarer-cart:
+    build:
+      context: .
+      dockerfile: ./apps/wayfarer-cart/Dockerfile
+    container_name: wayfarer-cart
+    env_file:
+      - .env.docker
+    ports:
+      - "9003:9003"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./apps/wayfarer-cart:/usr/src/app/apps/wayfarer-cart
+      - /usr/src/app/node_modules
+      - /usr/src/app/dist
+      - /usr/src/app/libs/common
+    networks:
+      - wayfarer-network
+    restart: always
+
   api-gateway:
     build:
       context: .
@@ -54,6 +74,7 @@ services:
     depends_on:
       - wayfarer-auth
       - wayfarer-catalog
+      - wayfarer-cart
     environment:
       - NODE_ENV=development
     volumes:

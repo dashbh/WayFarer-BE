@@ -1,4 +1,4 @@
-# Dockerfile for api-gateway
+# Dockerfile for wayfarer-cart
 FROM node:alpine
 
 # Set working directory
@@ -6,12 +6,12 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
-COPY apps/api-gateway ./apps/api-gateway
-COPY tsconfig*.json ./
-COPY nest-cli.json ./
 
 # Install dependencies
 RUN npm install
+
+# Copy the rest of the application files
+COPY . .
 
 # Set environment variables
 ARG NODE_ENV=production
@@ -21,7 +21,7 @@ ENV NODE_ENV=${NODE_ENV}
 # RUN npm run build
 
 # Expose the port the service will run on
-EXPOSE 9000
+EXPOSE 9003
 
 # Start the service
-CMD ["npm", "run", "start:gateway"]
+CMD ["npm", "run", "start:cart"]
