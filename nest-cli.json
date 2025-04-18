@@ -47,6 +47,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/wayfarer-catalog/tsconfig.app.json"
       }
+    },
+    "wayfarer-cart": {
+      "type": "application",
+      "root": "apps/wayfarer-cart",
+      "entryFile": "main",
+      "sourceRoot": "apps/wayfarer-cart/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wayfarer-cart/tsconfig.app.json"
+      }
     }
   }
 }
