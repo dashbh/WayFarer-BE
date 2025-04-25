@@ -13,7 +13,7 @@ import { CATALOG_PROTO_PATH } from '@wayfarer/common';
         inject: [ConfigService], // Inject ConfigService
         useFactory: (configService: ConfigService) => {
           const host = configService.get<string>(
-            'CATALOG_SERVICE_HOST',
+            'CATALOG_GRPC_HOST',
             'localhost',
           );
           const port = configService.get<number>('CATALOG_SERVICE_PORT', 9002);

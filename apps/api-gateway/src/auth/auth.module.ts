@@ -14,7 +14,7 @@ import { AUTH_PROTO_PATH } from '@wayfarer/common';
         inject: [ConfigService], // Inject ConfigService
         useFactory: (configService: ConfigService) => {
           const host = configService.get<string>(
-            'AUTH_SERVICE_HOST',
+            'AUTH_GRPC_HOST',
             'localhost',
           );
           const port = configService.get<number>('AUTH_SERVICE_PORT', 9001);

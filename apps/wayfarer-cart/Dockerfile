@@ -5,20 +5,21 @@ FROM node:alpine
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
+COPY libs ./libs
 COPY package*.json ./
+COPY apps/wayfarer-cart ./apps/wayfarer-cart
+COPY tsconfig*.json ./
+COPY nest-cli.json ./
 
 # Install dependencies
 RUN npm install
-
-# Copy the rest of the application files
-COPY . .
 
 # Set environment variables
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 # Build the project (optional, if using TypeScript)
-# RUN npm run build
+RUN npm run build:wayfarer-cart
 
 # Expose the port the service will run on
 EXPOSE 9003
