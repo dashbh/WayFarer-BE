@@ -5,11 +5,13 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { DatabaseModule } from '../database/db.module';
 import { UserModule } from '../user/user.module';
+import { KafkaModule } from '@wayfarer/framework';
 
 @Module({
   imports: [
     DatabaseModule,
     UserModule,
+    KafkaModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

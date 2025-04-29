@@ -21,6 +21,15 @@
         "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
       }
     },
+    "framework": {
+      "type": "library",
+      "root": "libs/framework",
+      "entryFile": "index",
+      "sourceRoot": "libs/framework/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/framework/tsconfig.lib.json"
+      }
+    },
     "common": {
       "type": "library",
       "root": "libs/common",

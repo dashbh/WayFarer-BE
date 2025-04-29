@@ -6,12 +6,13 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run build:common && nest build",
-    "build:api-gateway": "npm run build:common && nest build api-gateway",
-    "build:wayfarer-auth": "npm run build:common && nest build wayfarer-auth",
-    "build:wayfarer-catalog": "npm run build:common && nest build wayfarer-catalog",
-    "build:wayfarer-cart": "npm run build:common && nest build wayfarer-cart",
+    "build": "npm run build:common && npm run build:framework && nest build",
+    "build:api-gateway": "npm run build:common && npm run build:framework && nest build api-gateway",
+    "build:wayfarer-auth": "npm run build:common && npm run build:framework && nest build wayfarer-auth",
+    "build:wayfarer-catalog": "npm run build:common && npm run build:framework && nest build wayfarer-catalog",
+    "build:wayfarer-cart": "npm run build:common && npm run build:framework && nest build wayfarer-cart",
     "build:common": "nest build common",
+    "build:framework": "nest build framework",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -43,6 +44,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.14.1",
+    "kafkajs": "^2.2.4",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.13.3",
@@ -93,6 +95,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@wayfarer/framework(|/.*)$": "<rootDir>/libs/framework/src/$1",
       "^@wayfarer/common(|/.*)$": "<rootDir>/libs/common/src/$1"
     }
   }

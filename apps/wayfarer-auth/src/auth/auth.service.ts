@@ -1,14 +1,21 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, OnModuleInit, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { UserService } from '../user/user.service';
+import { KafkaService } from '@wayfarer/framework';
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnModuleInit {
   constructor(
     private jwtService: JwtService,
     private userService: UserService,
+    private kafkaService: KafkaService
   ) {}
+
+  async onModuleInit() {
+    // Subscribe to a Kafka topic called 'auth-topic'
+    // await this.kafkaService.subscribe('auth-topic', this.handleMessage);
+  }
 
   async validateUser(username: string, password: string): Promise<any> {
     // First Check -> Valid User
@@ -25,12 +32,18 @@ export class AuthService {
     return result;
   }
 
-  async login(user: any) {
+  async login(user: any) {  
     const payload = { username: user.username };
+    await this.kafkaService.publish('auth-topic', [{ key: 'user', value: user.username }]);  
     return {
       accessToken: this.jwtService.sign(payload),
       refreshToken: this.jwtService.sign(payload),
     };
+  }
+
+  private handleMessage(message: any) {
+    console.log('Received Kafka message in AuthService:', message.value.toString());
+    // You can do any processing here with the received message
   }
 
   async validateJWT(payload: any) {

@@ -20,7 +20,7 @@ async function bootstrap() {
         protoPath: AUTH_PROTO_PATH,
         url: `${host}:${port}`,
       },
-    },
+    }
   );
   // app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen();

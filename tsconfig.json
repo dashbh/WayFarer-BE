@@ -24,6 +24,12 @@
       "@wayfarer/common/*": [
         "libs/common/src/*"
       ],
+      "@wayfarer/framework": [
+        "libs/framework/src"
+      ],
+      "@wayfarer/framework/*": [
+        "libs/framework/src/*"
+      ],
     }
   }
 }

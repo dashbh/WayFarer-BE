@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: ./apps/wayfarer-auth/Dockerfile
     container_name: wayfarer-auth
-    # depends_on:
-    #   - postgres
     env_file:
       - .env.docker
     ports:
@@ -18,6 +16,7 @@ services:
       - /usr/src/app/node_modules
       - /usr/src/app/dist
       - /usr/src/app/libs/common
+      - /usr/src/app/libs/framework
     networks:
       - wayfarer-network
     restart: always
@@ -38,6 +37,7 @@ services:
       - /usr/src/app/node_modules
       - /usr/src/app/dist
       - /usr/src/app/libs/common
+      - /usr/src/app/libs/framework
     networks:
       - wayfarer-network
     restart: always
@@ -58,6 +58,7 @@ services:
       - /usr/src/app/node_modules
       - /usr/src/app/dist
       - /usr/src/app/libs/common
+      - /usr/src/app/libs/framework
     networks:
       - wayfarer-network
     restart: always
@@ -82,22 +83,10 @@ services:
       - /usr/src/app/node_modules
       - /usr/src/app/dist
       - /usr/src/app/libs/common
+      - /usr/src/app/libs/framework
     networks:
       - wayfarer-network
     restart: always
-
-  # postgres:
-  #   image: postgres:15
-  #   container_name: wayfarer-postgres
-  #   restart: always
-  #   env_file:
-  #     - .env.docker
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data
-  #   networks:
-  #     - wayfarer-network
 
 networks:
   wayfarer-network:
