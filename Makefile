@@ -1,5 +1,14 @@
-# Your DockerHub username
-DOCKER_USER=dashbh
+# Makefile for building and pushing Docker images for microservices
+# Load only DOCKER_USER from .env file if present
+ifneq (,$(wildcard .env))
+	include .env
+	export DOCKER_USER
+endif
+
+# Ensure DOCKER_USER is defined
+ifndef DOCKER_USER
+  $(error DOCKER_USER is not set. Define it in .env or via environment variable)
+endif
 
 # List of your microservices
 SERVICES=api-gateway wayfarer-auth wayfarer-catalog wayfarer-cart

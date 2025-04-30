@@ -30,14 +30,14 @@ describe('AuthController', () => {
   });
 
   it('should call authClient.send() on login', async () => {
-    const data = { email: 'test@example.com', password: '123456' };
+    const data = { usename: 'test@example.com', password: '123456' };
     await authController.login(data);
 
     expect(authClientMock.send).toHaveBeenCalledWith({ cmd: 'login' }, data);
   });
 
   it('should call authClient.send() on register', async () => {
-    const data = { email: 'newuser@example.com', password: 'password123' };
+    const data = { usename: 'newuser@example.com', password: 'password123' };
     await authController.register(data);
 
     expect(authClientMock.send).toHaveBeenCalledWith(

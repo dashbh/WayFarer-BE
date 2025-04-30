@@ -16,7 +16,7 @@ export class CatalogController {
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogList')
   async getCatalogList(): Promise<CatalogListResponseDto> {
-    const items = await this.catalogService.getCatalogList({});
+    const items = await this.catalogService.getCatalogList();
     if (!items) {
       throw new RpcException({
         code: GrpcStatus.NOT_FOUND,

@@ -9,7 +9,7 @@ describe('CartController', () => {
 
   beforeEach(async () => {
     cartServiceMock = {
-      getCartList: jest.fn(),
+      getCart: jest.fn(),
       getCartItem: jest.fn(),
     } as any;
 
@@ -25,7 +25,7 @@ describe('CartController', () => {
     expect(cartController).toBeDefined();
   });
 
-  describe('getCartList', () => {
+  describe('getCart', () => {
     it('should return a success response with cart list', async () => {
       const mockCartList = [
         { id: '1', name: 'Item 1' },
