@@ -1,4 +1,9 @@
-import { Injectable, OnModuleInit, OnModuleDestroy, Logger } from '@nestjs/common';
+import {
+  Injectable,
+  OnModuleInit,
+  OnModuleDestroy,
+  Logger,
+} from '@nestjs/common';
 import { Kafka, KafkaConfig, Producer, Consumer } from 'kafkajs';
 import { KafkaConfigService } from './kafka.config';
 
@@ -18,8 +23,10 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
       ssl: false, // ← disable SSL
       sasl: undefined, // ← disable SASL
     };
-    this.logger.log(`Connecting to Kafka at ${this.kafkaConfigService.kafkaBrokerUrl}`);
-  
+    this.logger.log(
+      `Connecting to Kafka at ${this.kafkaConfigService.kafkaBrokerUrl}`,
+    );
+
     this.kafka = new Kafka(config);
     this.producer = this.kafka.producer();
     this.consumer = this.kafka.consumer({ groupId: 'nestjs-group' });
@@ -28,9 +35,9 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
   }
 
   async onModuleDestroy() {
-    // await this.consumer.disconnect();
-    // await this.producer.disconnect();
-    // this.logger.log('🛑 Kafka connections closed');
+    await this.consumer.disconnect();
+    await this.producer.disconnect();
+    this.logger.log('🛑 Kafka connections closed');
   }
 
   /**
@@ -60,20 +67,26 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
    * @param topic The topic to publish to.
    * @param messages The messages to publish.
    */
-  async publish(topic: string, messages: { key: string; value: string }[]): Promise<void> {
+  async publish(
+    topic: string,
+    messages: { key: string; value: string }[],
+  ): Promise<void> {
     await this.producer.send({ topic, messages });
     this.logger.log(`✅ Published to "${topic}": ${JSON.stringify(messages)}`);
   }
-  
+
   /**
    * Subscribes to a Kafka topic and processes incoming messages.
    * @param topic The topic to subscribe to.
    * @param onMessage Callback function to handle incoming messages.
    */
-  async subscribe<T = any>(topic: string, onMessage: (payload: T) => void): Promise<void> {
+  async subscribe<T = any>(
+    topic: string,
+    onMessage: (payload: T) => void,
+  ): Promise<void> {
     await this.consumer.subscribe({ topic, fromBeginning: true });
     this.logger.log(`✅ Subscribed to topic "${topic}"`);
-  
+
     await this.consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
         try {

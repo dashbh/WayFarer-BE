@@ -13,10 +13,7 @@ import { AUTH_PROTO_PATH } from '@wayfarer/common';
         imports: [ConfigModule], // Ensure ConfigModule is available
         inject: [ConfigService], // Inject ConfigService
         useFactory: (configService: ConfigService) => {
-          const host = configService.get<string>(
-            'AUTH_GRPC_HOST',
-            'localhost',
-          );
+          const host = configService.get<string>('AUTH_GRPC_HOST', 'localhost');
           const port = configService.get<number>('AUTH_SERVICE_PORT', 9001);
           return {
             transport: Transport.GRPC,

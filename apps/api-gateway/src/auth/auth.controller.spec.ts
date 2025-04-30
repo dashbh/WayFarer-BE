@@ -40,6 +40,9 @@ describe('AuthController', () => {
     const data = { email: 'newuser@example.com', password: 'password123' };
     await authController.register(data);
 
-    expect(authClientMock.send).toHaveBeenCalledWith({ cmd: 'register_user' }, data);
+    expect(authClientMock.send).toHaveBeenCalledWith(
+      { cmd: 'register_user' },
+      data,
+    );
   });
 });

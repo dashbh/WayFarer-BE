@@ -15,9 +15,7 @@ describe('CatalogController', () => {
 
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CatalogController],
-      providers: [
-        { provide: CatalogService, useValue: catalogServiceMock },
-      ],
+      providers: [{ provide: CatalogService, useValue: catalogServiceMock }],
     }).compile();
 
     catalogController = module.get<CatalogController>(CatalogController);
@@ -34,7 +32,9 @@ describe('CatalogController', () => {
         { id: '2', name: 'Item 2' },
       ];
 
-      (catalogServiceMock.getCatalogList as jest.Mock).mockReturnValue(mockCatalogList);
+      (catalogServiceMock.getCatalogList as jest.Mock).mockReturnValue(
+        mockCatalogList,
+      );
 
       const result = catalogController.getCatalogList();
 
@@ -48,11 +48,15 @@ describe('CatalogController', () => {
       const catalogId = '1';
       const mockCatalogItem = { id: '1', name: 'Item 1' };
 
-      (catalogServiceMock.getCatalogItem as jest.Mock).mockReturnValue(mockCatalogItem);
+      (catalogServiceMock.getCatalogItem as jest.Mock).mockReturnValue(
+        mockCatalogItem,
+      );
 
       const result = catalogController.getCatalogItem({ id: catalogId });
 
-      expect(catalogServiceMock.getCatalogItem).toHaveBeenCalledWith({ id: catalogId });
+      expect(catalogServiceMock.getCatalogItem).toHaveBeenCalledWith({
+        id: catalogId,
+      });
       expect(result).toEqual(HttpResponse.success(mockCatalogItem, 'Success'));
     });
   });

@@ -25,18 +25,27 @@ export class HttpExceptionFilter implements ExceptionFilter {
     let details: any = null;
 
     // Handle raw gRPC errors
-    if (typeof exception === 'object' && exception !== null && 'code' in exception && 'details' in exception) {
-      this.logger.warn(`🟠 Raw gRPC Error Received: ${JSON.stringify(exception)}`);
+    if (
+      typeof exception === 'object' &&
+      exception !== null &&
+      'code' in exception &&
+      'details' in exception
+    ) {
+      this.logger.warn(
+        `🟠 Raw gRPC Error Received: ${JSON.stringify(exception)}`,
+      );
 
       message = exception.details || message;
       errorCode = exception.code || GrpcStatus.UNKNOWN;
       details = exception;
-      
+
       status = this.mapGrpcToHttpStatus(exception.code);
     }
     // Handle gRPC RpcException
     else if (exception instanceof RpcException) {
-      this.logger.warn(`🟡 RpcException Received: ${JSON.stringify(exception.getError())}`);
+      this.logger.warn(
+        `🟡 RpcException Received: ${JSON.stringify(exception.getError())}`,
+      );
 
       const grpcError = exception.getError();
       if (typeof grpcError === 'object' && grpcError !== null) {
@@ -45,11 +54,15 @@ export class HttpExceptionFilter implements ExceptionFilter {
         details = grpcError;
       }
 
-      status = this.mapGrpcToHttpStatus(grpcError['code'] || GrpcStatus.UNKNOWN);
+      status = this.mapGrpcToHttpStatus(
+        grpcError['code'] || GrpcStatus.UNKNOWN,
+      );
     }
     // Handle NestJS HTTP exceptions
     else if (exception instanceof HttpException) {
-      this.logger.warn(`🟢 HttpException Received: ${JSON.stringify(exception.getResponse())}`);
+      this.logger.warn(
+        `🟢 HttpException Received: ${JSON.stringify(exception.getResponse())}`,
+      );
 
       status = exception.getStatus();
       const responseObj = exception.getResponse();
@@ -61,7 +74,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
       }
     }
 
-    this.logger.error(`❌ HTTP Exception: ${status} - ${message}`, exception.stack);
+    this.logger.error(
+      `❌ HTTP Exception: ${status} - ${message}`,
+      exception.stack,
+    );
 
     response.status(status).json({
       statusCode: status,

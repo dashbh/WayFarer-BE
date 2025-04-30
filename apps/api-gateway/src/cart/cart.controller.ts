@@ -9,12 +9,10 @@ import {
 import { ClientGrpc } from '@nestjs/microservices';
 import { JwtAuthGuard } from '../auth/auth.guard';
 import { lastValueFrom, Observable } from 'rxjs';
-import {
-  CartResponseDto,
-} from '@wayfarer/common';
+import { CartResponseDto } from '@wayfarer/common';
 
 interface CartGrpcService {
-  getCart(data: {}): Observable<CartResponseDto>;
+  getCart(data: Record<string, unknown>): Observable<CartResponseDto>;
 }
 
 @Controller('cart')

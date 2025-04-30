@@ -15,9 +15,7 @@ describe('CartController', () => {
 
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CartController],
-      providers: [
-        { provide: CartService, useValue: cartServiceMock },
-      ],
+      providers: [{ provide: CartService, useValue: cartServiceMock }],
     }).compile();
 
     cartController = module.get<CartController>(CartController);

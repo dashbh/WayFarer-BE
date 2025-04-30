@@ -15,7 +15,9 @@ import {
 } from '@wayfarer/common';
 
 interface CatalogGrpcService {
-  getCatalogList(data: {}): Observable<CatalogListResponseDto>;
+  getCatalogList(
+    data: Record<string, unknown>,
+  ): Observable<CatalogListResponseDto>;
   getCatalogItem(
     data: CatalogItemRequestDto,
   ): Observable<CatalogItemRequestDto>;

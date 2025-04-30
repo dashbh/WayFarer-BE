@@ -12,10 +12,7 @@ import { CART_PROTO_PATH } from '@wayfarer/common';
         imports: [ConfigModule], // Ensure ConfigModule is available
         inject: [ConfigService], // Inject ConfigService
         useFactory: (configService: ConfigService) => {
-          const host = configService.get<string>(
-            'CART_GRPC_HOST',
-            'localhost',
-          );
+          const host = configService.get<string>('CART_GRPC_HOST', 'localhost');
           const port = configService.get<number>('CART_SERVICE_PORT', 9003);
           return {
             transport: Transport.GRPC,

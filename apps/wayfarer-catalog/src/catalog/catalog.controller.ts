@@ -15,7 +15,7 @@ export class CatalogController {
   constructor(private readonly catalogService: CatalogService) {}
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogList')
-  async getCatalogList(data: {}): Promise<CatalogListResponseDto> {
+  async getCatalogList(): Promise<CatalogListResponseDto> {
     const items = await this.catalogService.getCatalogList({});
     if (!items) {
       throw new RpcException({
@@ -45,7 +45,7 @@ export class CatalogController {
       throw new RpcException({
         code: GrpcStatus.NOT_FOUND,
         message: 'Catalog item not found',
-      });;
+      });
     }
   }
 }

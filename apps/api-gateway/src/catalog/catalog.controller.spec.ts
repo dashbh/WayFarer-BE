@@ -39,19 +39,28 @@ describe('CatalogController', () => {
     const data = { category: 'electronics' };
     await catalogController.getCatalog(data);
 
-    expect(catalogClientMock.send).toHaveBeenCalledWith({ cmd: 'catalog' }, data);
+    expect(catalogClientMock.send).toHaveBeenCalledWith(
+      { cmd: 'catalog' },
+      data,
+    );
   });
 
   it('should call catalogClient.send() on getCatalogList', async () => {
     await catalogController.getCatalogList();
 
-    expect(catalogClientMock.send).toHaveBeenCalledWith({ cmd: 'get_catalog_list' }, {});
+    expect(catalogClientMock.send).toHaveBeenCalledWith(
+      { cmd: 'get_catalog_list' },
+      {},
+    );
   });
 
   it('should call catalogClient.send() on getCatalogItem', async () => {
     const catalogId = '123';
     await catalogController.getCatalogItem(catalogId);
 
-    expect(catalogClientMock.send).toHaveBeenCalledWith({ cmd: 'get_catalog_item' }, { id: catalogId });
+    expect(catalogClientMock.send).toHaveBeenCalledWith(
+      { cmd: 'get_catalog_item' },
+      { id: catalogId },
+    );
   });
 });

@@ -1,7 +1,7 @@
 import { Body, Controller } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import { RegisterDto, UserEntity } from '@wayfarer/common';
-import { status as GrpcStatus} from '@grpc/grpc-js';
+import { status as GrpcStatus } from '@grpc/grpc-js';
 
 import { AuthService } from './auth.service';
 import { UserService } from '../user/user.service';

@@ -8,5 +8,4 @@ import { KafkaConfigService } from './kafka.config';
   providers: [KafkaService, KafkaConfigService],
   exports: [KafkaService],
 })
-
 export class KafkaModule {}
