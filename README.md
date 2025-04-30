@@ -1,4 +1,5 @@
-# WayFarer Backend (BE)
+# WayFarer Backend (BE) ![CI](https://github.com/dashbh/WayFarer-BE/actions/workflows/ci.yml/badge.svg)
+
 
 ## Overview
 WayFarer Backend is a **NestJS-driven microservices architecture** built using a **monorepo** structure. It provides an **API Gateway, authentication service, and catalog service**, communicating via **TCP**. The authentication service secures the catalog service using **JWT authentication**.
