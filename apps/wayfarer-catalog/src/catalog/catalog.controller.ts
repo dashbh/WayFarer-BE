@@ -1,4 +1,4 @@
-import { Controller, Logger } from '@nestjs/common';
+import { Controller, Logger, Query } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import { CatalogService } from './catalog.service';
 import {
@@ -15,8 +15,26 @@ export class CatalogController {
   constructor(private readonly catalogService: CatalogService) {}
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogList')
-  async getCatalogList(): Promise<CatalogListResponseDto> {
-    const items = await this.catalogService.getCatalogList();
+  async getCatalogList(
+    @Query('page') page = '1', // default to page 1 if not provided
+    @Query('limit') limit = '20', // default to 100 if not provided
+  ): Promise<CatalogListResponseDto> {
+    let parsedPage = parseInt(page);
+    let parsedLimit = parseInt(limit);
+
+    // Check if parsing was successful
+    if (isNaN(parsedPage) || parsedPage <= 0) {
+      parsedPage = 1;
+    }
+
+    if (isNaN(parsedLimit) || parsedLimit <= 0) {
+      parsedLimit = 20;
+    }
+    const items = await this.catalogService.getCatalogList(
+      parsedPage,
+      parsedLimit,
+    );
+
     if (!items) {
       throw new RpcException({
         code: GrpcStatus.NOT_FOUND,
@@ -24,7 +42,7 @@ export class CatalogController {
       });
     }
 
-    return { items };
+    return items;
   }
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogItem')

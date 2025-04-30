@@ -6,7 +6,9 @@ export class HealthController {
   constructor(private kafkaService: KafkaService) {}
   @Get()
   async check() {
-    await this.kafkaService.publish('health', [{ key: 'health', value: 'ok' }]);
+    this.kafkaService.publish('wayfarer-gateway-topic', [
+      { key: 'health', value: 'ok' },
+    ]);
     return { status: 'ok' };
   }
 }

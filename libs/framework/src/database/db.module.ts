@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
-import { UserModule } from '../user/user.module';
 import { databaseConfig } from './db.config';
 
 @Module({
@@ -11,7 +10,6 @@ import { databaseConfig } from './db.config';
       useFactory: async (configService: ConfigService) =>
         databaseConfig(configService),
     }),
-    UserModule,
   ],
   exports: [TypeOrmModule],
 })

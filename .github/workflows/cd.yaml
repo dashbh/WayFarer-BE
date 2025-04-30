@@ -27,4 +27,5 @@ jobs:
       - name: Build & Push All Services
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+          COMPOSE_BAKE: true
         run: make all

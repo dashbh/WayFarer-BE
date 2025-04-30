@@ -3,7 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { DatabaseModule } from '../database/db.module';
+import { DatabaseModule } from '@wayfarer/framework';
 import { UserModule } from '../user/user.module';
 import { KafkaModule } from '@wayfarer/framework';
 

@@ -14,13 +14,35 @@ message CatalogItemRequest {
 
 message Catalog {
   string id = 1;
-  string name = 2;
+  string title = 2;
   string description = 3;
   double price = 4;
+  string imageUrl = 5;
+  string category = 6;
+  string sku = 7;
+  int32 quantity = 8;
+  string brand = 9;
+  double length = 10;
+  double width = 11;
+  double height = 12;
+  double weight = 13;
+  string dateAdded = 14;
+  double discountPrice = 15;
+  string discountStartDate = 16;
+  string discountEndDate = 17;
+  double rating = 18;
+  repeated string tags = 19;
+  repeated string imageUrls = 20;
+  string supplier = 21;
+  string currency = 22;
 }
 
 message CatalogListResponse {
-  repeated Catalog items = 1;
+  repeated Catalog data = 1;       // List of catalog items
+  int32 total = 2;                  // Total number of catalog items
+  int32 page = 3;                   // Current page number
+  int32 limit = 4;                  // Number of items per page
+  int32 totalPages = 5;             // Total number of pages
 }
 
 message CatalogItemResponse {

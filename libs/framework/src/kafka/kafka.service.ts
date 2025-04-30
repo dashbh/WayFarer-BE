@@ -22,13 +22,19 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
       brokers: [this.kafkaConfigService.kafkaBrokerUrl],
       ssl: false, // ← disable SSL
       sasl: undefined, // ← disable SASL
+      // logLevel: 5,
     };
     this.logger.log(
       `Connecting to Kafka at ${this.kafkaConfigService.kafkaBrokerUrl}`,
     );
 
     this.kafka = new Kafka(config);
-    this.producer = this.kafka.producer();
+    this.producer = this.kafka.producer({
+      retry: {
+        maxRetryTime: 3000,
+        retries: 2,
+      },
+    });
     this.consumer = this.kafka.consumer({ groupId: 'nestjs-group' });
 
     await this.connectWithRetry();
@@ -71,8 +77,19 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
     topic: string,
     messages: { key: string; value: string }[],
   ): Promise<void> {
-    await this.producer.send({ topic, messages });
-    this.logger.log(`✅ Published to "${topic}": ${JSON.stringify(messages)}`);
+    try {
+      await this.producer.send({
+        topic,
+        messages,
+        acks: -1, // wait for all replicas
+      });
+      this.logger.log(
+        `✅ Published to "${topic}": ${JSON.stringify(messages)}`,
+      );
+    } catch (err) {
+      this.logger.error(`❌ Failed to publish to "${topic}": ${err.message}`);
+      // Do NOT rethrow — app should continue running
+    }
   }
 
   /**

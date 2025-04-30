@@ -38,9 +38,9 @@ export class AuthService implements OnModuleInit {
 
   async login(user: any) {
     const payload = { username: user.username };
-    await this.kafkaService.publish('auth-topic', [
-      { key: 'user', value: user.username },
-    ]);
+    // this.kafkaService.publish('auth-topic', [
+    //   { key: 'user', value: user.username },
+    // ]);
     return {
       accessToken: this.jwtService.sign(payload),
       refreshToken: this.jwtService.sign(payload),
