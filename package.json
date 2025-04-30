@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run build:common && npm run build:framework && nest build",
+    "build": "nest build --all",
     "build:api-gateway": "npm run build:common && npm run build:framework && nest build api-gateway",
     "build:wayfarer-auth": "npm run build:common && npm run build:framework && nest build wayfarer-auth",
     "build:wayfarer-catalog": "npm run build:common && npm run build:framework && nest build wayfarer-catalog",
@@ -23,7 +23,8 @@
     "start:all": "npm run start:auth & npm run start:gateway & npm run start:catalog & npm run start:cart",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/api-gateway/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
