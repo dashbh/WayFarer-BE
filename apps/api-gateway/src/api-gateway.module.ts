@@ -6,10 +6,20 @@ import { CatalogModule } from './catalog/catalog.module';
 import { CartModule } from './cart/cart.module';
 import { HealthModule } from './health/health.module';
 import { KafkaModule } from '@wayfarer/framework';
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        {
+          ttl: 60, // 1 minute
+          limit: 10, // 10 requests per minute
+        },
+      ],
+    }),
     JwtAuthModule,
     HealthModule,
     AuthModule,
@@ -18,6 +28,11 @@ import { KafkaModule } from '@wayfarer/framework';
     KafkaModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
 })
 export class ApiGatewayModule {}

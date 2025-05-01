@@ -38,9 +38,9 @@ export class AuthService implements OnModuleInit {
 
   async login(user: any) {
     const payload = { username: user.username };
-    // this.kafkaService.publish('auth-topic', [
-    //   { key: 'user', value: user.username },
-    // ]);
+    this.kafkaService.publish('auth-topic', [
+      { key: 'user', value: user.username },
+    ]);
     return {
       accessToken: this.jwtService.sign(payload),
       refreshToken: this.jwtService.sign(payload),
@@ -48,10 +48,7 @@ export class AuthService implements OnModuleInit {
   }
 
   private handleMessage(message: any) {
-    console.log(
-      'Received Kafka message in AuthService:',
-      message.value.toString(),
-    );
+    console.log('Received Kafka message in AuthService:', message.toString());
     // You can do any processing here with the received message
   }
 

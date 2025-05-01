@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { ConfigService } from '@nestjs/config';
 import { HttpExceptionFilter } from '@wayfarer/common';
 import { ApiGatewayModule } from './api-gateway.module';
+import * as cookieParser from 'cookie-parser';
+import helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);
@@ -13,7 +15,19 @@ async function bootstrap() {
 
   await app.startAllMicroservices();
   app.useGlobalFilters(new HttpExceptionFilter());
+
+  app.use(cookieParser());
+
+  app.enableCors({
+    origin: ['http://localhost:3001'],
+    credentials: true,
+    methods: 'GET,PUT,POST',
+  });
+
+  app.use(helmet());
+
   await app.listen(port, host);
   console.log(`✅ WayFarer API Gateway is running on http://${host}:${port}`);
 }
+
 bootstrap();

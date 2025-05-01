@@ -2,10 +2,12 @@ import {
   Controller,
   Post,
   Body,
+  Res,
   Inject,
   OnModuleInit,
   InternalServerErrorException,
 } from '@nestjs/common';
+import { Response } from 'express';
 import { ClientGrpc } from '@nestjs/microservices';
 import { lastValueFrom, Observable } from 'rxjs';
 
@@ -37,11 +39,30 @@ export class AuthController implements OnModuleInit {
   }
 
   @Post('login')
-  async login(@Body() data: { usename: string; password: string }) {
+  async login(
+    @Body() data: { usename: string; password: string },
+    @Res({ passthrough: true }) response: Response,
+  ) {
     try {
-      return lastValueFrom(this.authService.login(data));
+      const loginResult = await lastValueFrom(this.authService.login(data));
+
+      const token = loginResult?.accessToken;
+
+      if (!token) {
+        throw new InternalServerErrorException('No token received');
+      }
+
+      // Set cookie
+      response.cookie('auth_token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // Only send cookie over HTTPS in production
+        sameSite: 'lax',
+        maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
+      });
+
+      return { success: true };
     } catch (error) {
-      throw new InternalServerErrorException('Request failed');
+      throw new InternalServerErrorException('Login failed');
     }
   }
 
