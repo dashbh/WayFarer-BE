@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { HttpResponse, UserEntity, RegisterDto } from '@wayfarer/common';
+
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UserService } from '../user/user.service';
-import { HttpResponse, UserEntity, RegisterDto } from '@wayfarer/common';
 
 describe('AuthController', () => {
   let authController: AuthController;

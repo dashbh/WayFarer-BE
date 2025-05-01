@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AuthController } from './auth.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AUTH_PROTO_PATH } from '@wayfarer/common';
+
+import { AuthController } from './auth.controller';
 
 @Module({
   imports: [

@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { AUTH_PROTO_PATH, HttpExceptionFilter } from '@wayfarer/common';
+
 import { AppModule } from './app.module';
 
 async function bootstrap() {

@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthController } from './auth.controller';
 import { ClientProxy } from '@nestjs/microservices';
 import { of } from 'rxjs';
+
+import { AuthController } from './auth.controller';
 
 describe('AuthController', () => {
   let authController: AuthController;

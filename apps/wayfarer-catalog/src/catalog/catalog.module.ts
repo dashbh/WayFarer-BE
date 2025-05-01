@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { CatalogController } from './catalog.controller';
-import { CatalogService } from './catalog.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from '@wayfarer/framework';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CatalogItemEntity } from '@wayfarer/common';
+
+import { CatalogService } from './catalog.service';
+import { CatalogController } from './catalog.controller';
 
 @Module({
   imports: [

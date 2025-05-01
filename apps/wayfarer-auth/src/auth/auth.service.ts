@@ -5,8 +5,9 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { UserService } from '../user/user.service';
 import { KafkaService } from '@wayfarer/framework';
+
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class AuthService implements OnModuleInit {

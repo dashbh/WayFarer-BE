@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+
 import { CartController } from './cart.controller';
 import { CartService } from './cart.service';
-import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [

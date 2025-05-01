@@ -5,6 +5,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Kafka, KafkaConfig, Producer, Consumer } from 'kafkajs';
+
 import { KafkaConfigService } from './kafka.config';
 
 @Injectable()

@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CatalogController } from './catalog.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CATALOG_PROTO_PATH } from '@wayfarer/common';
+
+import { CatalogController } from './catalog.controller';
 
 @Module({
   imports: [

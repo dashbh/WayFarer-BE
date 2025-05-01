@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HealthController } from './health.controller';
 import { KafkaService } from '@wayfarer/framework';
+
+import { HealthController } from './health.controller';
 
 describe('HealthController', () => {
   let healthController: HealthController;

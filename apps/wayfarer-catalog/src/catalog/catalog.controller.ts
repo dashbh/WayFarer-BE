@@ -1,12 +1,13 @@
 import { Controller, Logger, Query } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
-import { CatalogService } from './catalog.service';
 import {
   CatalogListResponseDto,
   CatalogItemRequestDto,
   CatalogItemResponseDto,
 } from '@wayfarer/common';
 import { status as GrpcStatus } from '@grpc/grpc-js';
+
+import { CatalogService } from './catalog.service';
 
 @Controller()
 export class CatalogController {

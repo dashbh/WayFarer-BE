@@ -1,9 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { ConfigService } from '@nestjs/config';
 import { HttpExceptionFilter } from '@wayfarer/common';
-import { ApiGatewayModule } from './api-gateway.module';
 import * as cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+
+import { ApiGatewayModule } from './api-gateway.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);

@@ -1,8 +1,9 @@
 import { Controller, Logger } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
-import { CartService } from './cart.service';
 import { CartResponseDto } from '@wayfarer/common';
 import { status as GrpcStatus } from '@grpc/grpc-js';
+
+import { CartService } from './cart.service';
 
 @Controller()
 export class CartController {

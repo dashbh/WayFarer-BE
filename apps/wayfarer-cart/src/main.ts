@@ -1,8 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
-import { AppModule } from './app.module';
 import { CART_PROTO_PATH, HttpExceptionFilter } from '@wayfarer/common';
+
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const appContext = await NestFactory.create(AppModule);

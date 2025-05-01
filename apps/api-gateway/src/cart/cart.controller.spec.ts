@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CartController } from './cart.controller';
 import { ClientProxy } from '@nestjs/microservices';
-import { JwtAuthGuard } from '../auth/auth.guard';
 import { of } from 'rxjs';
+
+import { CartController } from './cart.controller';
+import { JwtAuthGuard } from '../auth/auth.guard';
 
 describe('CartController', () => {
   let cartController: CartController;

@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { HttpResponse } from '@wayfarer/common';
+
 import { CatalogController } from './catalog.controller';
 import { CatalogService } from './catalog.service';
-import { HttpResponse } from '@wayfarer/common';
 
 describe('CatalogController', () => {
   let catalogController: CatalogController;

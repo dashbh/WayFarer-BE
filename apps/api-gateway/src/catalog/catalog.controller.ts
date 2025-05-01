@@ -7,12 +7,13 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
-import { JwtAuthGuard } from '../auth/auth.guard';
 import { lastValueFrom, Observable } from 'rxjs';
 import {
   CatalogItemRequestDto,
   CatalogListResponseDto,
 } from '@wayfarer/common';
+
+import { JwtAuthGuard } from '../auth/auth.guard';
 
 interface CatalogGrpcService {
   getCatalogList(
