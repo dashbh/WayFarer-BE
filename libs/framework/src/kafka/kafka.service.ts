@@ -25,7 +25,7 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
       sasl: undefined, // ← disable SASL
       // logLevel: 5,
     };
-    this.logger.log(
+    this.logger.warn(
       `Connecting to Kafka at ${this.kafkaConfigService.kafkaBrokerUrl}`,
     );
 
@@ -36,9 +36,16 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
         retries: 2,
       },
     });
-    this.consumer = this.kafka.consumer({ groupId: 'nestjs-group' });
 
-    await this.connectWithRetry();
+    this.consumer = this.kafka.consumer({
+      groupId: 'nestjs-group',
+      retry: {
+        maxRetryTime: 3000,
+        retries: 2,
+      },
+    });
+
+    await this.connectToKafka();
   }
 
   async onModuleDestroy() {
@@ -52,21 +59,17 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
    * @param retries Number of retries before failing.
    * @param delayMs Delay between retries in milliseconds.
    */
-  private async connectWithRetry(retries = 10, delayMs = 3000) {
-    for (let i = 0; i < retries; i++) {
-      try {
-        await this.producer.connect();
-        this.logger.log('✅ Kafka Producer connected !!!');
+  private async connectToKafka() {
+    try {
+      await this.producer.connect();
+      this.logger.log('✅ Kafka Producer connected !!!');
 
-        await this.consumer.connect();
-        this.logger.log('✅ Kafka Consumer connected !!!');
-        return;
-      } catch (err) {
-        this.logger.error(`❌ Kafka connection failed (attempt ${i + 1})`, err);
-        await new Promise((res) => setTimeout(res, delayMs));
-      }
+      await this.consumer.connect();
+      this.logger.log('✅ Kafka Consumer connected !!!');
+      return;
+    } catch (err) {
+      this.logger.error(`❌ Failed to connect to kafka`, err);
     }
-    throw new Error('❌ Failed to connect to Kafka after multiple retries');
   }
 
   /**

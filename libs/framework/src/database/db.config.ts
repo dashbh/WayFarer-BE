@@ -12,4 +12,7 @@ export const databaseConfig = async (
   database: configService.get<string>('POSTGRES_DB'),
   autoLoadEntities: true,
   synchronize: true, // Set to false in production
+  ssl: {
+    rejectUnauthorized: false, // use true with CA certs in production
+  },
 });
