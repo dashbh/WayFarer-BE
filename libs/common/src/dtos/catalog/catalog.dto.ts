@@ -91,3 +91,12 @@ export class CatalogItemRequestDto {
 export class CatalogItemResponseDto {
   item: CatalogDto;
 }
+
+export class CatalogSeedRequestDto {
+  count: number; // Number of items to seed
+}
+
+export class CatalogSeedResponseDto {
+  status: string; // Status of the seeding operation
+  message: string; // Message describing the result of the operation
+}

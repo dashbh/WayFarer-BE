@@ -4,17 +4,37 @@ package wayfarer.cart;
 
 service CartGrpcService {
   rpc GetCart (Empty) returns (CartResponse);
+  rpc AddToCart(AddItemRequest) returns (CartMessage);
+  rpc Checkout(Empty) returns (CheckoutResponse);
 }
 
 message Empty {}
 
+message AddItemRequest {
+  string productId = 1;
+  int32 quantity = 2;
+}
+
 message CartItem {
-  string id = 1;
-  string name = 2;
-  string description = 3;
-  double price = 4;
+  string productId = 1;
+  int32 quantity = 2;
+  string title = 3;
+  int32 price = 4;
+  int32 discountPrice = 5;
+  string imageUrl = 6;
+  string currency = 7;
+  string brand = 8;
 }
 
 message CartResponse {
   repeated CartItem items = 1;
+}
+
+message CheckoutResponse {
+  string message = 1;
+  repeated CartItem items = 2;
+}
+
+message CartMessage {
+  string message = 1;
 }

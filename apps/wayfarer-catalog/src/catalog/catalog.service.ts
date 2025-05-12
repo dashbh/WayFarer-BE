@@ -4,6 +4,7 @@ import { CatalogItemEntity } from '@wayfarer/common';
 import { Repository } from 'typeorm';
 import * as path from 'path';
 import * as fs from 'fs';
+import { count } from 'console';
 
 @Injectable()
 export class CatalogService implements OnModuleInit {
@@ -35,6 +36,27 @@ export class CatalogService implements OnModuleInit {
 
   getCatalogItem(data: { id: string }) {
     return this.catalogRepo.findOneBy({ id: data.id });
+  }
+
+  async seedCatalogItems(data: { count: number }) {
+    try {
+      const dbCount = await this.catalogRepo.count();
+
+      const seedPath = path.resolve(process.cwd(), 'seed', 'catalog.json');
+      const catalogData = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
+      const seedCount = catalogData.length;
+      await this.catalogRepo.delete({}); // deletes all rows before seeding
+      await this.catalogRepo.save(catalogData);
+
+      return {
+        status: 'success',
+        message: `✅ Catalog re-seeded (${seedCount} items inserted, previous count was ${dbCount})`,
+        count: data,
+      };
+    } catch (error) {
+      console.error('Error seeding catalog:', error);
+      throw new Error('Failed to seed catalog');
+    }
   }
 
   async seedCatalogIfOutOfSync() {

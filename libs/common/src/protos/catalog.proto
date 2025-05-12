@@ -5,6 +5,7 @@ package wayfarer.catalog;
 service CatalogGrpcService {
   rpc GetCatalogList (Empty) returns (CatalogListResponse);
   rpc GetCatalogItem (CatalogItemRequest) returns (CatalogItemResponse);
+  rpc SeedCatalogData (CatalogSeedRequest) returns (CatalogSeedResponse);
 }
 message Empty {}
 
@@ -47,4 +48,13 @@ message CatalogListResponse {
 
 message CatalogItemResponse {
   Catalog item = 1;
+}
+
+message CatalogSeedRequest {
+  int32 count = 1;
+}
+
+message CatalogSeedResponse {
+  string status = 1; // e.g., "success"
+  string message = 2; // success or error message
 }

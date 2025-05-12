@@ -18,8 +18,8 @@ export class AuthService implements OnModuleInit {
   ) {}
 
   async onModuleInit() {
-    // Subscribe to a Kafka topic called 'auth-topic'
-    // await this.kafkaService.subscribe('auth-topic', this.handleMessage);
+    // Subscribe to a Kafka topic called 'user.login'
+    await this.kafkaService.subscribe('user.login', this.handleMessage);
   }
 
   async validateUser(username: string, password: string): Promise<any> {
@@ -38,9 +38,25 @@ export class AuthService implements OnModuleInit {
   }
 
   async login(user: any) {
-    const payload = { username: user.username };
-    this.kafkaService.publish('auth-topic', [
-      { key: 'user', value: user.username },
+    // Mock user database (Replace with real DB)
+    const users = [
+      {
+        id: '123456',
+        email: 'user@example.com',
+        name: 'Bhabani Prasad',
+        image: 'https://gravatar.com/images/homepage/avatar-01.png',
+      },
+    ];
+
+    const payload = { username: user.username, ...users[0] };
+    this.kafkaService.publish('user.login', [
+      {
+        key: user.username,
+        value: JSON.stringify({
+          ...payload,
+          timestamp: Date.now(),
+        }),
+      },
     ]);
     return {
       accessToken: this.jwtService.sign(payload),
@@ -49,7 +65,7 @@ export class AuthService implements OnModuleInit {
   }
 
   private handleMessage(message: any) {
-    console.log('Received Kafka message in AuthService:', message.toString());
+    console.log('Received Kafka message in AuthService ->', message);
     // You can do any processing here with the received message
   }
 

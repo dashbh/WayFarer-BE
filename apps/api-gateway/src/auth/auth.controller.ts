@@ -6,6 +6,8 @@ import {
   Inject,
   OnModuleInit,
   InternalServerErrorException,
+  HttpCode,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { ClientGrpc } from '@nestjs/microservices';
@@ -39,30 +41,27 @@ export class AuthController implements OnModuleInit {
   }
 
   @Post('login')
+  @HttpCode(200)
   async login(
     @Body() data: { usename: string; password: string },
-    @Res({ passthrough: true }) response: Response,
-  ) {
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<{ message: string }> {
     try {
-      const loginResult = await lastValueFrom(this.authService.login(data));
-
-      const token = loginResult?.accessToken;
-
-      if (!token) {
-        throw new InternalServerErrorException('No token received');
+      const { accessToken } = await lastValueFrom(this.authService.login(data));
+      if (!accessToken) {
+        throw new UnauthorizedException('No access token received');
       }
-
       // Set cookie
-      response.cookie('auth_token', token, {
+      res.cookie('auth_token', accessToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production', // Only send cookie over HTTPS in production
         sameSite: 'lax',
         maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
       });
 
-      return { success: true };
-    } catch (error) {
-      throw new InternalServerErrorException('Login failed');
+      return { message: 'Login successful' };
+    } catch (err) {
+      throw new UnauthorizedException('Login failed');
     }
   }
 

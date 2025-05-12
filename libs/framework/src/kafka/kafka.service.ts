@@ -70,6 +70,10 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
     } catch (err) {
       this.logger.error(`❌ Failed to connect to kafka`, err);
     }
+
+    this.consumer.on(this.consumer.events.CRASH, (e) => {
+      this.logger.error('💥 Kafka consumer crashed:', e.payload);
+    });
   }
 
   /**
@@ -109,15 +113,16 @@ export class KafkaService implements OnModuleInit, OnModuleDestroy {
     this.logger.log(`✅ Subscribed to topic "${topic}"`);
 
     await this.consumer.run({
-      eachMessage: async ({ topic, partition, message }) => {
-        try {
-          const value = message.value?.toString() ?? '{}';
-          const parsed: T = JSON.parse(value);
-          this.logger.debug(`📨 Received on "${topic}": ${value}`);
-          onMessage(parsed);
-        } catch (err) {
-          this.logger.error(`❌ Failed to handle message on "${topic}"`, err);
-        }
+      eachMessage: async ({ message }) => {
+        const key = message.key?.toString();
+        const value = message.value?.toString();
+        const payload = JSON.parse(value);
+
+        this.logger.log(
+          `📬 Received message from "${topic}" - "${key}": - ${value}`,
+        );
+
+        onMessage(payload);
       },
     });
   }

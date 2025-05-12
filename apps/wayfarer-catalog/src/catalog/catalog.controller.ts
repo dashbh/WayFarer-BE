@@ -4,6 +4,8 @@ import {
   CatalogListResponseDto,
   CatalogItemRequestDto,
   CatalogItemResponseDto,
+  CatalogSeedRequestDto,
+  CatalogSeedResponseDto,
 } from '@wayfarer/common';
 import { status as GrpcStatus } from '@grpc/grpc-js';
 
@@ -44,6 +46,24 @@ export class CatalogController {
     }
 
     return items;
+  }
+
+  @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'SeedCatalogData')
+  async seedCatalogData(
+    data: CatalogSeedRequestDto,
+  ): Promise<CatalogSeedResponseDto> {
+    try {
+      const response = await this.catalogService.seedCatalogItems({
+        count: data.count,
+      });
+      return response;
+    } catch (error) {
+      this.logger.error(`Not able to seed: ${error.message}`);
+      throw new RpcException({
+        code: GrpcStatus.NOT_FOUND,
+        message: 'Unable to seed catalog',
+      });
+    }
   }
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogItem')
