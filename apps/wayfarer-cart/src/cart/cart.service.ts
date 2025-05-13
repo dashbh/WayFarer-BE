@@ -73,6 +73,9 @@ export class CartService {
           title: product.title,
           price: product.price,
           imageUrl: product.imageUrl,
+          discountPrice: product.discountPrice,
+          currency: product.currency,
+          brand: product.brand,
         };
       }),
     );
