@@ -14,7 +14,7 @@
     "build:common": "nest build common",
     "build:framework": "nest build framework",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start",
+    "start": "npm run start:all",
     "start:dev": "nest start --watch",
     "start:gateway": "nest start --watch api-gateway",
     "start:auth": "nest start --watch wayfarer-auth",
@@ -32,6 +32,7 @@
     "test:e2e": "jest --config ./apps/api-gateway/test/jest-e2e.json"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@grpc/grpc-js": "^1.12.6",
     "@grpc/proto-loader": "^0.7.13",
     "@nestjs/common": "^11.0.8",

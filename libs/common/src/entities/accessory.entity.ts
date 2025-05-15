@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('catalog_items')
-export class CatalogItemEntity {
+@Entity('accessories')
+export class AccessoryEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -55,6 +55,9 @@ export class CatalogItemEntity {
 
   @Column('decimal', { precision: 2, scale: 1, nullable: true })
   rating: number;
+
+  @Column('int', { nullable: true })
+  totalRatings: number;
 
   @Column('text', { array: true, nullable: true })
   tags: string[];

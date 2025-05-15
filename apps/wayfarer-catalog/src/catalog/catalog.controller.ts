@@ -1,11 +1,17 @@
-import { Controller, Logger, Query } from '@nestjs/common';
+import {
+  BadRequestException,
+  Controller,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import {
-  CatalogListResponseDto,
   CatalogItemRequestDto,
-  CatalogItemResponseDto,
-  CatalogSeedRequestDto,
-  CatalogSeedResponseDto,
+  CatalogItemType,
+  CatalogItemgRPCResponseDto,
+  CatalogListRequestDto,
+  CatalogListgRPCResponseDto,
+  CatalogRPCDto,
 } from '@wayfarer/common';
 import { status as GrpcStatus } from '@grpc/grpc-js';
 
@@ -19,49 +25,65 @@ export class CatalogController {
 
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogList')
   async getCatalogList(
-    @Query('page') page = '1', // default to page 1 if not provided
-    @Query('limit') limit = '20', // default to 100 if not provided
-  ): Promise<CatalogListResponseDto> {
-    let parsedPage = parseInt(page);
-    let parsedLimit = parseInt(limit);
-
-    // Check if parsing was successful
-    if (isNaN(parsedPage) || parsedPage <= 0) {
-      parsedPage = 1;
-    }
-
-    if (isNaN(parsedLimit) || parsedLimit <= 0) {
-      parsedLimit = 20;
-    }
-    const items = await this.catalogService.getCatalogList(
-      parsedPage,
-      parsedLimit,
-    );
-
-    if (!items) {
-      throw new RpcException({
-        code: GrpcStatus.NOT_FOUND,
-        message: 'Catalog list not found',
-      });
-    }
-
-    return items;
-  }
-
-  @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'SeedCatalogData')
-  async seedCatalogData(
-    data: CatalogSeedRequestDto,
-  ): Promise<CatalogSeedResponseDto> {
+    payload: CatalogListRequestDto,
+  ): Promise<CatalogListgRPCResponseDto> {
     try {
-      const response = await this.catalogService.seedCatalogItems({
-        count: data.count,
+      const parsedPage = payload.page > 0 ? payload.page : 1;
+      const parsedLimit = payload.limit > 0 ? payload.limit : 20;
+
+      const items = await this.catalogService.getCatalogList(
+        payload.type,
+        parsedPage,
+        parsedLimit,
+        payload.sortBy,
+        payload.sortOrder,
+        payload.search,
+      );
+
+      if (!items) {
+        this.logger.error('Catalog list not found', JSON.stringify(payload));
+        throw new RpcException({
+          code: GrpcStatus.NOT_FOUND,
+          message: 'Catalog list not found',
+        });
+      }
+
+      const mappedData = items.data.map((item: any) => {
+        for (const typeKey of Object.values(CatalogItemType)) {
+          if (item[typeKey]) {
+            return { [typeKey]: item[typeKey] } as CatalogRPCDto;
+          }
+        }
+        // fallback for unexpected structure
+        return {} as CatalogRPCDto;
       });
-      return response;
+
+      return {
+        ...items,
+        data: mappedData,
+      };
     } catch (error) {
-      this.logger.error(`Not able to seed: ${error.message}`);
+      this.logger.error(
+        `Error fetching catalog list: ${error.message}`,
+        error.stack,
+      );
+      // Map NestJS exceptions to gRPC status codes
+      if (error instanceof BadRequestException) {
+        throw new RpcException({
+          code: GrpcStatus.INVALID_ARGUMENT, // 3
+          message: error.message,
+        });
+      }
+      if (error instanceof NotFoundException) {
+        throw new RpcException({
+          code: GrpcStatus.NOT_FOUND, // 5
+          message: error.message,
+        });
+      }
+      // fallback for all other errors
       throw new RpcException({
-        code: GrpcStatus.NOT_FOUND,
-        message: 'Unable to seed catalog',
+        code: GrpcStatus.INTERNAL,
+        message: 'Failed to fetch catalog list',
       });
     }
   }
@@ -69,16 +91,26 @@ export class CatalogController {
   @GrpcMethod('wayfarer.catalog.CatalogGrpcService', 'GetCatalogItem')
   async getCatalogItem(
     data: CatalogItemRequestDto,
-  ): Promise<CatalogItemResponseDto> {
+  ): Promise<CatalogItemgRPCResponseDto> {
     try {
-      const item = await this.catalogService.getCatalogItem({ id: data.id });
-      if (!item) {
+      const itemEntity = await this.catalogService.getCatalogItem({
+        id: data.id,
+      });
+
+      if (!itemEntity) {
         throw new RpcException({
           code: GrpcStatus.NOT_FOUND,
           message: 'Catalog item not found',
         });
       }
-      return { item };
+
+      // Wrap in the correct property for the oneof protobuff -> catalog.proto
+      const wrapper: any = {};
+      wrapper[itemEntity.type] = itemEntity.item;
+
+      return {
+        item: wrapper,
+      } as CatalogItemgRPCResponseDto;
     } catch (error) {
       this.logger.error(`Error fetching catalog item: ${error.message}`);
       throw new RpcException({

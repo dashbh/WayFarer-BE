@@ -13,9 +13,8 @@ import {
 import { firstValueFrom, Observable } from 'rxjs';
 
 interface CatalogGrpcService {
-  getCatalogItem(
-    data: CatalogItemRequestDto,
-  ): Observable<CatalogItemResponseDto>;
+  getCatalogItem(data: CatalogItemRequestDto): Observable<any>;
+  // ): Observable<CatalogItemResponseDto>;
 }
 
 @Injectable()
@@ -73,7 +72,7 @@ export class CartService {
           title: product.title,
           price: product.price,
           imageUrl: product.imageUrl,
-          discountPrice: product.discountPrice,
+          discountPrice: product?.discountPrice,
           currency: product.currency,
           brand: product.brand,
         };

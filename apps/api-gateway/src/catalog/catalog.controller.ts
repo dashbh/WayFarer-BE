@@ -5,11 +5,18 @@ import {
   Param,
   UseGuards,
   InternalServerErrorException,
+  Post,
+  Body,
+  Query,
+  Logger,
 } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { lastValueFrom, Observable } from 'rxjs';
 import {
   CatalogItemRequestDto,
+  CatalogItemResponseDto,
+  CatalogItemType,
+  CatalogListRequestDto,
   CatalogListResponseDto,
   CatalogSeedRequestDto,
 } from '@wayfarer/common';
@@ -22,14 +29,15 @@ interface CatalogGrpcService {
   ): Observable<CatalogListResponseDto>;
   getCatalogItem(
     data: CatalogItemRequestDto,
-  ): Observable<CatalogItemRequestDto>;
+  ): Observable<CatalogItemResponseDto>;
   seedCatalogData(
-    count: CatalogSeedRequestDto,
+    counts: CatalogSeedRequestDto,
   ): Observable<CatalogSeedRequestDto>;
 }
 
 @Controller('catalog')
 export class CatalogController {
+  private readonly logger = new Logger(CatalogController.name);
   private catalogService: CatalogGrpcService;
 
   constructor(@Inject('CATALOG_PACKAGE') private client: ClientGrpc) {}
@@ -44,23 +52,45 @@ export class CatalogController {
     }
   }
 
-  @Get() // POST /catalog - General catalog request
-  // @UseGuards(JwtAuthGuard)
-  async getCatalog() {
-    return await lastValueFrom(this.catalogService.getCatalogList({}));
-  }
-
   @Get('list') // GET /catalog/list - This will list all catalog items
   // @UseGuards(JwtAuthGuard)
-  async getCatalogList() {
-    return await lastValueFrom(this.catalogService.getCatalogList({}));
+  async getCatalogList(@Query() query: CatalogListRequestDto) {
+    const request = {
+      type: query.type ?? '',
+      page: Number(query.page) || 1,
+      limit: Number(query.limit) || 10,
+      sortBy: query.sortBy ?? '',
+      sortOrder: query.sortOrder ?? '',
+      search: query.search ?? '',
+    };
+
+    const response = await lastValueFrom(
+      this.catalogService.getCatalogList(request),
+    );
+
+    // Determine the type key to extract from each item
+    const typeKey = (
+      request.type as string
+    )?.toLowerCase() as keyof typeof CatalogItemType;
+
+    if (
+      Array.isArray(response.data) &&
+      typeKey &&
+      CatalogItemType[typeKey.toUpperCase() as keyof typeof CatalogItemType]
+    ) {
+      response.data = response.data.map((item: any) => item[typeKey]);
+    }
+
+    return response;
   }
 
-  @Get('seed') // GET /catalog/seed - This will seed the catalog
+  @Post('seed') // GET /catalog/seed - This will seed the catalog
   // @UseGuards(JwtAuthGuard)
-  async seedCatalog() {
+  async seedCatalog(@Body() seedRequest: any) {
     return await lastValueFrom(
-      this.catalogService.seedCatalogData({ count: 0 }),
+      this.catalogService.seedCatalogData({
+        counts: seedRequest,
+      }),
     ).catch((err) => {
       console.error('Error seeding catalog:', err);
       throw new InternalServerErrorException(
@@ -72,6 +102,16 @@ export class CatalogController {
   @Get(':id') // GET /catalog/:id - This will get a specific catalog item by id
   // @UseGuards(JwtAuthGuard)
   async getCatalogItem(@Param('id') id: string) {
-    return await lastValueFrom(this.catalogService.getCatalogItem({ id }));
+    const response = await lastValueFrom(
+      this.catalogService.getCatalogItem({ id }),
+    );
+    // Dynamically extract the first property value from the "item" object
+    if (response && response.item && typeof response.item === 'object') {
+      const firstKey = Object.keys(response.item)[0];
+      if (firstKey) {
+        response.item = response.item[firstKey];
+      }
+    }
+    return response;
   }
 }

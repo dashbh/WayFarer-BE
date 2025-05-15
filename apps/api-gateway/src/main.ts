@@ -25,6 +25,8 @@ async function bootstrap() {
     methods: 'GET,PUT,POST',
   });
 
+  app.setGlobalPrefix('api');
+
   app.use(helmet());
 
   await app.listen(port, host);

@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class CatalogDto {
+export class AccessoryDto {
   @Expose()
   id: string;
 
@@ -56,6 +56,9 @@ export class CatalogDto {
   rating: number;
 
   @Expose()
+  totalRatings: number;
+
+  @Expose()
   tags: string[];
 
   @Expose()
@@ -68,7 +71,38 @@ export class CatalogDto {
   currency: string;
 }
 
+export interface DestinationDto {
+  id: string;
+  title: string;
+  country: string;
+  description?: string;
+  latitude: number;
+  longitude: number;
+  imageUrl: string;
+  rating: number;
+  totalRatings: number;
+}
+
+export interface AccommodationDto {
+  id: string;
+  title: string;
+  description?: string;
+  type: string; // rename from "type" to avoid collision
+  price: number;
+  rating: number;
+  totalRatings: number;
+  imageUrl: string;
+  tags: string[];
+}
+
+export type CatalogDto = DestinationDto | AccommodationDto | AccessoryDto;
+export type CatalogRPCDto =
+  | { destination: DestinationDto; accommodation?: never; accessory?: never }
+  | { accommodation: AccommodationDto; destination?: never; accessory?: never }
+  | { accessory: AccessoryDto; destination?: never; accommodation?: never };
+
 export class CatalogListRequestDto {
+  type: string;
   page: number;
   limit: number;
   sortBy?: string;
@@ -77,7 +111,17 @@ export class CatalogListRequestDto {
 }
 
 export class CatalogListResponseDto {
+  type: string; // Type of catalog -> accessories/accomodations/destinations
   data: CatalogDto[]; // List of catalog items
+  total: number; // Total number of catalog items
+  page: number; // Current page number
+  limit: number; // Number of items per page
+  totalPages: number; // Total number of pages
+}
+
+export class CatalogListgRPCResponseDto {
+  type: string; // Type of catalog -> accessories/accomodations/destinations
+  data: CatalogRPCDto[]; // List of catalog items
   total: number; // Total number of catalog items
   page: number; // Current page number
   limit: number; // Number of items per page
@@ -92,8 +136,12 @@ export class CatalogItemResponseDto {
   item: CatalogDto;
 }
 
+export class CatalogItemgRPCResponseDto {
+  item: CatalogRPCDto;
+}
+
 export class CatalogSeedRequestDto {
-  count: number; // Number of items to seed
+  counts: any; // Number of items to seed
 }
 
 export class CatalogSeedResponseDto {

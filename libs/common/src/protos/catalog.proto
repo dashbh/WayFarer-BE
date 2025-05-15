@@ -1,19 +1,40 @@
 syntax = "proto3";
+import "google/protobuf/any.proto";
 
 package wayfarer.catalog;
 
 service CatalogGrpcService {
-  rpc GetCatalogList (Empty) returns (CatalogListResponse);
+  rpc GetCatalogList (CatalogListRequest) returns (CatalogListResponse);
   rpc GetCatalogItem (CatalogItemRequest) returns (CatalogItemResponse);
   rpc SeedCatalogData (CatalogSeedRequest) returns (CatalogSeedResponse);
 }
 message Empty {}
 
-message CatalogItemRequest {
+message Destination {
   string id = 1;
+  string title = 2;
+  string country = 3;
+  string description = 4;
+  float latitude = 5;
+  float longitude = 6;
+  string imageUrl = 7;
+  float rating = 8;
+  int32 totalRatings = 9;
 }
 
-message Catalog {
+message Accommodation {
+  string id = 1;
+  string title = 2;
+  string type = 3;
+  string description = 4;              // hotel, hostel, bnb
+  float price = 5;
+  float rating = 6;
+  int32 totalRatings = 7;
+  string imageUrl = 8;
+  repeated string tags = 9;
+}
+
+message Accessory {
   string id = 1;
   string title = 2;
   string description = 3;
@@ -32,29 +53,53 @@ message Catalog {
   string discountStartDate = 16;
   string discountEndDate = 17;
   double rating = 18;
-  repeated string tags = 19;
-  repeated string imageUrls = 20;
-  string supplier = 21;
-  string currency = 22;
+  double totalRatings = 19;
+  repeated string tags = 20;
+  repeated string imageUrls = 21;
+  string supplier = 22;
+  string currency = 23;
+}
+
+message CatalogItemWrapper {
+  oneof item {
+    Destination destination = 1;
+    Accommodation accommodation = 2;
+    Accessory accessory = 3;
+  }
+}
+
+message CatalogItemRequest {
+  string id = 1;
+}
+
+message CatalogItemResponse {
+  CatalogItemWrapper item = 1;
+}
+
+message CatalogListRequest {
+  string type = 1;                   // e.g., "destination", "accommodation"
+  int32 page = 2;                    // pagination page
+  int32 limit = 3;                   // items per page
+  string sortBy = 4;                 // field name to sort by
+  string sortOrder = 5;             // "asc" or "desc"
+  string search = 6;                // optional search term
 }
 
 message CatalogListResponse {
-  repeated Catalog data = 1;       // List of catalog items
+  repeated CatalogItemWrapper data = 1;       // List of catalog items
   int32 total = 2;                  // Total number of catalog items
   int32 page = 3;                   // Current page number
   int32 limit = 4;                  // Number of items per page
   int32 totalPages = 5;             // Total number of pages
-}
-
-message CatalogItemResponse {
-  Catalog item = 1;
+  string type = 6;                  // Type of catalog accessories/accomodations/destinations
 }
 
 message CatalogSeedRequest {
-  int32 count = 1;
+  map<string, int32> counts = 1;
 }
 
 message CatalogSeedResponse {
   string status = 1; // e.g., "success"
   string message = 2; // success or error message
+  map<string, string> data = 3; 
 }
