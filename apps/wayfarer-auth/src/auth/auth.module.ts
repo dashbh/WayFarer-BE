@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { DatabaseModule } from '@wayfarer/framework';
+import { PostgresDatabaseModule } from '@wayfarer/framework';
 import { KafkaModule } from '@wayfarer/framework';
 
 import { AuthService } from './auth.service';
@@ -10,7 +10,7 @@ import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [
-    DatabaseModule,
+    PostgresDatabaseModule,
     UserModule,
     KafkaModule,
     JwtModule.registerAsync({

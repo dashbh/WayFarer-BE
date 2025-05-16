@@ -2,7 +2,12 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { JwtModule } from '@nestjs/jwt';
-import { CATALOG_PROTO_PATH } from '@wayfarer/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import {
+  CartMongo,
+  CartMongoSchema,
+  CATALOG_PROTO_PATH,
+} from '@wayfarer/common';
 
 import { CartController } from './cart.controller';
 import { CartService } from './cart.service';
@@ -39,6 +44,9 @@ import { GrpcAuthGuard } from '../guards/grpc-auth.guard';
           };
         },
       },
+    ]),
+    MongooseModule.forFeature([
+      { name: CartMongo.name, schema: CartMongoSchema },
     ]),
   ],
   controllers: [CartController],

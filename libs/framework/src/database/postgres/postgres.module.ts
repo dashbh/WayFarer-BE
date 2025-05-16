@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 
-import { databaseConfig } from './db.config';
+import { databaseConfig } from './postgres.config';
 
 @Module({
   imports: [
@@ -14,4 +14,4 @@ import { databaseConfig } from './db.config';
   ],
   exports: [TypeOrmModule],
 })
-export class DatabaseModule {}
+export class PostgresDatabaseModule {}

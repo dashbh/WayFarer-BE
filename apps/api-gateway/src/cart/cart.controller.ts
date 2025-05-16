@@ -7,6 +7,7 @@ import {
   Post,
   Req,
   Body,
+  Delete,
 } from '@nestjs/common';
 import { Request } from 'express';
 import { ClientGrpc } from '@nestjs/microservices';
@@ -22,6 +23,8 @@ interface CartGrpcService {
     metadata?: Metadata,
   ): Observable<CartResponseDto>;
   AddToCart(data: AddItemDto, metadata?: Metadata): Promise<any>;
+  RemoveItemFromCart(data: AddItemDto, metadata?: Metadata): Promise<any>;
+  ClearCart(data: any, metadata?: Metadata): Promise<any>;
   Checkout(data: any, metadata?: Metadata): Promise<any>;
 }
 
@@ -50,7 +53,7 @@ export class CartController {
     return this.cartService.GetCart({}, metadata);
   }
 
-  @Post() // POST /cart - General cart request
+  @Post() // POST /cart - AddToCart request
   @UseGuards(JwtAuthGuard)
   async addToCart(@Req() req: Request, @Body() item: AddItemDto) {
     const metadata = new Metadata();
@@ -59,7 +62,35 @@ export class CartController {
     return this.cartService.AddToCart(item, metadata);
   }
 
-  @Post('checkout') // POST /checkout - Placing Order
+  @Post('remove') // POST /cart/remove - Remove item from cart
+  @UseGuards(JwtAuthGuard)
+  async removeItemFromCart(@Req() req: Request, @Body() item: AddItemDto) {
+    const metadata = new Metadata();
+    const token = req.cookies?.auth_token;
+    metadata.add('authorization', `Bearer ${token}`);
+    if (!this.cartService['RemoveItemFromCart']) {
+      throw new InternalServerErrorException(
+        'RemoveItemFromCart not implemented in CartGrpcService',
+      );
+    }
+    return this.cartService.RemoveItemFromCart(item, metadata);
+  }
+
+  @Delete() // DELETE /cart - Remove item from cart
+  @UseGuards(JwtAuthGuard)
+  async clearCart(@Req() req: Request) {
+    const metadata = new Metadata();
+    const token = req.cookies?.auth_token;
+    metadata.add('authorization', `Bearer ${token}`);
+    if (!this.cartService['ClearCart']) {
+      throw new InternalServerErrorException(
+        'ClearCart not implemented in CartGrpcService',
+      );
+    }
+    return this.cartService.ClearCart({}, metadata);
+  }
+
+  @Post('checkout') // POST /cart/checkout - Placing Order
   @UseGuards(JwtAuthGuard)
   async checkout(@Req() req: Request) {
     const metadata = new Metadata();

@@ -6,6 +6,8 @@ service CartGrpcService {
   rpc GetCart (Empty) returns (CartResponse);
   rpc AddToCart(AddItemRequest) returns (CartMessage);
   rpc Checkout(Empty) returns (CheckoutResponse);
+  rpc RemoveItemFromCart(AddItemRequest) returns (CartMessage);
+  rpc ClearCart(Empty) returns (CartMessage);
 }
 
 message Empty {}
@@ -27,12 +29,28 @@ message CartItem {
 }
 
 message CartResponse {
-  repeated CartItem items = 1;
+  string cartId = 1;
+  repeated CartItem items = 2;
+  double total = 3;
+  double subTotal = 4;
+  double taxes = 5;
+  string currency = 6;
+  double totalDiscount = 7;
+  double itemCount = 8;
+  string createdAt = 9;
+  string updatedAt = 10;
 }
 
 message CheckoutResponse {
   string message = 1;
   repeated CartItem items = 2;
+  double total = 3;
+  double subTotal = 4;
+  double taxes = 5;
+  string currency = 6;
+  double discountTotal = 7;
+  string createdAt = 8;
+  string updatedAt = 9;
 }
 
 message CartMessage {

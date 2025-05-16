@@ -37,11 +37,11 @@ export class CartController {
     }
 
     try {
-      const cartItems = await this.cartService.getCart(userId);
+      const cartObject = await this.cartService.getCartByUserId(userId);
       this.logger.log(
-        `Cart items for user ${userId}: ${JSON.stringify(cartItems)}`,
+        `Cart cartObject for user ${userId}: ${JSON.stringify(cartObject)}`,
       );
-      return { items: cartItems };
+      return cartObject;
     } catch (error) {
       this.logger.error(
         `Error fetching cart for user ${userId}: ${error.message}`,
@@ -57,7 +57,7 @@ export class CartController {
   async addToCart(data: AddItemDto, context: any): Promise<any> {
     const userId = this.getUserIdFromContext(context);
     try {
-      this.cartService.addItem(userId, data);
+      this.cartService.addItemToCart(userId, data);
       this.logger.log(
         `Added item to cart for user ${userId}: ${JSON.stringify(data)}`,
       );
@@ -65,6 +65,44 @@ export class CartController {
     } catch (error) {
       this.logger.error(
         `Error Added item to cart for user ${userId}: ${error.message}`,
+      );
+      throw new RpcException({
+        code: GrpcStatus.NOT_FOUND,
+        message: 'Unable to add item',
+      });
+    }
+  }
+
+  @GrpcMethod('wayfarer.cart.CartGrpcService', 'RemoveItemFromCart')
+  async removeItemFromCart(data: AddItemDto, context: any): Promise<any> {
+    const userId = this.getUserIdFromContext(context);
+    try {
+      this.cartService.removeItemFromCart(userId, data?.productId);
+      this.logger.log(
+        `Removed item from cart for user ${userId}: ${JSON.stringify(data)}`,
+      );
+      return { message: 'Item Removed' };
+    } catch (error) {
+      this.logger.error(
+        `Error removing item from cart for user ${userId}: ${error.message}`,
+      );
+      throw new RpcException({
+        code: GrpcStatus.NOT_FOUND,
+        message: 'Unable to remove item',
+      });
+    }
+  }
+
+  @GrpcMethod('wayfarer.cart.CartGrpcService', 'ClearCart')
+  async clearCart(_: any, context: any): Promise<any> {
+    const userId = this.getUserIdFromContext(context);
+    try {
+      this.cartService.clearCart(userId);
+      this.logger.log(`Deleted cart for user ${userId}`);
+      return { message: 'Cart deleted' };
+    } catch (error) {
+      this.logger.error(
+        `Error clearing cart for user ${userId}: ${error.message}`,
       );
       throw new RpcException({
         code: GrpcStatus.NOT_FOUND,

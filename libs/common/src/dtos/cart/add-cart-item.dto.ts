@@ -5,5 +5,5 @@ export class AddItemDto {
   productId: string;
 
   @IsInt()
-  quantity: number;
+  quantity: number = 1;
 }

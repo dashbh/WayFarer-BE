@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DatabaseModule } from '@wayfarer/framework';
+import { PostgresDatabaseModule } from '@wayfarer/framework';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   AccommodationEntity,
@@ -16,7 +16,7 @@ import { SeedService } from './seed/seed.service';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // Load env variables globally
-    DatabaseModule,
+    PostgresDatabaseModule,
     TypeOrmModule.forFeature([
       AccessoryEntity,
       DestinationEntity,

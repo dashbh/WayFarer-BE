@@ -7,3 +7,4 @@ export * from './entities';
 export * from './protos';
 export * from './interfaces';
 export * from './enums';
+export * from './mongo-schema';
