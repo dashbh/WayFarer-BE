@@ -14,6 +14,10 @@ import {
   CartMongoDocument,
   CartResponseDto,
   CatalogItemRequestDto,
+  OrderItemDto,
+  OrderListResponseDto,
+  OrderMongo,
+  OrderMongoDocument,
 } from '@wayfarer/common';
 import { Model } from 'mongoose';
 import { firstValueFrom, Observable } from 'rxjs';
@@ -30,9 +34,11 @@ export class CartService {
     @Inject('CATALOG_PACKAGE') private readonly catalogClient: ClientGrpc,
     @InjectModel(CartMongo.name)
     private readonly cartModel: Model<CartMongoDocument>,
+
+    @InjectModel(OrderMongo.name)
+    private readonly orderModel: Model<OrderMongoDocument>,
   ) {}
 
-  private carts: Map<string, CartItemDto[]> = new Map();
   private catalogService: CatalogGrpcService;
 
   onModuleInit() {
@@ -46,18 +52,15 @@ export class CartService {
   }
 
   async getCartByUserId(userId: string): Promise<CartResponseDto> {
-    const cart = await this.cartModel.findOne({ userId });
+    const cart = await this.cartModel.findOne({ userId }).exec();
 
     if (!cart) {
       throw new NotFoundException('Cart not found for user');
     }
 
-    const cartObject = cart.toObject();
-
     // Map Mongoose document to CartResponseDto
     const cartDto: CartResponseDto = {
-      cartId: cart._id.toString(),
-      ...cartObject,
+      ...this.mapCartResponseToDto(cart),
     };
 
     // Enrich cart with real time catalog data
@@ -127,14 +130,58 @@ export class CartService {
     await cart.deleteOne();
   }
 
-  async checkout(userId: string): Promise<void> {
-    const cart = await this.cartModel.findOne({ userId });
+  async checkout(userId: string, data: any): Promise<OrderItemDto> {
+    const cart = await this.getCartByUserId(userId);
 
     if (!cart) {
       throw new NotFoundException('Cart not found for user');
     }
 
-    await cart.deleteOne();
+    const orderObject: OrderItemDto = {
+      ...cart,
+      orderStatus: 'Pending',
+      shippingAddress: data?.shippingAddress,
+      shippingType: data?.shippingType,
+      paymentStatus: 'Pending',
+      paymentType: data?.paymentType,
+    };
+
+    const order = new this.orderModel({
+      userId,
+      ...orderObject,
+    });
+
+    const orderResponse = await order.save();
+
+    return {
+      ...this.mapOrderToDto(orderResponse),
+    };
+  }
+
+  async getOrderListByUserId(userId: string): Promise<OrderListResponseDto> {
+    const orderList = await this.orderModel.find({ userId }).exec();
+
+    if (!orderList && !Array.isArray(orderList)) {
+      throw new NotFoundException('Order list found for user');
+    }
+
+    const mappedOrderList = orderList.map((item) => this.mapOrderToDto(item));
+
+    return {
+      data: mappedOrderList,
+    };
+  }
+
+  async getOrderItem(userId: string, orderId: string): Promise<any> {
+    const orderItem = await this.orderModel.findOne({ userId, id: orderId });
+
+    if (!orderItem) {
+      throw new NotFoundException('Order not found for user');
+    }
+
+    return {
+      ...this.mapOrderToDto(orderItem),
+    };
   }
 
   async enrichCartwithCatalogItems(cart: CartResponseDto) {
@@ -207,6 +254,56 @@ export class CartService {
       totalDiscount: Number(totalDiscount.toFixed(2)),
       taxes,
       currency: items[0]?.currency || '₹',
+    };
+  }
+
+  // Utils
+  private mapCartItemToDto(item: any): CartItemDto {
+    return {
+      productId: item.productId,
+      quantity: item.quantity,
+      title: item.title,
+      price: item.price,
+      imageUrl: item.imageUrl,
+      discountPrice: item.discountPrice,
+      currency: item.currency,
+      brand: item.brand,
+    };
+  }
+
+  private mapCartResponseToDto(cart: any): CartResponseDto {
+    return {
+      cartId: cart.id,
+      items: cart.items.map((item: any) => this.mapCartItemToDto(item)),
+      total: cart.total,
+      subTotal: cart.subTotal,
+      taxes: cart.taxes,
+      currency: cart.currency,
+      totalDiscount: cart.totalDiscount,
+      itemCount: cart.itemCount,
+      createdAt: cart.createdAt,
+      updatedAt: cart.updatedAt,
+    };
+  }
+
+  private mapOrderToDto(order: any): OrderItemDto {
+    return {
+      orderId: order.id,
+      cartId: order.cartId,
+      items: order.items.map((item: any) => this.mapCartItemToDto(item)),
+      total: order.total,
+      subTotal: order.subTotal,
+      taxes: order.taxes,
+      currency: order.currency,
+      totalDiscount: order.totalDiscount,
+      itemCount: order.itemCount,
+      createdAt: order.createdAt,
+      updatedAt: order.updatedAt,
+      orderStatus: order.orderStatus,
+      shippingAddress: order.shippingAddress,
+      shippingType: order.shippingType,
+      paymentStatus: order.paymentStatus,
+      paymentType: order.paymentType,
     };
   }
 }

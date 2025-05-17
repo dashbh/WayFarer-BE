@@ -39,7 +39,7 @@ export class CartController {
       this.client.getService<CartGrpcService>('CartGrpcService');
     if (!this.cartService) {
       throw new InternalServerErrorException(
-        'AuthGrpcService not initialized properly',
+        'CartGrpcService not initialized properly',
       );
     }
   }
@@ -92,10 +92,20 @@ export class CartController {
 
   @Post('checkout') // POST /cart/checkout - Placing Order
   @UseGuards(JwtAuthGuard)
-  async checkout(@Req() req: Request) {
+  async checkout(@Req() req: Request, @Body() item: any) {
     const metadata = new Metadata();
     const token = req.cookies?.auth_token;
     metadata.add('authorization', `Bearer ${token}`);
-    return this.cartService.Checkout({}, metadata);
+    if (!this.cartService['Checkout']) {
+      throw new InternalServerErrorException(
+        'Checkout not implemented in CartGrpcService',
+      );
+    }
+    try {
+      const checkoutResp = this.cartService.Checkout(item, metadata);
+      return checkoutResp;
+    } catch {
+      throw new InternalServerErrorException('Request failed');
+    }
   }
 }

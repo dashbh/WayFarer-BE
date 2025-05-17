@@ -1,6 +1,11 @@
 import { Controller, UseGuards, Logger } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
-import { AddItemDto, CartResponseDto } from '@wayfarer/common';
+import {
+  AddItemDto,
+  CartResponseDto,
+  OrderItemDto,
+  OrderListResponseDto,
+} from '@wayfarer/common';
 import { status as GrpcStatus } from '@grpc/grpc-js';
 
 import { CartService } from './cart.service';
@@ -112,14 +117,14 @@ export class CartController {
   }
 
   @GrpcMethod('wayfarer.cart.CartGrpcService', 'Checkout')
-  async checkout(_: any, context: any): Promise<any> {
+  async checkout(data: any, context: any): Promise<any> {
     const userId = this.getUserIdFromContext(context);
     try {
-      const items = this.cartService.checkout(userId);
+      const items = await this.cartService.checkout(userId, data);
       this.logger.log(
-        `Checked out items for user ${userId}: ${JSON.stringify(items)}`,
+        `Checked out items for user - ${userId}: ${JSON.stringify(data)}`,
       );
-      return { message: 'Checked out', items };
+      return { message: 'Checkout Success', ...items };
     } catch (error) {
       this.logger.error(
         `Error checking out for user ${userId}: ${error.message}`,
@@ -127,6 +132,63 @@ export class CartController {
       throw new RpcException({
         code: GrpcStatus.NOT_FOUND,
         message: 'Cart list not found',
+      });
+    }
+  }
+
+  @GrpcMethod('wayfarer.cart.CartGrpcService', 'GetOrderList')
+  async getOrderList(_: any, context: any): Promise<OrderListResponseDto> {
+    const userId = this.getUserIdFromContext(context);
+    if (!userId) {
+      throw new RpcException({
+        code: GrpcStatus.UNAUTHENTICATED,
+        message: `No user ID found in context ${userId}`,
+      });
+    }
+
+    try {
+      const orderList = await this.cartService.getOrderListByUserId(userId);
+      this.logger.log(
+        `OrderList for user ${userId}: ${JSON.stringify(orderList)}`,
+      );
+      return orderList;
+    } catch (error) {
+      this.logger.error(
+        `Error fetching orders for user ${userId}: ${error.message}`,
+      );
+      throw new RpcException({
+        code: GrpcStatus.NOT_FOUND,
+        message: 'Order list not found',
+      });
+    }
+  }
+
+  @GrpcMethod('wayfarer.cart.CartGrpcService', 'GetOrderById')
+  async getOrderItem(data: any, context: any): Promise<OrderItemDto> {
+    const userId = this.getUserIdFromContext(context);
+    if (!userId) {
+      throw new RpcException({
+        code: GrpcStatus.UNAUTHENTICATED,
+        message: `No user ID found in context ${userId}`,
+      });
+    }
+
+    try {
+      const orderItem = await this.cartService.getOrderItem(
+        userId,
+        data.orderId,
+      );
+      this.logger.log(
+        `Order Item for user ${userId}: ${JSON.stringify(orderItem)}`,
+      );
+      return orderItem;
+    } catch (error) {
+      this.logger.error(
+        `Error fetching order for user ${userId}: ${error.message}`,
+      );
+      throw new RpcException({
+        code: GrpcStatus.NOT_FOUND,
+        message: 'Order not found',
       });
     }
   }

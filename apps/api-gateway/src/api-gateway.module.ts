@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { CartModule } from './cart/cart.module';
 import { HealthModule } from './health/health.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { HealthModule } from './health/health.module';
     AuthModule,
     CatalogModule,
     CartModule,
+    OrderModule,
     KafkaModule,
   ],
   controllers: [],

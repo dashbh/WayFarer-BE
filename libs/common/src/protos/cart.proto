@@ -5,9 +5,11 @@ package wayfarer.cart;
 service CartGrpcService {
   rpc GetCart (Empty) returns (CartResponse);
   rpc AddToCart(AddItemRequest) returns (CartMessage);
-  rpc Checkout(Empty) returns (CheckoutResponse);
   rpc RemoveItemFromCart(AddItemRequest) returns (CartMessage);
   rpc ClearCart(Empty) returns (CartMessage);
+  rpc Checkout (CheckoutRequest) returns (CheckoutResponse);
+  rpc GetOrderList (GetOrderListRequest) returns (OrderListResponse);
+  rpc GetOrderById (GetOrderRequest) returns (OrderItemResponse);
 }
 
 message Empty {}
@@ -41,6 +43,16 @@ message CartResponse {
   string updatedAt = 10;
 }
 
+message CartMessage {
+  string message = 1;
+}
+
+message CheckoutRequest {
+  string shippingAddress = 1;
+  string shippingType = 2;
+  string paymentType = 3;
+}
+
 message CheckoutResponse {
   string message = 1;
   repeated CartItem items = 2;
@@ -51,8 +63,42 @@ message CheckoutResponse {
   double discountTotal = 7;
   string createdAt = 8;
   string updatedAt = 9;
+  string shippingAddress = 10;
+  string shippingType = 11;
+  string paymentType = 12;
+  string paymentStatus = 13;
+  string orderStatus = 14;
+  string orderId = 15;
 }
 
-message CartMessage {
+message GetOrderRequest {
+  string orderId = 1;
+}
+
+message GetOrderListRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string sort = 3;
+}
+
+message OrderItemResponse {
   string message = 1;
+  repeated CartItem items = 2;
+  double total = 3;
+  double subTotal = 4;
+  double taxes = 5;
+  string currency = 6;
+  double discountTotal = 7;
+  string createdAt = 8;
+  string updatedAt = 9;
+  string shippingAddress = 10;
+  string shippingType = 11;
+  string paymentType = 12;
+  string paymentStatus = 13;
+  string orderStatus = 14;
+  string orderId = 15;
+}
+
+message OrderListResponse {
+  repeated OrderItemResponse data = 1;
 }

@@ -7,6 +7,8 @@ import {
   CartMongo,
   CartMongoSchema,
   CATALOG_PROTO_PATH,
+  OrderMongo,
+  OrderMongoSchema,
 } from '@wayfarer/common';
 
 import { CartController } from './cart.controller';
@@ -47,6 +49,7 @@ import { GrpcAuthGuard } from '../guards/grpc-auth.guard';
     ]),
     MongooseModule.forFeature([
       { name: CartMongo.name, schema: CartMongoSchema },
+      { name: OrderMongo.name, schema: OrderMongoSchema },
     ]),
   ],
   controllers: [CartController],
