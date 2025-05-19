@@ -3,11 +3,18 @@ import "google/protobuf/any.proto";
 
 package wayfarer.catalog;
 
+import "destination.proto";
+
 service CatalogGrpcService {
   rpc GetCatalogList (CatalogListRequest) returns (CatalogListResponse);
   rpc GetCatalogItem (CatalogItemRequest) returns (CatalogItemResponse);
   rpc SeedCatalogData (CatalogSeedRequest) returns (CatalogSeedResponse);
+
+  rpc GetDestination(wayfarer.destination.DestinationRequest) returns (wayfarer.destination.DestinationResponse);
+  rpc GetAllDestinations(wayfarer.destination.GetAllDestinationsRequest) returns (wayfarer.destination.GetAllDestinationsResponse);
+  rpc SearchDestinations(wayfarer.destination.SearchDestinationsRequest) returns (wayfarer.destination.GetAllDestinationsResponse);
 }
+
 message Empty {}
 
 message Destination {

@@ -71,7 +71,7 @@ export class AccessoryDto {
   currency: string;
 }
 
-export interface DestinationDto {
+export interface DestinationDto2 {
   id: string;
   title: string;
   country: string;
@@ -95,9 +95,9 @@ export interface AccommodationDto {
   tags: string[];
 }
 
-export type CatalogDto = DestinationDto | AccommodationDto | AccessoryDto;
+export type CatalogDto = DestinationDto2 | AccommodationDto | AccessoryDto;
 export type CatalogRPCDto =
-  | { destination: DestinationDto; accommodation?: never; accessory?: never }
+  | { destination: DestinationDto2; accommodation?: never; accessory?: never }
   | { accommodation: AccommodationDto; destination?: never; accessory?: never }
   | { accessory: AccessoryDto; destination?: never; accommodation?: never };
 

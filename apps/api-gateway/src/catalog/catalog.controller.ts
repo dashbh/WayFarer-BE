@@ -33,6 +33,9 @@ interface CatalogGrpcService {
   seedCatalogData(
     counts: CatalogSeedRequestDto,
   ): Observable<CatalogSeedRequestDto>;
+
+  getAllDestinations(data: any): Observable<any>;
+  getDestination(data: any): Observable<any>;
 }
 
 @Controller('catalog')
@@ -51,6 +54,21 @@ export class CatalogController {
       );
     }
   }
+
+  // destination API's
+  @Get('destinations') // GET /catalog/destinations - This will list all catalog destinations
+  // @UseGuards(JwtAuthGuard)
+  getAllDestinations(limit = 10, offset = 0): Observable<any> {
+    return this.catalogService.getAllDestinations({ limit, offset });
+  }
+
+  @Get('destinations/:id') // GET /catalog/destinations - This will list all catalog destinations
+  // @UseGuards(JwtAuthGuard)
+  getDestination(id: string): Observable<any> {
+    return this.catalogService.getDestination({ id });
+  }
+
+  // End destinations
 
   @Get('list') // GET /catalog/list - This will list all catalog items
   // @UseGuards(JwtAuthGuard)

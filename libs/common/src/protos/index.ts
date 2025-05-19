@@ -12,3 +12,7 @@ export const CART_PROTO_PATH = join(
   process.cwd(),
   'libs/common/src/protos/cart.proto',
 );
+export const DESTINATION_PROTO_PATH = join(
+  process.cwd(),
+  'libs/common/src/protos/destination.proto',
+);

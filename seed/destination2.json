@@ -1,0 +1,932 @@
+[
+    {
+        "title": "Jaipur",
+        "country": "India",
+        "region": "Rajasthan",
+        "city": "Jaipur",
+        "description": "The Pink City, known for its royal palaces, forts, and vibrant culture.",
+        "latitude": 26.9124,
+        "longitude": 75.7873,
+        "imageUrl": "https://source.unsplash.com/featured/?jaipur,india",
+        "galleryImages": [
+            "https://source.unsplash.com/featured/?amerfort,jaipur",
+            "https://source.unsplash.com/featured/?hawa-mahal",
+            "https://source.unsplash.com/featured/?jaipur-palace"
+        ],
+        "rating": 4.7,
+        "totalRatings": 10456,
+        "reviewSummary": "Rich in culture and history, Jaipur is a must-visit for heritage lovers.",
+        "reviewCategories": {
+            "cleanliness": 4,
+            "safety": 4,
+            "valueForMoney": 4.5,
+            "familyFriendly": 4,
+            "localExperience": 5
+        },
+        "locationTag": "jaipur-rajasthan",
+        "tags": [
+            "historical",
+            "palaces",
+            "desert",
+            "cultural"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "February",
+            "March"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 25,
+                "max": 50,
+                "currency": "USD"
+            },
+            "midRange": {
+                "min": 50,
+                "max": 120,
+                "currency": "USD"
+            },
+            "luxury": {
+                "min": 120,
+                "max": 400,
+                "currency": "USD"
+            }
+        },
+        "averageDailyCost": 60,
+        "landmarks": [
+            {
+                "id": "amer-fort",
+                "name": "Amer Fort",
+                "description": "A majestic fort with beautiful architecture and panoramic views.",
+                "imageUrl": "https://source.unsplash.com/featured/?amerfort",
+                "distanceFromDestination": 11,
+                "visitDuration": 3,
+                "entryFee": {
+                    "min": 5,
+                    "max": 10,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 26.9855,
+                    "longitude": 75.8513
+                }
+            },
+            {
+                "id": "hawa-mahal",
+                "name": "Hawa Mahal",
+                "description": "The iconic Palace of Winds with its unique honeycomb façade.",
+                "imageUrl": "https://source.unsplash.com/featured/?hawamahal",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 2,
+                    "max": 3,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 26.9239,
+                    "longitude": 75.8267
+                }
+            },
+            {
+                "id": "city-palace",
+                "name": "City Palace",
+                "description": "Royal residence with museums and courtyards.",
+                "imageUrl": "https://source.unsplash.com/featured/?citypalace,jaipur",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 3,
+                    "max": 6,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 26.9258,
+                    "longitude": 75.8241
+                }
+            },
+            {
+                "id": "jal-mahal",
+                "name": "Jal Mahal",
+                "description": "Water palace located in the middle of Man Sagar Lake.",
+                "imageUrl": "https://source.unsplash.com/featured/?jalmahal",
+                "distanceFromDestination": 4,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 26.9544,
+                    "longitude": 75.8260
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "elephant-ride",
+                "name": "Elephant Ride at Amer Fort",
+                "description": "Ride elephants up the ramparts of Amer Fort.",
+                "imageUrl": "https://source.unsplash.com/featured/?elephant,india",
+                "category": "Adventure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 10,
+                    "max": 20,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "heritage-walk",
+                "name": "Heritage Walk",
+                "description": "Explore old markets, temples, and havelis with a guide.",
+                "imageUrl": "https://source.unsplash.com/featured/?heritage,walk,jaipur",
+                "category": "Cultural",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 15,
+                    "max": 25,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Solo travelers",
+                    "Families"
+                ]
+            },
+            {
+                "id": "local-cuisine-tour",
+                "name": "Local Cuisine Tour",
+                "description": "Taste authentic Rajasthani dishes in traditional eateries.",
+                "imageUrl": "https://source.unsplash.com/featured/?indian-food,jaipur",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 5,
+                    "max": 15,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Foodies",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "shopping",
+                "name": "Shopping in Johari Bazaar",
+                "description": "Buy traditional jewelry, textiles, and handicrafts.",
+                "imageUrl": "https://source.unsplash.com/featured/?shopping,jaipur",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 0,
+                    "max": 100,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Solo travelers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Amer Fort",
+            "Hawa Mahal",
+            "City Palace",
+            "Jal Mahal"
+        ],
+        "travelTips": [
+            "Carry sunscreen",
+            "Stay hydrated",
+            "Respect local customs"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Hindi",
+            "English",
+            "Rajasthani"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Jaipur International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Carry basic medications; avoid street food if unsure.",
+        "aiGeneratedSummary": "Jaipur offers a royal experience with its stunning forts, palaces, and rich culture, perfect for heritage lovers and adventurers alike.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Visit Amer Fort",
+                    "Explore Hawa Mahal",
+                    "Walk through Johari Bazaar"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "City Palace tour",
+                    "Local cuisine tasting",
+                    "Sunset at Jal Mahal"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "udaipur-rajasthan",
+            "jodhpur-rajasthan"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Kerala Backwaters",
+        "country": "India",
+        "region": "Kerala",
+        "description": "A network of lagoons and lakes offering tranquil houseboat experiences.",
+        "latitude": 9.4981,
+        "longitude": 76.3388,
+        "imageUrl": "https://source.unsplash.com/featured/?kerala,backwaters",
+        "galleryImages": [
+            "https://source.unsplash.com/featured/?houseboat,kerala",
+            "https://source.unsplash.com/featured/?alleppey",
+            "https://source.unsplash.com/featured/?kerala-nature"
+        ],
+        "rating": 4.8,
+        "totalRatings": 8732,
+        "reviewSummary": "Peaceful and scenic, perfect for relaxation and nature lovers.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4,
+            "valueForMoney": 4,
+            "familyFriendly": 5,
+            "localExperience": 5
+        },
+        "locationTag": "kerala-backwaters",
+        "tags": [
+            "nature",
+            "relaxation",
+            "houseboat",
+            "waterways"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 30,
+                "max": 60,
+                "currency": "USD"
+            },
+            "midRange": {
+                "min": 60,
+                "max": 150,
+                "currency": "USD"
+            },
+            "luxury": {
+                "min": 150,
+                "max": 400,
+                "currency": "USD"
+            }
+        },
+        "averageDailyCost": 70,
+        "landmarks": [
+            {
+                "id": "alleppey-boat-jetty",
+                "name": "Alleppey Boat Jetty",
+                "description": "Main starting point for houseboat cruises.",
+                "imageUrl": "https://source.unsplash.com/featured/?alleppey-jetty",
+                "distanceFromDestination": 5,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 9.4981,
+                    "longitude": 76.3388
+                }
+            },
+            {
+                "id": "vembanad-lake",
+                "name": "Vembanad Lake",
+                "description": "Largest lake in Kerala, offering beautiful views.",
+                "imageUrl": "https://source.unsplash.com/featured/?vembanad-lake",
+                "distanceFromDestination": 7,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 9.5,
+                    "longitude": 76.33
+                }
+            },
+            {
+                "id": "kumarakom-bird-sanctuary",
+                "name": "Kumarakom Bird Sanctuary",
+                "description": "A paradise for bird watchers.",
+                "imageUrl": "https://source.unsplash.com/featured/?kumarakom,bird-sanctuary",
+                "distanceFromDestination": 15,
+                "visitDuration": 3,
+                "entryFee": {
+                    "min": 1,
+                    "max": 3,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 9.58,
+                    "longitude": 76.47
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "houseboat-cruise",
+                "name": "Houseboat Cruise",
+                "description": "Enjoy a relaxing cruise through the backwaters.",
+                "imageUrl": "https://source.unsplash.com/featured/?houseboat,kerala",
+                "category": "Relaxation",
+                "durationHours": 6,
+                "priceRange": {
+                    "min": 50,
+                    "max": 200,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "canoeing",
+                "name": "Canoeing",
+                "description": "Explore narrow canals by canoe.",
+                "imageUrl": "https://source.unsplash.com/featured/?canoeing,kerala",
+                "category": "Adventure",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 15,
+                    "max": 30,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Adventure seekers",
+                    "Solo travelers"
+                ]
+            },
+            {
+                "id": "fishing",
+                "name": "Fishing Experience",
+                "description": "Try traditional fishing methods with locals.",
+                "imageUrl": "https://source.unsplash.com/featured/?fishing,kerala",
+                "category": "Cultural",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 10,
+                    "max": 25,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "local-cuisine",
+                "name": "Kerala Cuisine Tasting",
+                "description": "Sample authentic Kerala dishes.",
+                "imageUrl": "https://source.unsplash.com/featured/?kerala-food",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 5,
+                    "max": 15,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Food lovers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Alleppey Boat Jetty",
+            "Vembanad Lake",
+            "Kumarakom Bird Sanctuary"
+        ],
+        "travelTips": [
+            "Book houseboats in advance",
+            "Carry insect repellent",
+            "Try local spices"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Malayalam",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Cochin International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Stay hydrated; use mosquito nets at night.",
+        "aiGeneratedSummary": "The Kerala Backwaters offer a unique, peaceful experience with scenic waterways and vibrant local culture.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Houseboat cruise",
+                    "Visit Kumarakom Bird Sanctuary"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Canoeing",
+                    "Local cuisine tasting"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "alleppey-kerala",
+            "kumarakom-kerala"
+        ],
+        "createdAt": "2024-01-12T11:00:00Z",
+        "updatedAt": "2024-04-15T12:30:00Z"
+    },
+    {
+        "title": "Goa",
+        "country": "India",
+        "region": "Goa",
+        "city": "Panaji",
+        "description": "Famous for its beaches, nightlife, and Portuguese heritage.",
+        "latitude": 15.2993,
+        "longitude": 74.1240,
+        "imageUrl": "https://source.unsplash.com/featured/?goa,beach",
+        "galleryImages": [
+            "https://source.unsplash.com/featured/?goa-nightlife",
+            "https://source.unsplash.com/featured/?goa-fort",
+            "https://source.unsplash.com/featured/?goa-market"
+        ],
+        "rating": 4.6,
+        "totalRatings": 15632,
+        "reviewSummary": "Perfect blend of beach fun, history, and vibrant culture.",
+        "reviewCategories": {
+            "cleanliness": 3.8,
+            "safety": 4,
+            "valueForMoney": 4,
+            "familyFriendly": 3.5,
+            "localExperience": 4.5
+        },
+        "locationTag": "goa-beach",
+        "tags": [
+            "beaches",
+            "nightlife",
+            "heritage",
+            "water-sports"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 3,
+            "max": 5
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 30,
+                "max": 70,
+                "currency": "USD"
+            },
+            "midRange": {
+                "min": 70,
+                "max": 150,
+                "currency": "USD"
+            },
+            "luxury": {
+                "min": 150,
+                "max": 500,
+                "currency": "USD"
+            }
+        },
+        "averageDailyCost": 80,
+        "landmarks": [
+            {
+                "id": "baga-beach",
+                "name": "Baga Beach",
+                "description": "Popular beach known for water sports and nightlife.",
+                "imageUrl": "https://source.unsplash.com/featured/?baga-beach",
+                "distanceFromDestination": 10,
+                "visitDuration": 4,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 15.5767,
+                    "longitude": 73.754
+                }
+            },
+            {
+                "id": "fort-aguada",
+                "name": "Fort Aguada",
+                "description": "Historic Portuguese fort overlooking the Arabian Sea.",
+                "imageUrl": "https://source.unsplash.com/featured/?fort-aguada",
+                "distanceFromDestination": 7,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 15.492,
+                    "longitude": 73.77
+                }
+            },
+            {
+                "id": "old-goa-churches",
+                "name": "Old Goa Churches",
+                "description": "UNESCO World Heritage site featuring Baroque churches.",
+                "imageUrl": "https://source.unsplash.com/featured/?old-goa-church",
+                "distanceFromDestination": 12,
+                "visitDuration": 3,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 15.4989,
+                    "longitude": 73.9133
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "scuba-diving",
+                "name": "Scuba Diving",
+                "description": "Explore underwater marine life along Goa's coast.",
+                "imageUrl": "https://source.unsplash.com/featured/?scuba-diving",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 50,
+                    "max": 100,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Adventure seekers",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "beach-party",
+                "name": "Beach Party",
+                "description": "Join the vibrant nightlife and beach parties at night.",
+                "imageUrl": "https://source.unsplash.com/featured/?goa-party",
+                "category": "Entertainment",
+                "durationHours": 6,
+                "priceRange": {
+                    "min": 0,
+                    "max": 50,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Youth",
+                    "Solo travelers"
+                ]
+            },
+            {
+                "id": "heritage-walk",
+                "name": "Heritage Walk",
+                "description": "Explore the Portuguese heritage and colonial architecture.",
+                "imageUrl": "https://source.unsplash.com/featured/?goa-heritage",
+                "category": "Cultural",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 10,
+                    "max": 20,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "History buffs",
+                    "Families"
+                ]
+            },
+            {
+                "id": "local-food-tour",
+                "name": "Local Food Tour",
+                "description": "Taste Goan seafood and local delicacies.",
+                "imageUrl": "https://source.unsplash.com/featured/?goan-food",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 10,
+                    "max": 25,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Food lovers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Baga Beach",
+            "Fort Aguada",
+            "Old Goa Churches"
+        ],
+        "travelTips": [
+            "Wear sunscreen",
+            "Avoid isolated beaches at night",
+            "Try seafood"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Konkani",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Dabolim Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Drink bottled water; be cautious with nightlife.",
+        "aiGeneratedSummary": "Goa is a perfect mix of sun, sand, and culture with vibrant nightlife and historical sites.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Beach day at Baga",
+                    "Scuba diving"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Visit Fort Aguada",
+                    "Old Goa Churches tour",
+                    "Beach party at night"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "pondicherry-tamilnadu",
+            "kovalam-kerala"
+        ],
+        "createdAt": "2024-01-15T11:30:00Z",
+        "updatedAt": "2024-04-15T13:00:00Z"
+    },
+    {
+        "title": "Varanasi",
+        "country": "India",
+        "region": "Uttar Pradesh",
+        "city": "Varanasi",
+        "description": "One of the world's oldest living cities, sacred on the banks of the Ganges.",
+        "latitude": 25.3176,
+        "longitude": 82.9739,
+        "imageUrl": "https://source.unsplash.com/featured/?varanasi,india",
+        "galleryImages": [
+            "https://source.unsplash.com/featured/?ganges,varanasi",
+            "https://source.unsplash.com/featured/?varanasi-ghats",
+            "https://source.unsplash.com/featured/?varanasi-temple"
+        ],
+        "rating": 4.5,
+        "totalRatings": 7632,
+        "reviewSummary": "Spiritual and vibrant, with rituals on the ghats and historic temples.",
+        "reviewCategories": {
+            "cleanliness": 3.5,
+            "safety": 3.5,
+            "valueForMoney": 4,
+            "familyFriendly": 3.5,
+            "localExperience": 5
+        },
+        "locationTag": "varanasi-uttarpradesh",
+        "tags": [
+            "spiritual",
+            "heritage",
+            "ghats",
+            "temples"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "February",
+            "March"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 20,
+                "max": 40,
+                "currency": "USD"
+            },
+            "midRange": {
+                "min": 40,
+                "max": 90,
+                "currency": "USD"
+            },
+            "luxury": {
+                "min": 90,
+                "max": 300,
+                "currency": "USD"
+            }
+        },
+        "averageDailyCost": 45,
+        "landmarks": [
+            {
+                "id": "kashi-vishwanath-temple",
+                "name": "Kashi Vishwanath Temple",
+                "description": "One of the holiest Hindu temples dedicated to Lord Shiva.",
+                "imageUrl": "https://source.unsplash.com/featured/?kashi-vishwanath",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 25.3105,
+                    "longitude": 82.9605
+                }
+            },
+            {
+                "id": "dasaswamedh-ghat",
+                "name": "Dasaswamedh Ghat",
+                "description": "Famous ghat on the Ganges known for evening aarti ceremonies.",
+                "imageUrl": "https://source.unsplash.com/featured/?varanasi-ghats",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 25.3137,
+                    "longitude": 82.9681
+                }
+            },
+            {
+                "id": "banaras-hindu-university",
+                "name": "Banaras Hindu University",
+                "description": "One of Asia's largest residential universities with beautiful campus.",
+                "imageUrl": "https://source.unsplash.com/featured/?bhu-varanasi",
+                "distanceFromDestination": 5,
+                "visitDuration": 3,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "coordinates": {
+                    "latitude": 25.267,
+                    "longitude": 82.987
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "ganges-boating",
+                "name": "Boating on the Ganges",
+                "description": "Experience sunrise or sunset boat rides on the sacred river.",
+                "imageUrl": "https://source.unsplash.com/featured/?ganges-boat",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 10,
+                    "max": 20,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Spiritual seekers",
+                    "Photographers"
+                ]
+            },
+            {
+                "id": "aarti-ceremony",
+                "name": "Evening Aarti Ceremony",
+                "description": "Witness the spectacular aarti ritual at the ghats.",
+                "imageUrl": "https://source.unsplash.com/featured/?varanasi-aarti",
+                "category": "Spiritual",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Spiritual seekers",
+                    "Families"
+                ]
+            },
+            {
+                "id": "heritage-walk",
+                "name": "Old City Heritage Walk",
+                "description": "Explore narrow lanes, temples, and markets of ancient Varanasi.",
+                "imageUrl": "https://source.unsplash.com/featured/?varanasi-heritage",
+                "category": "Cultural",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 5,
+                    "max": 15,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "History buffs",
+                    "Photographers"
+                ]
+            },
+            {
+                "id": "banarasi-saree-shopping",
+                "name": "Banarasi Saree Shopping",
+                "description": "Buy exquisite silk sarees famous worldwide.",
+                "imageUrl": "https://source.unsplash.com/featured/?banarasi-saree",
+                "category": "Shopping",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 20,
+                    "max": 100,
+                    "currency": "USD"
+                },
+                "recommendedFor": [
+                    "Shoppers",
+                    "Tourists"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Kashi Vishwanath Temple",
+            "Dasaswamedh Ghat",
+            "Banaras Hindu University"
+        ],
+        "travelTips": [
+            "Respect local customs",
+            "Stay hydrated",
+            "Avoid crowded places during festivals"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Hindi",
+            "Bhojpuri",
+            "English"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Lal Bahadur Shastri Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Drink bottled water; be cautious in crowded places.",
+        "aiGeneratedSummary": "Varanasi offers a deeply spiritual experience on the banks of the Ganges, with vibrant rituals and rich heritage.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Boating on the Ganges",
+                    "Evening Aarti Ceremony"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Heritage Walk",
+                    "Saree Shopping"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ayodhya-uttarpradesh",
+            "khajuraho-madhyapradesh"
+        ],
+        "createdAt": "2024-01-20T09:30:00Z",
+        "updatedAt": "2024-04-16T10:30:00Z"
+    }
+]

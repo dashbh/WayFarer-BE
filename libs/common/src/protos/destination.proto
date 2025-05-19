@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+package wayfarer.destination;
+
+message DestinationRequest {
+  string id = 1;
+}
+
+message GetAllDestinationsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message SearchDestinationsRequest {
+  string searchTerm = 1;
+  string country = 2;
+  repeated string tags = 3;
+  int32 limit = 4;
+  int32 offset = 5;
+}
+
+message PriceRange {
+  double min = 1;
+  double max = 2;
+  string currency = 3;
+}
+
+message PointOfInterest {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string imageUrl = 4;
+  double distanceFromDestination = 5;
+  double visitDuration = 6;
+  PriceRange entryFee = 7;
+  
+  message Coordinates {
+    double latitude = 1;
+    double longitude = 2;
+  }
+  
+  Coordinates coordinates = 8;
+}
+
+message Activity {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string imageUrl = 4;
+  string category = 5;
+  double durationHours = 6;
+  PriceRange priceRange = 7;
+  string bookingUrl = 8;
+  
+  message Availability {
+    repeated string seasonalAvailability = 1;
+    repeated string weekdayAvailability = 2;
+    repeated string timeSlots = 3;
+  }
+  
+  Availability availability = 9;
+  repeated string recommendedFor = 10;
+}
+
+message ReviewCategories {
+  double cleanliness = 1;
+  double safety = 2;
+  double valueForMoney = 3;
+  double familyFriendly = 4;
+  double localExperience = 5;
+}
+
+message SuggestedBudget {
+  PriceRange budget = 1;
+  PriceRange midRange = 2;
+  PriceRange luxury = 3;
+}
+
+message RecommendedItinerary {
+  int32 day = 1;
+  repeated string activities = 2;
+}
+
+message DestinationResponse {
+  string id = 1;
+  string title = 2;
+  string country = 3;
+  string region = 4;
+  string city = 5;
+  string description = 6;
+  double latitude = 7;
+  double longitude = 8;
+  string imageUrl = 9;
+  repeated string galleryImages = 10;
+  double rating = 11;
+  int32 totalRatings = 12;
+  string reviewSummary = 13;
+  ReviewCategories reviewCategories = 14;
+  string locationTag = 15;
+  repeated string tags = 16;
+  bool isTrending = 17;
+  bool isFavorite = 18;
+  repeated string bestTimeToVisit = 19;
+  
+  message SuggestedDuration {
+    int32 min = 1;
+    int32 max = 2;
+  }
+  
+  SuggestedDuration suggestedDuration = 20;
+  SuggestedBudget suggestedBudget = 21;
+  double averageDailyCost = 22;
+  repeated PointOfInterest landmarks = 23;
+  repeated Activity activities = 24;
+  repeated string popularAttractions = 25;
+  repeated string travelTips = 26;
+  string timezone = 27;
+  repeated string languages = 28;
+  string currency = 29;
+  string nearestAirport = 30;
+  string visaRequirements = 31;
+  string healthAndSafety = 32;
+  string aiGeneratedSummary = 33;
+  repeated RecommendedItinerary recommendedItinerary = 34;
+  repeated string similarDestinations = 35;
+  string createdAt = 36;
+  string updatedAt = 37;
+}
+
+message GetAllDestinationsResponse {
+  repeated DestinationResponse destinations = 1;
+  int32 total = 2;
+}
