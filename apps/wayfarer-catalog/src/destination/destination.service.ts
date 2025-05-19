@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Destination, DestinationDocument } from '@wayfarer/common';
 import { DestinationDto } from '@wayfarer/common';
 import { mapToDestinationDto } from '@wayfarer/common';
@@ -16,7 +16,9 @@ export class DestinationService {
 
   async findById(id: string): Promise<DestinationDto> {
     try {
-      const destination = await this.destinationModel.findOne({ id }).lean();
+      const destination = await this.destinationModel
+        .findOne({ _id: new Types.ObjectId(id) })
+        .lean();
 
       if (!destination) {
         throw new NotFoundException(`Destination with ID ${id} not found`);

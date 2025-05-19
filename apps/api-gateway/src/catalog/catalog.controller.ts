@@ -64,7 +64,7 @@ export class CatalogController {
 
   @Get('destinations/:id') // GET /catalog/destinations - This will list all catalog destinations
   // @UseGuards(JwtAuthGuard)
-  getDestination(id: string): Observable<any> {
+  getDestination(@Param('id') id: string): Observable<any> {
     return this.catalogService.getDestination({ id });
   }
 
