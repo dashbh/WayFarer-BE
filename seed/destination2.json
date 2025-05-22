@@ -2006,90 +2006,90 @@
         "updatedAt": "2025-05-23T00:00:00Z"
     },
     {
-        "title": "Shillong",
+        "title": "Ziro Valley",
         "country": "India",
-        "region": "Meghalaya",
-        "city": "Shillong",
-        "description": "Known as the ‘Scotland of the East’, Shillong boasts rolling hills, waterfalls, and vibrant culture.",
-        "latitude": 25.5788,
-        "longitude": 91.8933,
-        "imageUrl": "https://picsum.photos/seed/shillong/800/600",
+        "region": "Arunachal Pradesh",
+        "city": "Ziro",
+        "description": "A peaceful valley town known for its pine-covered hills, Apatani tribe culture, and lush rice fields.",
+        "latitude": 27.5958,
+        "longitude": 93.8240,
+        "imageUrl": "https://picsum.photos/seed/ziro/800/600",
         "galleryImages": [
-            "https://picsum.photos/seed/wardslake/800/600",
-            "https://picsum.photos/seed/elephantfalls/800/600",
-            "https://picsum.photos/seed/policebazar/800/600"
+            "https://picsum.photos/seed/zirofields/800/600",
+            "https://picsum.photos/seed/zirotribe/800/600",
+            "https://picsum.photos/seed/zirofarm/800/600"
         ],
-        "rating": 4.7,
-        "totalRatings": 8123,
-        "reviewSummary": "Shillong blends modernity and tradition, nature and music, all in a cool highland setting.",
+        "rating": 4.6,
+        "totalRatings": 4321,
+        "reviewSummary": "Ziro offers a laid-back escape into tribal culture and pristine landscapes.",
         "reviewCategories": {
-            "cleanliness": 4.4,
-            "safety": 4.7,
-            "valueForMoney": 4.6,
-            "familyFriendly": 4.5,
-            "localExperience": 4.8
+            "cleanliness": 4.6,
+            "safety": 4.8,
+            "valueForMoney": 4.5,
+            "familyFriendly": 4.4,
+            "localExperience": 5.0
         },
-        "locationTag": "shillong-meghalaya",
+        "locationTag": "ziro-valley-arunachal",
         "tags": [
-            "hills",
-            "culture",
-            "waterfalls",
-            "music"
+            "tribal culture",
+            "valleys",
+            "music festivals",
+            "nature"
         ],
         "isTrending": true,
         "isFavorite": false,
         "bestTimeToVisit": [
+            "September",
+            "October",
             "March",
-            "April",
-            "May",
-            "October"
+            "April"
         ],
         "suggestedDuration": {
             "min": 2,
-            "max": 4
+            "max": 3
         },
-        "averageDailyCost": 4500,
+        "averageDailyCost": 4000,
         "landmarks": [
             {
-                "id": "elephant-falls",
-                "name": "Elephant Falls",
-                "description": "A multi-tiered waterfall nestled in lush greenery, perfect for nature walks.",
-                "imageUrl": "https://picsum.photos/seed/landmark-elephant/800/600",
-                "distanceFromDestination": 12,
-                "visitDuration": 1,
+                "id": "ziro-tribal-village",
+                "name": "Apatani Tribal Villages",
+                "description": "Visit homes and farms of the Apatani tribe to learn sustainable farming and culture.",
+                "imageUrl": "https://picsum.photos/seed/landmark-apatani/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
                 "entryFee": {
-                    "min": 30,
-                    "max": 50,
+                    "min": 0,
+                    "max": 0,
                     "currency": "INR"
                 },
                 "coordinates": {
-                    "latitude": 25.5700,
-                    "longitude": 91.8730
+                    "latitude": 27.5962,
+                    "longitude": 93.8215
                 }
             }
         ],
         "activities": [
             {
-                "id": "shillong-nightlife",
-                "name": "Shillong Live Music Pubs",
-                "description": "Catch live rock and blues performances in the heart of Meghalaya’s capital.",
-                "imageUrl": "https://picsum.photos/seed/activity-musicpub/800/600",
-                "category": "Nightlife",
-                "durationHours": 3,
+                "id": "ziro-music-festival",
+                "name": "Ziro Music Festival",
+                "description": "India’s most iconic indie music festival in a scenic valley setting.",
+                "imageUrl": "https://picsum.photos/seed/activity-zirofest/800/600",
+                "category": "Festival",
+                "durationHours": 48,
                 "priceRange": {
-                    "min": 500,
-                    "max": 1500,
+                    "min": 2000,
+                    "max": 5000,
                     "currency": "INR"
                 },
                 "recommendedFor": [
-                    "Young adults",
-                    "Music fans"
+                    "Music lovers",
+                    "Youth travelers"
                 ]
             }
         ],
         "similarDestinations": [
             "tawang-arunachal",
-            "ziro-valley-arunachal"
+            "shillong-meghalaya"
         ],
         "createdAt": "2025-05-23T00:00:00Z",
         "updatedAt": "2025-05-23T00:00:00Z"
@@ -2446,5 +2446,883 @@
         ],
         "createdAt": "2025-05-23T00:00:00Z",
         "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Ooty",
+        "country": "India",
+        "region": "Tamil Nadu",
+        "city": "Ooty",
+        "description": "The Queen of Hills, famous for its tea gardens, lakes, and colonial charm.",
+        "latitude": 11.4064,
+        "longitude": 76.6932,
+        "imageUrl": "https://picsum.photos/seed/ooty/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/ootylake/800/600",
+            "https://picsum.photos/seed/botanicalgarden/800/600",
+            "https://picsum.photos/seed/dodabetta/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 8932,
+        "reviewSummary": "A picturesque hill station perfect for nature lovers and a peaceful retreat.",
+        "reviewCategories": {
+            "cleanliness": 4.2,
+            "safety": 4.3,
+            "valueForMoney": 4.1,
+            "familyFriendly": 4.5,
+            "localExperience": 4.7
+        },
+        "locationTag": "ooty-tamilnadu",
+        "tags": [
+            "hillstation",
+            "tea",
+            "nature",
+            "lakes"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "May",
+            "September",
+            "October"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "ooty-lake",
+                "name": "Ooty Lake",
+                "description": "Scenic lake known for boating and picnics.",
+                "imageUrl": "https://picsum.photos/seed/landmark-ootylake/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 20,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4036,
+                    "longitude": 76.7036
+                }
+            },
+            {
+                "id": "botanical-garden",
+                "name": "Government Botanical Garden",
+                "description": "Lush gardens with rare plant species and vibrant flower beds.",
+                "imageUrl": "https://picsum.photos/seed/landmark-botanicalgarden/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 30,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4125,
+                    "longitude": 76.7132
+                }
+            },
+            {
+                "id": "dodabetta-peak",
+                "name": "Doddabetta Peak",
+                "description": "The highest point in the Nilgiris with panoramic views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-dodabetta/800/600",
+                "distanceFromDestination": 10,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 10,
+                    "max": 30,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4108,
+                    "longitude": 76.7362
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "boating-ooty-lake",
+                "name": "Boating on Ooty Lake",
+                "description": "Enjoy paddle and row boating surrounded by misty hills.",
+                "imageUrl": "https://picsum.photos/seed/activity-boat/800/600",
+                "category": "Leisure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 150,
+                    "max": 400,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "tea-museum-tour",
+                "name": "Tea Museum Tour",
+                "description": "Learn about tea processing and taste fresh Nilgiri tea.",
+                "imageUrl": "https://picsum.photos/seed/activity-tea/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 200,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Foodies",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "toy-train-ride",
+                "name": "Nilgiri Toy Train Ride",
+                "description": "Ride the scenic UNESCO heritage railway route.",
+                "imageUrl": "https://picsum.photos/seed/activity-train/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 100,
+                    "max": 600,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Solo travelers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Ooty Lake",
+            "Botanical Garden",
+            "Doddabetta Peak"
+        ],
+        "travelTips": [
+            "Carry warm clothes",
+            "Avoid peak holiday weekends",
+            "Try local homemade chocolates"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Tamil",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Coimbatore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Carry woolens; use bottled water.",
+        "aiGeneratedSummary": "Ooty is a serene hill station nestled in the Nilgiris, offering tea gardens, colonial charm, and scenic views perfect for a relaxing getaway.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Visit Botanical Garden",
+                    "Boat ride at Ooty Lake",
+                    "Shopping at local markets"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Toy Train ride",
+                    "Tea Museum visit",
+                    "Sunset from Doddabetta Peak"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka",
+            "coorg-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Kodaikanal",
+        "country": "India",
+        "region": "Tamil Nadu",
+        "city": "Kodaikanal",
+        "description": "Known as the Princess of Hill Stations, Kodaikanal is a serene retreat with lush landscapes, lakes, and misty mountains.",
+        "latitude": 10.2381,
+        "longitude": 77.4892,
+        "imageUrl": "https://picsum.photos/seed/kodaikanal/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/kodaikanallake/800/600",
+            "https://picsum.photos/seed/coakerswalk/800/600",
+            "https://picsum.photos/seed/pillarrocks/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 9204,
+        "reviewSummary": "Peaceful and scenic, Kodaikanal is ideal for nature lovers and couples seeking a romantic getaway.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.5,
+            "valueForMoney": 4.2,
+            "familyFriendly": 4.3,
+            "localExperience": 4.6
+        },
+        "locationTag": "kodaikanal-tamilnadu",
+        "tags": [
+            "hill station",
+            "lake",
+            "romantic",
+            "nature"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "May",
+            "October"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "kodaikanal-lake",
+                "name": "Kodaikanal Lake",
+                "description": "A star-shaped manmade lake surrounded by forest, great for boating.",
+                "imageUrl": "https://picsum.photos/seed/landmark-kodalake/800/600",
+                "distanceFromDestination": 0,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 200,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2381,
+                    "longitude": 77.4892
+                }
+            },
+            {
+                "id": "coakers-walk",
+                "name": "Coaker's Walk",
+                "description": "A scenic walking path offering panoramic views of the hills.",
+                "imageUrl": "https://picsum.photos/seed/landmark-coakerswalk/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 20,
+                    "max": 40,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2357,
+                    "longitude": 77.4920
+                }
+            },
+            {
+                "id": "pillar-rocks",
+                "name": "Pillar Rocks",
+                "description": "Three giant rock pillars that stand shoulder to shoulder, offering dramatic views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-pillarrocks/800/600",
+                "distanceFromDestination": 7,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 50,
+                    "max": 100,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2060,
+                    "longitude": 77.4894
+                }
+            },
+            {
+                "id": "bryant-park",
+                "name": "Bryant Park",
+                "description": "Botanical garden with a wide variety of flora, ideal for families and picnics.",
+                "imageUrl": "https://picsum.photos/seed/landmark-bryantpark/800/600",
+                "distanceFromDestination": 0.5,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 60,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2352,
+                    "longitude": 77.4893
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "boating-kodaikanal",
+                "name": "Boating on Kodaikanal Lake",
+                "description": "Rent pedal boats or rowboats for a peaceful ride.",
+                "imageUrl": "https://picsum.photos/seed/activity-boating/800/600",
+                "category": "Nature",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 100,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "cycling-around-lake",
+                "name": "Cycling Around the Lake",
+                "description": "Rent a cycle and enjoy the misty breeze around the lake.",
+                "imageUrl": "https://picsum.photos/seed/activity-cycling/800/600",
+                "category": "Adventure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 100,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Solo travelers",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "flora-tour",
+                "name": "Bryant Park Flora Tour",
+                "description": "Explore native and exotic flora with a botanical guide.",
+                "imageUrl": "https://picsum.photos/seed/activity-flora/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 100,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Nature lovers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Kodaikanal Lake",
+            "Coaker's Walk",
+            "Pillar Rocks",
+            "Bryant Park"
+        ],
+        "travelTips": [
+            "Pack warm clothes",
+            "Carry an umbrella for unexpected showers",
+            "Avoid peak holiday weekends for a quieter experience"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Tamil",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Madurai Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Safe for travelers; be cautious near cliffs and wild monkeys.",
+        "aiGeneratedSummary": "Kodaikanal is a tranquil hill station perfect for couples and nature lovers, with scenic lakes, misty walks, and panoramic viewpoints.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Boating on Kodaikanal Lake",
+                    "Visit Bryant Park",
+                    "Coaker's Walk"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Pillar Rocks",
+                    "Cycling around the lake",
+                    "Botanical garden tour"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ooty-tamilnadu",
+            "coorg-karnataka",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Coorg",
+        "country": "India",
+        "region": "Karnataka",
+        "city": "Madikeri",
+        "description": "Often called the Scotland of India, Coorg is a lush green hill station known for its coffee plantations, misty hills, and vibrant Kodava culture.",
+        "latitude": 12.3375,
+        "longitude": 75.8069,
+        "imageUrl": "https://picsum.photos/seed/coorg/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/rajakseat/800/600",
+            "https://picsum.photos/seed/abbeyfalls/800/600",
+            "https://picsum.photos/seed/coffeeplantation/800/600"
+        ],
+        "rating": 4.7,
+        "totalRatings": 11234,
+        "reviewSummary": "A peaceful retreat amidst the Western Ghats, Coorg is perfect for coffee lovers, trekkers, and those seeking serenity in nature.",
+        "reviewCategories": {
+            "cleanliness": 4.6,
+            "safety": 4.7,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.5,
+            "localExperience": 4.8
+        },
+        "locationTag": "coorg-karnataka",
+        "tags": [
+            "coffee",
+            "trekking",
+            "nature",
+            "hill station"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "March",
+            "April"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 3000,
+                "max": 6000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 6000,
+                "max": 15000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 15000,
+                "max": 35000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 5000,
+        "landmarks": [
+            {
+                "id": "rajas-seat",
+                "name": "Raja's Seat",
+                "description": "A scenic viewpoint with gardens and sunset views once enjoyed by Kodava kings.",
+                "imageUrl": "https://picsum.photos/seed/landmark-rajasseat/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 10,
+                    "max": 20,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4212,
+                    "longitude": 75.7391
+                }
+            },
+            {
+                "id": "abbey-falls",
+                "name": "Abbey Falls",
+                "description": "A picturesque waterfall surrounded by coffee plantations and spice estates.",
+                "imageUrl": "https://picsum.photos/seed/landmark-abbeyfalls/800/600",
+                "distanceFromDestination": 8,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4578,
+                    "longitude": 75.7087
+                }
+            },
+            {
+                "id": "namdroling-monastery",
+                "name": "Namdroling Monastery",
+                "description": "A stunning Tibetan monastery known for its golden temple and peaceful aura.",
+                "imageUrl": "https://picsum.photos/seed/landmark-namdroling/800/600",
+                "distanceFromDestination": 34,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4334,
+                    "longitude": 75.9690
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "coffee-tour",
+                "name": "Coffee Plantation Tour",
+                "description": "Walk through lush coffee estates and learn about the cultivation process.",
+                "imageUrl": "https://picsum.photos/seed/activity-coffee/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 300,
+                    "max": 800,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Nature lovers",
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "river-rafting-barapole",
+                "name": "White Water Rafting on Barapole River",
+                "description": "Adrenaline-filled rafting experience during monsoon season.",
+                "imageUrl": "https://picsum.photos/seed/activity-rafting/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 1200,
+                    "max": 2000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Adventure seekers",
+                    "Friends"
+                ]
+            },
+            {
+                "id": "tadiandamol-trek",
+                "name": "Tadiandamol Trek",
+                "description": "Trek to the highest peak in Coorg with scenic views and rich biodiversity.",
+                "imageUrl": "https://picsum.photos/seed/activity-trek/800/600",
+                "category": "Adventure",
+                "durationHours": 6,
+                "priceRange": {
+                    "min": 0,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Trekkers",
+                    "Photographers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Raja's Seat",
+            "Abbey Falls",
+            "Namdroling Monastery",
+            "Coffee Plantations"
+        ],
+        "travelTips": [
+            "Carry insect repellent if trekking or walking through plantations.",
+            "Try local Kodava cuisine like Pandi Curry.",
+            "Avoid the monsoon for outdoor activities unless you love the rain."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Kannada",
+            "Kodava",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Mangalore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Generally safe, but be cautious during heavy rains and in remote trekking areas.",
+        "aiGeneratedSummary": "Coorg is a lush hill station offering everything from serene plantations to thrilling treks and vibrant cultural sites. Ideal for a rejuvenating escape.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Coffee Plantation Tour",
+                    "Visit Raja's Seat",
+                    "Abbey Falls"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Tadiandamol Trek",
+                    "Visit Namdroling Monastery"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ooty-tamilnadu",
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Chikmagalur",
+        "country": "India",
+        "region": "Karnataka",
+        "city": "Chikmagalur",
+        "description": "Nestled in the Western Ghats, Chikmagalur is known for its serene hills, vast coffee plantations, and cool climate—perfect for a peaceful getaway.",
+        "latitude": 13.3187,
+        "longitude": 75.7721,
+        "imageUrl": "https://picsum.photos/seed/chikmagalur/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/mullayangiri/800/600",
+            "https://picsum.photos/seed/coffeeestate/800/600",
+            "https://picsum.photos/seed/hirekolale/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 9472,
+        "reviewSummary": "Chikmagalur offers a tranquil environment for nature lovers, coffee enthusiasts, and trekking aficionados, with scenic landscapes and cultural charm.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.6,
+            "valueForMoney": 4.3,
+            "familyFriendly": 4.4,
+            "localExperience": 4.7
+        },
+        "locationTag": "chikmagalur-karnataka",
+        "tags": [
+            "coffee",
+            "trekking",
+            "hill station",
+            "scenic"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "September",
+            "October",
+            "November",
+            "March"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "mullayanagiri-peak",
+                "name": "Mullayanagiri",
+                "description": "The highest peak in Karnataka, offering breathtaking views and a challenging trek.",
+                "imageUrl": "https://picsum.photos/seed/landmark-mullayanagiri/800/600",
+                "distanceFromDestination": 20,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3702,
+                    "longitude": 75.7139
+                }
+            },
+            {
+                "id": "hirekolale-lake",
+                "name": "Hirekolale Lake",
+                "description": "A peaceful lake surrounded by hills, ideal for sunsets and photography.",
+                "imageUrl": "https://picsum.photos/seed/landmark-hirekolale/800/600",
+                "distanceFromDestination": 12,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3456,
+                    "longitude": 75.7852
+                }
+            },
+            {
+                "id": "coffee-museum",
+                "name": "Coffee Museum",
+                "description": "Learn about the history and process of coffee making in this informative museum run by the Coffee Board of India.",
+                "imageUrl": "https://picsum.photos/seed/landmark-coffeemuseum/800/600",
+                "distanceFromDestination": 3,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 20,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3189,
+                    "longitude": 75.7845
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "mullayanagiri-trek",
+                "name": "Mullayanagiri Trek",
+                "description": "Trek to the highest point in Karnataka with panoramic views and cool breezes.",
+                "imageUrl": "https://picsum.photos/seed/activity-mullayanagiri/800/600",
+                "category": "Adventure",
+                "durationHours": 4,
+                "priceRange": {
+                    "min": 0,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Trekkers",
+                    "Nature lovers"
+                ]
+            },
+            {
+                "id": "coffee-estate-tour",
+                "name": "Coffee Estate Tour",
+                "description": "Explore sprawling coffee estates and taste fresh brews.",
+                "imageUrl": "https://picsum.photos/seed/activity-coffeetour/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 300,
+                    "max": 800,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Coffee lovers",
+                    "Families"
+                ]
+            },
+            {
+                "id": "jeep-ride-bababudangiri",
+                "name": "Jeep Ride to Baba Budangiri",
+                "description": "Rugged jeep rides through hairpin bends and misty hills to the famous shrine.",
+                "imageUrl": "https://picsum.photos/seed/activity-jeep/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 1000,
+                    "max": 2000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Adventurers",
+                    "Photographers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Mullayanagiri",
+            "Hirekolale Lake",
+            "Coffee Museum",
+            "Baba Budangiri"
+        ],
+        "travelTips": [
+            "Pack warm clothing for the evenings.",
+            "Carry cash for local purchases, as ATMs may be limited in rural areas.",
+            "Hire a local guide for treks to get the best experience."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Kannada",
+            "Tulu",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Mangalore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Safe for tourists. Take caution during monsoon treks due to slippery terrain.",
+        "aiGeneratedSummary": "Chikmagalur is a scenic escape in Karnataka’s hills, ideal for coffee connoisseurs and trekking lovers, with refreshing weather and a calming vibe.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Coffee Estate Tour",
+                    "Visit Coffee Museum",
+                    "Hirekolale Lake"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Mullayanagiri Trek",
+                    "Jeep Ride to Baba Budangiri"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "coorg-karnataka",
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
     }
 ]

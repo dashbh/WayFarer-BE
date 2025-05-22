@@ -7,11 +7,11 @@
         "description": "The Pink City, known for its royal palaces, forts, and vibrant culture.",
         "latitude": 26.9124,
         "longitude": 75.7873,
-        "imageUrl": "https://unsplash.com/s/photos/?jaipur,india",
+        "imageUrl": "https://picsum.photos/seed/jaipur/800/600",
         "galleryImages": [
-            "https://unsplash.com/s/photos/?amerfort,jaipur",
-            "https://unsplash.com/s/photos/?hawa-mahal",
-            "https://unsplash.com/s/photos/?jaipur-palace"
+            "https://picsum.photos/seed/amerfort/800/600",
+            "https://picsum.photos/seed/hawamahal/800/600",
+            "https://picsum.photos/seed/jaipurpalace/800/600"
         ],
         "rating": 4.7,
         "totalRatings": 10456,
@@ -44,34 +44,34 @@
         },
         "suggestedBudget": {
             "budget": {
-                "min": 25,
-                "max": 50,
-                "currency": "USD"
+                "min": 2000,
+                "max": 4000,
+                "currency": "INR"
             },
             "midRange": {
-                "min": 50,
-                "max": 120,
-                "currency": "USD"
+                "min": 4000,
+                "max": 10000,
+                "currency": "INR"
             },
             "luxury": {
-                "min": 120,
-                "max": 400,
-                "currency": "USD"
+                "min": 10000,
+                "max": 33000,
+                "currency": "INR"
             }
         },
-        "averageDailyCost": 60,
+        "averageDailyCost": 5000,
         "landmarks": [
             {
                 "id": "amer-fort",
                 "name": "Amer Fort",
                 "description": "A majestic fort with beautiful architecture and panoramic views.",
-                "imageUrl": "https://unsplash.com/s/photos/?amerfort",
+                "imageUrl": "https://picsum.photos/seed/landmark-amerfort/800/600",
                 "distanceFromDestination": 11,
                 "visitDuration": 3,
                 "entryFee": {
-                    "min": 5,
-                    "max": 10,
-                    "currency": "USD"
+                    "min": 400,
+                    "max": 800,
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 26.9855,
@@ -82,13 +82,13 @@
                 "id": "hawa-mahal",
                 "name": "Hawa Mahal",
                 "description": "The iconic Palace of Winds with its unique honeycomb façade.",
-                "imageUrl": "https://unsplash.com/s/photos/?hawamahal",
+                "imageUrl": "https://picsum.photos/seed/landmark-hawamahal/800/600",
                 "distanceFromDestination": 1,
                 "visitDuration": 1,
                 "entryFee": {
-                    "min": 2,
-                    "max": 3,
-                    "currency": "USD"
+                    "min": 150,
+                    "max": 250,
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 26.9239,
@@ -99,13 +99,13 @@
                 "id": "city-palace",
                 "name": "City Palace",
                 "description": "Royal residence with museums and courtyards.",
-                "imageUrl": "https://unsplash.com/s/photos/?citypalace,jaipur",
+                "imageUrl": "https://picsum.photos/seed/landmark-citypalace/800/600",
                 "distanceFromDestination": 1,
                 "visitDuration": 2,
                 "entryFee": {
-                    "min": 3,
-                    "max": 6,
-                    "currency": "USD"
+                    "min": 250,
+                    "max": 500,
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 26.9258,
@@ -116,17 +116,17 @@
                 "id": "jal-mahal",
                 "name": "Jal Mahal",
                 "description": "Water palace located in the middle of Man Sagar Lake.",
-                "imageUrl": "https://unsplash.com/s/photos/?jalmahal",
+                "imageUrl": "https://picsum.photos/seed/landmark-jalmahal/800/600",
                 "distanceFromDestination": 4,
                 "visitDuration": 1,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 26.9544,
-                    "longitude": 75.8260
+                    "longitude": 75.826
                 }
             }
         ],
@@ -135,13 +135,13 @@
                 "id": "elephant-ride",
                 "name": "Elephant Ride at Amer Fort",
                 "description": "Ride elephants up the ramparts of Amer Fort.",
-                "imageUrl": "https://unsplash.com/s/photos/?elephant,india",
+                "imageUrl": "https://picsum.photos/seed/activity-elephant/800/600",
                 "category": "Adventure",
                 "durationHours": 1,
                 "priceRange": {
-                    "min": 10,
-                    "max": 20,
-                    "currency": "USD"
+                    "min": 800,
+                    "max": 1600,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Families",
@@ -152,13 +152,13 @@
                 "id": "heritage-walk",
                 "name": "Heritage Walk",
                 "description": "Explore old markets, temples, and havelis with a guide.",
-                "imageUrl": "https://unsplash.com/s/photos/?heritage,walk,jaipur",
+                "imageUrl": "https://picsum.photos/seed/activity-walk/800/600",
                 "category": "Cultural",
                 "durationHours": 3,
                 "priceRange": {
-                    "min": 15,
-                    "max": 25,
-                    "currency": "USD"
+                    "min": 1200,
+                    "max": 2000,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Solo travelers",
@@ -169,13 +169,13 @@
                 "id": "local-cuisine-tour",
                 "name": "Local Cuisine Tour",
                 "description": "Taste authentic Rajasthani dishes in traditional eateries.",
-                "imageUrl": "https://unsplash.com/s/photos/?indian-food,jaipur",
+                "imageUrl": "https://picsum.photos/seed/activity-food/800/600",
                 "category": "Cultural",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 5,
-                    "max": 15,
-                    "currency": "USD"
+                    "min": 400,
+                    "max": 1200,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Foodies",
@@ -186,13 +186,13 @@
                 "id": "shopping",
                 "name": "Shopping in Johari Bazaar",
                 "description": "Buy traditional jewelry, textiles, and handicrafts.",
-                "imageUrl": "https://unsplash.com/s/photos/?shopping,jaipur",
+                "imageUrl": "https://picsum.photos/seed/activity-shopping/800/600",
                 "category": "Cultural",
                 "durationHours": 2,
                 "priceRange": {
                     "min": 0,
-                    "max": 100,
-                    "currency": "USD"
+                    "max": 8000,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Families",
@@ -248,17 +248,403 @@
         "updatedAt": "2024-04-15T12:00:00Z"
     },
     {
+        "title": "Udaipur",
+        "country": "India",
+        "region": "Rajasthan",
+        "city": "Udaipur",
+        "description": "The City of Lakes, renowned for its palaces, serene lakes, and romantic ambiance.",
+        "latitude": 24.5854,
+        "longitude": 73.7125,
+        "imageUrl": "https://picsum.photos/seed/udaipur/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/lakepichola/800/600",
+            "https://picsum.photos/seed/citypalaceudaipur/800/600",
+            "https://picsum.photos/seed/sajjangarh/800/600"
+        ],
+        "rating": 4.8,
+        "totalRatings": 9832,
+        "reviewSummary": "A romantic getaway surrounded by lakes and royal architecture.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.5,
+            "valueForMoney": 4.5,
+            "familyFriendly": 4,
+            "localExperience": 5
+        },
+        "locationTag": "udaipur-rajasthan",
+        "tags": [
+            "lakes",
+            "palaces",
+            "romantic",
+            "heritage"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "December",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 4500,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 40000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 6000,
+        "landmarks": [
+            {
+                "id": "lake-pichola",
+                "name": "Lake Pichola",
+                "description": "Scenic lake with boat rides offering views of palaces and ghats.",
+                "imageUrl": "https://picsum.photos/seed/landmark-pichola/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 24.5765,
+                    "longitude": 73.6821
+                }
+            },
+            {
+                "id": "city-palace-udaipur",
+                "name": "City Palace",
+                "description": "Historic complex overlooking Lake Pichola, known for its grandeur.",
+                "imageUrl": "https://picsum.photos/seed/landmark-citypalaceudaipur/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 300,
+                    "max": 600,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 24.5761,
+                    "longitude": 73.6833
+                }
+            },
+            {
+                "id": "sajjangarh-palace",
+                "name": "Sajjangarh Palace",
+                "description": "Also known as Monsoon Palace, offers panoramic views of the city.",
+                "imageUrl": "https://picsum.photos/seed/landmark-sajjangarh/800/600",
+                "distanceFromDestination": 6,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 100,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 24.5885,
+                    "longitude": 73.6714
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "boat-ride-pichola",
+                "name": "Boat Ride on Lake Pichola",
+                "description": "Evening boat ride with views of Jag Mandir and City Palace.",
+                "imageUrl": "https://picsum.photos/seed/activity-boat/800/600",
+                "category": "Leisure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 400,
+                    "max": 1000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "folk-dance-show",
+                "name": "Folk Dance Show",
+                "description": "Watch traditional Rajasthani dance at Bagore Ki Haveli.",
+                "imageUrl": "https://picsum.photos/seed/activity-dance/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 200,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Solo travelers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Lake Pichola",
+            "City Palace",
+            "Sajjangarh Palace"
+        ],
+        "travelTips": [
+            "Take early morning boat rides for fewer crowds",
+            "Explore hidden ghats for local interaction"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Hindi",
+            "English",
+            "Rajasthani"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Maharana Pratap Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Drink bottled water; watch out for steep palace steps.",
+        "aiGeneratedSummary": "Udaipur is a picturesque destination perfect for couples and culture seekers, offering a mix of serene lakes and majestic palaces.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "City Palace visit",
+                    "Boat ride on Lake Pichola"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Explore Sajjangarh Palace",
+                    "Watch folk dance show"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "jaipur-rajasthan",
+            "jodhpur-rajasthan"
+        ],
+        "createdAt": "2024-01-12T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Jodhpur",
+        "country": "India",
+        "region": "Rajasthan",
+        "city": "Jodhpur",
+        "description": "The Blue City, famous for its blue houses, massive Mehrangarh Fort, and desert charm.",
+        "latitude": 26.2389,
+        "longitude": 73.0243,
+        "imageUrl": "https://picsum.photos/seed/jodhpur/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/mehrangarh/800/600",
+            "https://picsum.photos/seed/jaswantthada/800/600",
+            "https://picsum.photos/seed/clocktower/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 8761,
+        "reviewSummary": "A city that blends desert vibes with stunning historical architecture.",
+        "reviewCategories": {
+            "cleanliness": 4,
+            "safety": 4,
+            "valueForMoney": 4.3,
+            "familyFriendly": 4,
+            "localExperience": 4.8
+        },
+        "locationTag": "jodhpur-rajasthan",
+        "tags": [
+            "forts",
+            "desert",
+            "architecture",
+            "historical"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "February",
+            "March"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2000,
+                "max": 4000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 4000,
+                "max": 9000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 9000,
+                "max": 25000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "mehrangarh-fort",
+                "name": "Mehrangarh Fort",
+                "description": "A colossal fort with museums, galleries, and panoramic city views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-mehrangarh/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 3,
+                "entryFee": {
+                    "min": 200,
+                    "max": 600,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 26.2976,
+                    "longitude": 73.0186
+                }
+            },
+            {
+                "id": "jaswant-thada",
+                "name": "Jaswant Thada",
+                "description": "A white marble cenotaph offering peace and serenity.",
+                "imageUrl": "https://picsum.photos/seed/landmark-jaswant/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 100,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 26.2961,
+                    "longitude": 73.0158
+                }
+            },
+            {
+                "id": "clock-tower",
+                "name": "Clock Tower and Sardar Market",
+                "description": "Bustling market for spices, handicrafts, and local life.",
+                "imageUrl": "https://picsum.photos/seed/landmark-clocktower/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 26.2962,
+                    "longitude": 73.0388
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "zipline-mehrangarh",
+                "name": "Zipline at Mehrangarh",
+                "description": "Fly over the fort and desert landscape.",
+                "imageUrl": "https://picsum.photos/seed/activity-zipline/800/600",
+                "category": "Adventure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 1800,
+                    "max": 2500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Thrill seekers"
+                ]
+            },
+            {
+                "id": "camel-safari",
+                "name": "Camel Safari",
+                "description": "Experience the Thar Desert on a traditional camel ride.",
+                "imageUrl": "https://picsum.photos/seed/activity-camel/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 1500,
+                    "max": 3000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Mehrangarh Fort",
+            "Jaswant Thada",
+            "Clock Tower"
+        ],
+        "travelTips": [
+            "Start your day early to avoid heat",
+            "Try the famous Makhaniya Lassi"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Hindi",
+            "English",
+            "Marwari"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Jodhpur Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Wear hats/sunglasses; use sunscreen.",
+        "aiGeneratedSummary": "Jodhpur blends desert magic with regal architecture, making it an essential stop in Rajasthan’s golden triangle.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Tour Mehrangarh Fort",
+                    "Explore Jaswant Thada"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Zipline experience",
+                    "Shop at Sardar Market"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "jaipur-rajasthan",
+            "udaipur-rajasthan"
+        ],
+        "createdAt": "2024-01-15T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
         "title": "Kerala Backwaters",
         "country": "India",
         "region": "Kerala",
         "description": "A network of lagoons and lakes offering tranquil houseboat experiences.",
         "latitude": 9.4981,
         "longitude": 76.3388,
-        "imageUrl": "https://unsplash.com/s/photos/?kerala,backwaters",
+        "imageUrl": "https://picsum.photos/800/600?random=kerala-backwaters",
         "galleryImages": [
-            "https://unsplash.com/s/photos/?houseboat,kerala",
-            "https://unsplash.com/s/photos/?alleppey",
-            "https://unsplash.com/s/photos/?kerala-nature"
+            "https://picsum.photos/800/600?random=houseboat",
+            "https://picsum.photos/800/600?random=alleppey",
+            "https://picsum.photos/800/600?random=kerala-nature"
         ],
         "rating": 4.8,
         "totalRatings": 8732,
@@ -291,34 +677,34 @@
         },
         "suggestedBudget": {
             "budget": {
-                "min": 30,
-                "max": 60,
-                "currency": "USD"
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
             },
             "midRange": {
-                "min": 60,
-                "max": 150,
-                "currency": "USD"
+                "min": 5000,
+                "max": 12500,
+                "currency": "INR"
             },
             "luxury": {
-                "min": 150,
-                "max": 400,
-                "currency": "USD"
+                "min": 12500,
+                "max": 33000,
+                "currency": "INR"
             }
         },
-        "averageDailyCost": 70,
+        "averageDailyCost": 5800,
         "landmarks": [
             {
                 "id": "alleppey-boat-jetty",
                 "name": "Alleppey Boat Jetty",
                 "description": "Main starting point for houseboat cruises.",
-                "imageUrl": "https://unsplash.com/s/photos/?alleppey-jetty",
+                "imageUrl": "https://picsum.photos/800/600?random=alleppey-jetty",
                 "distanceFromDestination": 5,
                 "visitDuration": 1,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 9.4981,
@@ -329,13 +715,13 @@
                 "id": "vembanad-lake",
                 "name": "Vembanad Lake",
                 "description": "Largest lake in Kerala, offering beautiful views.",
-                "imageUrl": "https://unsplash.com/s/photos/?vembanad-lake",
+                "imageUrl": "https://picsum.photos/800/600?random=vembanad-lake",
                 "distanceFromDestination": 7,
                 "visitDuration": 2,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 9.5,
@@ -346,13 +732,13 @@
                 "id": "kumarakom-bird-sanctuary",
                 "name": "Kumarakom Bird Sanctuary",
                 "description": "A paradise for bird watchers.",
-                "imageUrl": "https://unsplash.com/s/photos/?kumarakom,bird-sanctuary",
+                "imageUrl": "https://picsum.photos/800/600?random=kumarakom-bird-sanctuary",
                 "distanceFromDestination": 15,
                 "visitDuration": 3,
                 "entryFee": {
-                    "min": 1,
-                    "max": 3,
-                    "currency": "USD"
+                    "min": 83,
+                    "max": 250,
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 9.58,
@@ -365,13 +751,13 @@
                 "id": "houseboat-cruise",
                 "name": "Houseboat Cruise",
                 "description": "Enjoy a relaxing cruise through the backwaters.",
-                "imageUrl": "https://unsplash.com/s/photos/?houseboat,kerala",
+                "imageUrl": "https://picsum.photos/800/600?random=houseboat-cruise",
                 "category": "Relaxation",
                 "durationHours": 6,
                 "priceRange": {
-                    "min": 50,
-                    "max": 200,
-                    "currency": "USD"
+                    "min": 4150,
+                    "max": 16600,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Couples",
@@ -382,13 +768,13 @@
                 "id": "canoeing",
                 "name": "Canoeing",
                 "description": "Explore narrow canals by canoe.",
-                "imageUrl": "https://unsplash.com/s/photos/?canoeing,kerala",
+                "imageUrl": "https://picsum.photos/800/600?random=canoeing",
                 "category": "Adventure",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 15,
-                    "max": 30,
-                    "currency": "USD"
+                    "min": 1245,
+                    "max": 2490,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Adventure seekers",
@@ -399,13 +785,13 @@
                 "id": "fishing",
                 "name": "Fishing Experience",
                 "description": "Try traditional fishing methods with locals.",
-                "imageUrl": "https://unsplash.com/s/photos/?fishing,kerala",
+                "imageUrl": "https://picsum.photos/800/600?random=fishing",
                 "category": "Cultural",
                 "durationHours": 3,
                 "priceRange": {
-                    "min": 10,
-                    "max": 25,
-                    "currency": "USD"
+                    "min": 830,
+                    "max": 2075,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Families",
@@ -416,13 +802,13 @@
                 "id": "local-cuisine",
                 "name": "Kerala Cuisine Tasting",
                 "description": "Sample authentic Kerala dishes.",
-                "imageUrl": "https://unsplash.com/s/photos/?kerala-food",
+                "imageUrl": "https://picsum.photos/800/600?random=kerala-food",
                 "category": "Cultural",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 5,
-                    "max": 15,
-                    "currency": "USD"
+                    "min": 415,
+                    "max": 1245,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Food lovers"
@@ -474,18 +860,442 @@
         "updatedAt": "2024-04-15T12:30:00Z"
     },
     {
-        "title": "Goa",
+        "title": "Alleppey",
         "country": "India",
-        "region": "Goa",
-        "city": "Panaji",
-        "description": "Famous for its beaches, nightlife, and Portuguese heritage.",
-        "latitude": 15.2993,
-        "longitude": 74.1240,
-        "imageUrl": "https://unsplash.com/s/photos/?goa,beach",
+        "region": "Kerala",
+        "city": "Alappuzha",
+        "description": "Known as the 'Venice of the East', Alleppey is famed for its tranquil backwaters, houseboat cruises, and vibrant coastal culture.",
+        "latitude": 9.4981,
+        "longitude": 76.3388,
+        "imageUrl": "https://picsum.photos/seed/alleppey/800/600",
         "galleryImages": [
-            "https://unsplash.com/s/photos/?goa-nightlife",
-            "https://unsplash.com/s/photos/?goa-fort",
-            "https://unsplash.com/s/photos/?goa-market"
+            "https://picsum.photos/seed/alleppeybeach/800/600",
+            "https://picsum.photos/seed/houseboat/800/600",
+            "https://picsum.photos/seed/nehru-trophy/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 8923,
+        "reviewSummary": "A serene destination offering picturesque backwaters, sandy beaches, and rich cultural experiences.",
+        "reviewCategories": {
+            "cleanliness": 4.2,
+            "safety": 4.3,
+            "valueForMoney": 4.5,
+            "familyFriendly": 4.6,
+            "localExperience": 4.8
+        },
+        "locationTag": "alleppey-kerala",
+        "tags": [
+            "backwaters",
+            "houseboats",
+            "beach",
+            "cultural"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "alappuzha-beach",
+                "name": "Alappuzha Beach",
+                "description": "A scenic beach known for its historic pier and lighthouse, offering stunning sunset views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-alappuzhabeach/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.4946,
+                    "longitude": 76.3265
+                }
+            },
+            {
+                "id": "alappuzha-lighthouse",
+                "name": "Alappuzha Lighthouse",
+                "description": "An iconic 19th-century lighthouse offering panoramic views of the Arabian Sea.",
+                "imageUrl": "https://picsum.photos/seed/landmark-lighthouse/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 20,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.4941,
+                    "longitude": 76.3269
+                }
+            },
+            {
+                "id": "krishnapuram-palace",
+                "name": "Krishnapuram Palace",
+                "description": "A historic palace known for its traditional Kerala architecture and mural paintings.",
+                "imageUrl": "https://picsum.photos/seed/landmark-krishnapuram/800/600",
+                "distanceFromDestination": 47,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 10,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.2742,
+                    "longitude": 76.5065
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "houseboat-cruise",
+                "name": "Houseboat Cruise",
+                "description": "Experience the serene backwaters aboard a traditional houseboat with meals and overnight stay.",
+                "imageUrl": "https://picsum.photos/seed/activity-houseboat/800/600",
+                "category": "Relaxation",
+                "durationHours": 24,
+                "priceRange": {
+                    "min": 6000,
+                    "max": 15000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "beach-walk",
+                "name": "Evening Beach Walk",
+                "description": "Stroll along Alappuzha Beach and enjoy the sunset over the Arabian Sea.",
+                "imageUrl": "https://picsum.photos/seed/activity-beachwalk/800/600",
+                "category": "Leisure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Solo travelers",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "coir-museum-visit",
+                "name": "Coir Museum Visit",
+                "description": "Learn about the traditional coir industry and its significance in Kerala's culture.",
+                "imageUrl": "https://picsum.photos/seed/activity-coirmuseum/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 50,
+                    "max": 100,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Students"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Alappuzha Beach",
+            "Alappuzha Lighthouse",
+            "Krishnapuram Palace"
+        ],
+        "travelTips": [
+            "Book houseboats in advance during peak season.",
+            "Carry mosquito repellent for evening outings.",
+            "Respect local customs and dress modestly."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Malayalam",
+            "English"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Cochin International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Stay hydrated; avoid street food if unsure.",
+        "aiGeneratedSummary": "Alleppey offers a blend of tranquil backwaters, cultural landmarks, and coastal charm, making it a perfect getaway for relaxation and exploration.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Check-in to houseboat and begin backwater cruise",
+                    "Visit Alappuzha Beach and Lighthouse in the evening"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Explore Krishnapuram Palace",
+                    "Visit Coir Museum",
+                    "Enjoy local seafood cuisine"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "kumarakom-kerala",
+            "kerala-backwaters"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Kumarakom",
+        "country": "India",
+        "region": "Kerala",
+        "city": "Kumarakom",
+        "description": "A tranquil village on the banks of Vembanad Lake, renowned for its bird sanctuary, backwaters, and lush landscapes.",
+        "latitude": 9.6170,
+        "longitude": 76.4296,
+        "imageUrl": "https://picsum.photos/seed/kumarakom/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/kumarakomlake/800/600",
+            "https://picsum.photos/seed/birdsanctuary/800/600",
+            "https://picsum.photos/seed/pathiramanal/800/600"
+        ],
+        "rating": 4.7,
+        "totalRatings": 7564,
+        "reviewSummary": "Kumarakom captivates with its serene backwaters, rich avian life, and authentic Kerala village experience.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.6,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.7,
+            "localExperience": 4.9
+        },
+        "locationTag": "kumarakom-kerala",
+        "tags": [
+            "backwaters",
+            "bird sanctuary",
+            "nature",
+            "village"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 3000,
+                "max": 6000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 6000,
+                "max": 15000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 15000,
+                "max": 35000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 5000,
+        "landmarks": [
+            {
+                "id": "kumarakom-bird-sanctuary",
+                "name": "Kumarakom Bird Sanctuary",
+                "description": "A haven for bird watchers, home to numerous migratory and native bird species.",
+                "imageUrl": "https://picsum.photos/seed/landmark-birdsanctuary/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 50,
+                    "max": 150,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.6177,
+                    "longitude": 76.4300
+                }
+            },
+            {
+                "id": "vembanad-lake-view",
+                "name": "Vembanad Lake Viewpoint",
+                "description": "Scenic views of India’s longest lake with options for boating and sunset cruises.",
+                "imageUrl": "https://picsum.photos/seed/landmark-vembanad/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.6200,
+                    "longitude": 76.4322
+                }
+            },
+            {
+                "id": "pathiramanal-island",
+                "name": "Pathiramanal Island",
+                "description": "A small, lush island on Vembanad Lake rich in flora and fauna, accessible by boat.",
+                "imageUrl": "https://picsum.photos/seed/landmark-pathiramanal/800/600",
+                "distanceFromDestination": 13,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 9.6196,
+                    "longitude": 76.3970
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "bird-watching",
+                "name": "Bird Watching at Sanctuary",
+                "description": "Spot rare migratory birds including Siberian cranes, herons, and kingfishers.",
+                "imageUrl": "https://picsum.photos/seed/activity-birdwatching/800/600",
+                "category": "Nature",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 50,
+                    "max": 150,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Nature lovers",
+                    "Photographers"
+                ]
+            },
+            {
+                "id": "canoe-ride",
+                "name": "Canoe Ride through Canals",
+                "description": "Glide through narrow canals of Kumarakom in a traditional canoe.",
+                "imageUrl": "https://picsum.photos/seed/activity-canoe/800/600",
+                "category": "Adventure",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 300,
+                    "max": 800,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Solo travelers",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "ayurvedic-spa",
+                "name": "Ayurvedic Spa Therapy",
+                "description": "Rejuvenate with authentic Kerala-style Ayurvedic massage therapies.",
+                "imageUrl": "https://picsum.photos/seed/activity-spa/800/600",
+                "category": "Wellness",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 1000,
+                    "max": 3000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Everyone"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Kumarakom Bird Sanctuary",
+            "Vembanad Lake",
+            "Pathiramanal Island"
+        ],
+        "travelTips": [
+            "Visit the bird sanctuary early in the morning for best sightings.",
+            "Book canoe rides through local guides for an authentic experience.",
+            "Carry binoculars for bird watching."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Malayalam",
+            "English"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Cochin International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Wear insect repellent near water bodies; ensure drinking water is purified.",
+        "aiGeneratedSummary": "Kumarakom blends serene backwaters with rich birdlife, making it ideal for nature lovers and those seeking peace and rejuvenation.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Bird watching at Kumarakom Bird Sanctuary",
+                    "Sunset cruise on Vembanad Lake"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Morning canoe ride",
+                    "Visit Pathiramanal Island",
+                    "Relax with an Ayurvedic spa therapy"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "alleppey-kerala",
+            "kerala-backwaters"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "id": "goa-india",
+        "title": "Goa",
+        "location": {
+            "country": "India",
+            "region": "Goa",
+            "city": "Panaji",
+            "latitude": 15.2993,
+            "longitude": 74.124
+        },
+        "description": "Famous for its beaches, nightlife, and Portuguese heritage.",
+        "imageUrl": "https://picsum.photos/seed/goa-main/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/goa-nightlife/800/600",
+            "https://picsum.photos/seed/goa-fort/800/600",
+            "https://picsum.photos/seed/goa-market/800/600"
         ],
         "rating": 4.6,
         "totalRatings": 15632,
@@ -518,34 +1328,34 @@
         },
         "suggestedBudget": {
             "budget": {
-                "min": 30,
-                "max": 70,
-                "currency": "USD"
+                "min": 2500,
+                "max": 5800,
+                "currency": "INR"
             },
             "midRange": {
-                "min": 70,
-                "max": 150,
-                "currency": "USD"
+                "min": 5800,
+                "max": 12400,
+                "currency": "INR"
             },
             "luxury": {
-                "min": 150,
-                "max": 500,
-                "currency": "USD"
+                "min": 12400,
+                "max": 41500,
+                "currency": "INR"
             }
         },
-        "averageDailyCost": 80,
+        "averageDailyCost": 6600,
         "landmarks": [
             {
                 "id": "baga-beach",
                 "name": "Baga Beach",
                 "description": "Popular beach known for water sports and nightlife.",
-                "imageUrl": "https://unsplash.com/s/photos/?baga-beach",
+                "imageUrl": "https://picsum.photos/seed/baga-beach/800/600",
                 "distanceFromDestination": 10,
                 "visitDuration": 4,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 15.5767,
@@ -556,13 +1366,13 @@
                 "id": "fort-aguada",
                 "name": "Fort Aguada",
                 "description": "Historic Portuguese fort overlooking the Arabian Sea.",
-                "imageUrl": "https://unsplash.com/s/photos/?fort-aguada",
+                "imageUrl": "https://picsum.photos/seed/fort-aguada/800/600",
                 "distanceFromDestination": 7,
                 "visitDuration": 2,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 15.492,
@@ -573,13 +1383,13 @@
                 "id": "old-goa-churches",
                 "name": "Old Goa Churches",
                 "description": "UNESCO World Heritage site featuring Baroque churches.",
-                "imageUrl": "https://unsplash.com/s/photos/?old-goa-church",
+                "imageUrl": "https://picsum.photos/seed/old-goa-church/800/600",
                 "distanceFromDestination": 12,
                 "visitDuration": 3,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 15.4989,
@@ -592,13 +1402,13 @@
                 "id": "scuba-diving",
                 "name": "Scuba Diving",
                 "description": "Explore underwater marine life along Goa's coast.",
-                "imageUrl": "https://unsplash.com/s/photos/?scuba-diving",
+                "imageUrl": "https://picsum.photos/seed/scuba-diving/800/600",
                 "category": "Adventure",
                 "durationHours": 3,
                 "priceRange": {
-                    "min": 50,
-                    "max": 100,
-                    "currency": "USD"
+                    "min": 4150,
+                    "max": 8300,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Adventure seekers",
@@ -609,13 +1419,13 @@
                 "id": "beach-party",
                 "name": "Beach Party",
                 "description": "Join the vibrant nightlife and beach parties at night.",
-                "imageUrl": "https://unsplash.com/s/photos/?goa-party",
+                "imageUrl": "https://picsum.photos/seed/goa-party/800/600",
                 "category": "Entertainment",
                 "durationHours": 6,
                 "priceRange": {
                     "min": 0,
-                    "max": 50,
-                    "currency": "USD"
+                    "max": 4150,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Youth",
@@ -626,13 +1436,13 @@
                 "id": "heritage-walk",
                 "name": "Heritage Walk",
                 "description": "Explore the Portuguese heritage and colonial architecture.",
-                "imageUrl": "https://unsplash.com/s/photos/?goa-heritage",
+                "imageUrl": "https://picsum.photos/seed/goa-heritage/800/600",
                 "category": "Cultural",
                 "durationHours": 3,
                 "priceRange": {
-                    "min": 10,
-                    "max": 20,
-                    "currency": "USD"
+                    "min": 830,
+                    "max": 1660,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "History buffs",
@@ -643,13 +1453,13 @@
                 "id": "local-food-tour",
                 "name": "Local Food Tour",
                 "description": "Taste Goan seafood and local delicacies.",
-                "imageUrl": "https://unsplash.com/s/photos/?goan-food",
+                "imageUrl": "https://picsum.photos/seed/goan-food/800/600",
                 "category": "Cultural",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 10,
-                    "max": 25,
-                    "currency": "USD"
+                    "min": 830,
+                    "max": 2070,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Food lovers"
@@ -709,11 +1519,11 @@
         "description": "One of the world's oldest living cities, sacred on the banks of the Ganges.",
         "latitude": 25.3176,
         "longitude": 82.9739,
-        "imageUrl": "https://unsplash.com/s/photos/?varanasi,india",
+        "imageUrl": "https://picsum.photos/seed/varanasi1/800/600",
         "galleryImages": [
-            "https://unsplash.com/s/photos/?ganges,varanasi",
-            "https://unsplash.com/s/photos/?varanasi-ghats",
-            "https://unsplash.com/s/photos/?varanasi-temple"
+            "https://picsum.photos/seed/varanasi2/800/600",
+            "https://picsum.photos/seed/varanasi3/800/600",
+            "https://picsum.photos/seed/varanasi4/800/600"
         ],
         "rating": 4.5,
         "totalRatings": 7632,
@@ -746,34 +1556,34 @@
         },
         "suggestedBudget": {
             "budget": {
-                "min": 20,
-                "max": 40,
-                "currency": "USD"
+                "min": 1640,
+                "max": 3280,
+                "currency": "INR"
             },
             "midRange": {
-                "min": 40,
-                "max": 90,
-                "currency": "USD"
+                "min": 3280,
+                "max": 7380,
+                "currency": "INR"
             },
             "luxury": {
-                "min": 90,
-                "max": 300,
-                "currency": "USD"
+                "min": 7380,
+                "max": 24600,
+                "currency": "INR"
             }
         },
-        "averageDailyCost": 45,
+        "averageDailyCost": 3690,
         "landmarks": [
             {
                 "id": "kashi-vishwanath-temple",
                 "name": "Kashi Vishwanath Temple",
                 "description": "One of the holiest Hindu temples dedicated to Lord Shiva.",
-                "imageUrl": "https://unsplash.com/s/photos/?kashi-vishwanath",
+                "imageUrl": "https://picsum.photos/seed/kashi1/800/600",
                 "distanceFromDestination": 1,
                 "visitDuration": 2,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 25.3105,
@@ -784,13 +1594,13 @@
                 "id": "dasaswamedh-ghat",
                 "name": "Dasaswamedh Ghat",
                 "description": "Famous ghat on the Ganges known for evening aarti ceremonies.",
-                "imageUrl": "https://unsplash.com/s/photos/?varanasi-ghats",
+                "imageUrl": "https://picsum.photos/seed/ghat1/800/600",
                 "distanceFromDestination": 1,
                 "visitDuration": 2,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 25.3137,
@@ -801,13 +1611,13 @@
                 "id": "banaras-hindu-university",
                 "name": "Banaras Hindu University",
                 "description": "One of Asia's largest residential universities with beautiful campus.",
-                "imageUrl": "https://unsplash.com/s/photos/?bhu-varanasi",
+                "imageUrl": "https://picsum.photos/seed/bhu1/800/600",
                 "distanceFromDestination": 5,
                 "visitDuration": 3,
                 "entryFee": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "coordinates": {
                     "latitude": 25.267,
@@ -820,13 +1630,13 @@
                 "id": "ganges-boating",
                 "name": "Boating on the Ganges",
                 "description": "Experience sunrise or sunset boat rides on the sacred river.",
-                "imageUrl": "https://unsplash.com/s/photos/?ganges-boat",
+                "imageUrl": "https://picsum.photos/seed/boat1/800/600",
                 "category": "Cultural",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 10,
-                    "max": 20,
-                    "currency": "USD"
+                    "min": 820,
+                    "max": 1640,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Spiritual seekers",
@@ -837,13 +1647,13 @@
                 "id": "aarti-ceremony",
                 "name": "Evening Aarti Ceremony",
                 "description": "Witness the spectacular aarti ritual at the ghats.",
-                "imageUrl": "https://unsplash.com/s/photos/?varanasi-aarti",
+                "imageUrl": "https://picsum.photos/seed/aarti1/800/600",
                 "category": "Spiritual",
                 "durationHours": 1,
                 "priceRange": {
                     "min": 0,
                     "max": 0,
-                    "currency": "USD"
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Spiritual seekers",
@@ -854,13 +1664,13 @@
                 "id": "heritage-walk",
                 "name": "Old City Heritage Walk",
                 "description": "Explore narrow lanes, temples, and markets of ancient Varanasi.",
-                "imageUrl": "https://unsplash.com/s/photos/?varanasi-heritage",
+                "imageUrl": "https://picsum.photos/seed/heritage1/800/600",
                 "category": "Cultural",
                 "durationHours": 3,
                 "priceRange": {
-                    "min": 5,
-                    "max": 15,
-                    "currency": "USD"
+                    "min": 410,
+                    "max": 1230,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "History buffs",
@@ -871,13 +1681,13 @@
                 "id": "banarasi-saree-shopping",
                 "name": "Banarasi Saree Shopping",
                 "description": "Buy exquisite silk sarees famous worldwide.",
-                "imageUrl": "https://unsplash.com/s/photos/?banarasi-saree",
+                "imageUrl": "https://picsum.photos/seed/saree1/800/600",
                 "category": "Shopping",
                 "durationHours": 2,
                 "priceRange": {
-                    "min": 20,
-                    "max": 100,
-                    "currency": "USD"
+                    "min": 1640,
+                    "max": 8200,
+                    "currency": "INR"
                 },
                 "recommendedFor": [
                     "Shoppers",
@@ -928,5 +1738,1591 @@
         ],
         "createdAt": "2024-01-20T09:30:00Z",
         "updatedAt": "2024-04-16T10:30:00Z"
+    },
+    {
+        "title": "Tawang",
+        "country": "India",
+        "region": "Arunachal Pradesh",
+        "city": "Tawang",
+        "description": "A serene mountain town known for its ancient monastery, snow-covered peaks, and vibrant Tibetan culture.",
+        "latitude": 27.5860,
+        "longitude": 91.8656,
+        "imageUrl": "https://picsum.photos/seed/tawang/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/tawangmonastery/800/600",
+            "https://picsum.photos/seed/sellapass/800/600",
+            "https://picsum.photos/seed/bumtengla/800/600"
+        ],
+        "rating": 4.8,
+        "totalRatings": 6123,
+        "reviewSummary": "A mystical Himalayan retreat, perfect for spiritual seekers and mountain lovers.",
+        "reviewCategories": {
+            "cleanliness": 4.7,
+            "safety": 4.5,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.6,
+            "localExperience": 4.9
+        },
+        "locationTag": "tawang-arunachal",
+        "tags": [
+            "mountains",
+            "monastery",
+            "tibetan culture",
+            "snow"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "October",
+            "November"
+        ],
+        "suggestedDuration": {
+            "min": 3,
+            "max": 5
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 4000,
+                "max": 8000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 8000,
+                "max": 15000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 15000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 6000,
+        "landmarks": [
+            {
+                "id": "tawang-monastery",
+                "name": "Tawang Monastery",
+                "description": "India’s largest and Asia’s second-largest monastery, perched on a hill overlooking the Tawang valley.",
+                "imageUrl": "https://picsum.photos/seed/landmark-monastery/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 27.5865,
+                    "longitude": 91.8662
+                }
+            },
+            {
+                "id": "sella-pass",
+                "name": "Sela Pass",
+                "description": "A breathtaking high-altitude mountain pass with a glacial lake.",
+                "imageUrl": "https://picsum.photos/seed/landmark-sela/800/600",
+                "distanceFromDestination": 30,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 27.5255,
+                    "longitude": 91.8449
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "monastery-tour",
+                "name": "Monastery Tour",
+                "description": "Explore ancient Buddhist traditions at the iconic Tawang Monastery.",
+                "imageUrl": "https://picsum.photos/seed/activity-monastery/800/600",
+                "category": "Culture",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Spiritual seekers",
+                    "History lovers"
+                ]
+            },
+            {
+                "id": "mountain-drive",
+                "name": "Scenic Mountain Drive to Sela Pass",
+                "description": "Drive through winding roads and dramatic mountain landscapes.",
+                "imageUrl": "https://picsum.photos/seed/activity-drive/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 500,
+                    "max": 1500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Photographers",
+                    "Nature lovers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Tawang Monastery",
+            "Sela Pass",
+            "Gorichen Peak"
+        ],
+        "travelTips": [
+            "Carry winter gear even in summer.",
+            "Respect monastery etiquette — silence and dress modestly.",
+            "Inner Line Permit (ILP) is required for entry to Arunachal Pradesh."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Monpa",
+            "Hindi",
+            "English"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Tezpur Airport",
+        "visaRequirements": "Standard Indian visa; ILP required.",
+        "healthAndSafety": "Prepare for high altitudes; carry medication for AMS if needed.",
+        "aiGeneratedSummary": "Tawang is a spiritual Himalayan hideaway offering majestic views, cultural immersion, and peace in abundance.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Visit Tawang Monastery",
+                    "Evening stroll through local market"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Drive to Sela Pass",
+                    "Visit Jaswant Garh War Memorial"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ziro-valley-arunachal",
+            "shillong-meghalaya"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Shillong",
+        "country": "India",
+        "region": "Meghalaya",
+        "city": "Shillong",
+        "description": "Known as the ‘Scotland of the East’, Shillong boasts rolling hills, waterfalls, and vibrant culture.",
+        "latitude": 25.5788,
+        "longitude": 91.8933,
+        "imageUrl": "https://picsum.photos/seed/shillong/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/wardslake/800/600",
+            "https://picsum.photos/seed/elephantfalls/800/600",
+            "https://picsum.photos/seed/policebazar/800/600"
+        ],
+        "rating": 4.7,
+        "totalRatings": 8123,
+        "reviewSummary": "Shillong blends modernity and tradition, nature and music, all in a cool highland setting.",
+        "reviewCategories": {
+            "cleanliness": 4.4,
+            "safety": 4.7,
+            "valueForMoney": 4.6,
+            "familyFriendly": 4.5,
+            "localExperience": 4.8
+        },
+        "locationTag": "shillong-meghalaya",
+        "tags": [
+            "hills",
+            "culture",
+            "waterfalls",
+            "music"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "May",
+            "October"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "elephant-falls",
+                "name": "Elephant Falls",
+                "description": "A multi-tiered waterfall nestled in lush greenery, perfect for nature walks.",
+                "imageUrl": "https://picsum.photos/seed/landmark-elephant/800/600",
+                "distanceFromDestination": 12,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 25.5700,
+                    "longitude": 91.8730
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "shillong-nightlife",
+                "name": "Shillong Live Music Pubs",
+                "description": "Catch live rock and blues performances in the heart of Meghalaya’s capital.",
+                "imageUrl": "https://picsum.photos/seed/activity-musicpub/800/600",
+                "category": "Nightlife",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 500,
+                    "max": 1500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Young adults",
+                    "Music fans"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "tawang-arunachal",
+            "ziro-valley-arunachal"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Ziro Valley",
+        "country": "India",
+        "region": "Arunachal Pradesh",
+        "city": "Ziro",
+        "description": "A peaceful valley town known for its pine-covered hills, Apatani tribe culture, and lush rice fields.",
+        "latitude": 27.5958,
+        "longitude": 93.8240,
+        "imageUrl": "https://picsum.photos/seed/ziro/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/zirofields/800/600",
+            "https://picsum.photos/seed/zirotribe/800/600",
+            "https://picsum.photos/seed/zirofarm/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 4321,
+        "reviewSummary": "Ziro offers a laid-back escape into tribal culture and pristine landscapes.",
+        "reviewCategories": {
+            "cleanliness": 4.6,
+            "safety": 4.8,
+            "valueForMoney": 4.5,
+            "familyFriendly": 4.4,
+            "localExperience": 5.0
+        },
+        "locationTag": "ziro-valley-arunachal",
+        "tags": [
+            "tribal culture",
+            "valleys",
+            "music festivals",
+            "nature"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "September",
+            "October",
+            "March",
+            "April"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "averageDailyCost": 4000,
+        "landmarks": [
+            {
+                "id": "ziro-tribal-village",
+                "name": "Apatani Tribal Villages",
+                "description": "Visit homes and farms of the Apatani tribe to learn sustainable farming and culture.",
+                "imageUrl": "https://picsum.photos/seed/landmark-apatani/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 27.5962,
+                    "longitude": 93.8215
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "ziro-music-festival",
+                "name": "Ziro Music Festival",
+                "description": "India’s most iconic indie music festival in a scenic valley setting.",
+                "imageUrl": "https://picsum.photos/seed/activity-zirofest/800/600",
+                "category": "Festival",
+                "durationHours": 48,
+                "priceRange": {
+                    "min": 2000,
+                    "max": 5000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Music lovers",
+                    "Youth travelers"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "tawang-arunachal",
+            "shillong-meghalaya"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Puri",
+        "country": "India",
+        "region": "Odisha",
+        "city": "Puri",
+        "description": "A sacred coastal city known for the Jagannath Temple and the annual Rath Yatra festival.",
+        "latitude": 19.8135,
+        "longitude": 85.8312,
+        "imageUrl": "https://picsum.photos/seed/puri/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/puribeach/800/600",
+            "https://picsum.photos/seed/jagannathtemple/800/600",
+            "https://picsum.photos/seed/rathyatra/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 7432,
+        "reviewSummary": "A coastal pilgrimage town where faith meets the ocean breeze.",
+        "reviewCategories": {
+            "cleanliness": 4.3,
+            "safety": 4.5,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.6,
+            "localExperience": 4.7
+        },
+        "locationTag": "puri-odisha",
+        "tags": [
+            "temple",
+            "beach",
+            "pilgrimage",
+            "culture"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 3000,
+                "max": 6000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 6000,
+                "max": 10000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 10000,
+                "max": 18000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 5000,
+        "landmarks": [
+            {
+                "id": "jagannath-temple",
+                "name": "Jagannath Temple",
+                "description": "One of the four sacred Char Dham pilgrimage sites dedicated to Lord Jagannath.",
+                "imageUrl": "https://picsum.photos/seed/landmark-jagannath/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 19.8133,
+                    "longitude": 85.8311
+                }
+            },
+            {
+                "id": "puri-beach",
+                "name": "Puri Beach",
+                "description": "A vibrant beach popular for sunrise views and camel rides.",
+                "imageUrl": "https://picsum.photos/seed/landmark-puribeach/800/600",
+                "distanceFromDestination": 0.5,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 19.8046,
+                    "longitude": 85.8229
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "temple-visit",
+                "name": "Jagannath Temple Darshan",
+                "description": "Experience divine blessings at one of India’s holiest temples.",
+                "imageUrl": "https://picsum.photos/seed/activity-templevisit/800/600",
+                "category": "Spiritual",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Pilgrims",
+                    "Culture enthusiasts"
+                ]
+            },
+            {
+                "id": "beach-walk",
+                "name": "Evening Beach Walk",
+                "description": "Enjoy the breeze and vibrant local life along the shoreline.",
+                "imageUrl": "https://picsum.photos/seed/activity-beachwalk/800/600",
+                "category": "Relaxation",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Jagannath Temple",
+            "Puri Beach",
+            "Chilika Lake"
+        ],
+        "travelTips": [
+            "Avoid visiting during Rath Yatra if you don’t like crowds.",
+            "Non-Hindus are not allowed inside the main temple.",
+            "Try local sweets like 'Khaaja'."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Odia",
+            "Hindi",
+            "English"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Biju Patnaik International Airport, Bhubaneswar",
+        "visaRequirements": "Standard Indian visa for foreign nationals.",
+        "healthAndSafety": "Be cautious of strong beach currents. Dress modestly at temples.",
+        "aiGeneratedSummary": "Puri is a spiritual and scenic getaway, blending culture and coast in one divine destination.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Visit Jagannath Temple",
+                    "Explore Puri Beach"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Day trip to Chilika Lake",
+                    "Try local seafood and sweets"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "konark-odisha",
+            "bhubaneswar-odisha"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Konark",
+        "country": "India",
+        "region": "Odisha",
+        "city": "Konark",
+        "description": "Home to the iconic Sun Temple, a UNESCO World Heritage Site renowned for its chariot-shaped architecture.",
+        "latitude": 19.8876,
+        "longitude": 86.0945,
+        "imageUrl": "https://picsum.photos/seed/konark/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/konarksun/800/600",
+            "https://picsum.photos/seed/suntempleclose/800/600",
+            "https://picsum.photos/seed/konarkfestival/800/600"
+        ],
+        "rating": 4.7,
+        "totalRatings": 5291,
+        "reviewSummary": "A treasure trove of Indian temple architecture and solar mythology.",
+        "reviewCategories": {
+            "cleanliness": 4.4,
+            "safety": 4.5,
+            "valueForMoney": 4.3,
+            "familyFriendly": 4.6,
+            "localExperience": 4.8
+        },
+        "locationTag": "konark-odisha",
+        "tags": [
+            "heritage",
+            "temple",
+            "architecture",
+            "festival"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "January"
+        ],
+        "suggestedDuration": {
+            "min": 1,
+            "max": 2
+        },
+        "averageDailyCost": 3500,
+        "landmarks": [
+            {
+                "id": "sun-temple",
+                "name": "Sun Temple",
+                "description": "A 13th-century marvel shaped like a colossal chariot dedicated to the Sun God.",
+                "imageUrl": "https://picsum.photos/seed/landmark-suntemple/800/600",
+                "distanceFromDestination": 0,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 40,
+                    "max": 600,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 19.8879,
+                    "longitude": 86.0943
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "konark-dance-festival",
+                "name": "Konark Dance Festival",
+                "description": "Witness classical Indian dance in a grand temple backdrop.",
+                "imageUrl": "https://picsum.photos/seed/activity-konarkfest/800/600",
+                "category": "Culture",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 200,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Art lovers",
+                    "History buffs"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "puri-odisha",
+            "bhubaneswar-odisha"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Bhubaneswar",
+        "country": "India",
+        "region": "Odisha",
+        "city": "Bhubaneswar",
+        "description": "The ‘Temple City’ of India, blending ancient architecture with a modern urban vibe.",
+        "latitude": 20.2961,
+        "longitude": 85.8245,
+        "imageUrl": "https://picsum.photos/seed/bhubaneswar/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/lingarajtemple/800/600",
+            "https://picsum.photos/seed/ekamratemple/800/600",
+            "https://picsum.photos/seed/bindusagar/800/600"
+        ],
+        "rating": 4.5,
+        "totalRatings": 6120,
+        "reviewSummary": "A cultural capital where spirituality meets urban planning.",
+        "reviewCategories": {
+            "cleanliness": 4.4,
+            "safety": 4.5,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.5,
+            "localExperience": 4.6
+        },
+        "locationTag": "bhubaneswar-odisha",
+        "tags": [
+            "temple",
+            "history",
+            "urban",
+            "culture"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "November",
+            "December",
+            "February"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "averageDailyCost": 4000,
+        "landmarks": [
+            {
+                "id": "lingaraj-temple",
+                "name": "Lingaraj Temple",
+                "description": "An architectural masterpiece dedicated to Lord Shiva, built in the 11th century.",
+                "imageUrl": "https://picsum.photos/seed/landmark-lingaraj/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 20.2414,
+                    "longitude": 85.8345
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "heritage-walk",
+                "name": "Old Town Heritage Walk",
+                "description": "Explore centuries-old temples and stories of Kalinga architecture.",
+                "imageUrl": "https://picsum.photos/seed/activity-heritagewalk/800/600",
+                "category": "History",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 0,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "History lovers",
+                    "Architecture enthusiasts"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "puri-odisha",
+            "konark-odisha"
+        ],
+        "createdAt": "2025-05-23T00:00:00Z",
+        "updatedAt": "2025-05-23T00:00:00Z"
+    },
+    {
+        "title": "Ooty",
+        "country": "India",
+        "region": "Tamil Nadu",
+        "city": "Ooty",
+        "description": "The Queen of Hills, famous for its tea gardens, lakes, and colonial charm.",
+        "latitude": 11.4064,
+        "longitude": 76.6932,
+        "imageUrl": "https://picsum.photos/seed/ooty/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/ootylake/800/600",
+            "https://picsum.photos/seed/botanicalgarden/800/600",
+            "https://picsum.photos/seed/dodabetta/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 8932,
+        "reviewSummary": "A picturesque hill station perfect for nature lovers and a peaceful retreat.",
+        "reviewCategories": {
+            "cleanliness": 4.2,
+            "safety": 4.3,
+            "valueForMoney": 4.1,
+            "familyFriendly": 4.5,
+            "localExperience": 4.7
+        },
+        "locationTag": "ooty-tamilnadu",
+        "tags": [
+            "hillstation",
+            "tea",
+            "nature",
+            "lakes"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "May",
+            "September",
+            "October"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "ooty-lake",
+                "name": "Ooty Lake",
+                "description": "Scenic lake known for boating and picnics.",
+                "imageUrl": "https://picsum.photos/seed/landmark-ootylake/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 20,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4036,
+                    "longitude": 76.7036
+                }
+            },
+            {
+                "id": "botanical-garden",
+                "name": "Government Botanical Garden",
+                "description": "Lush gardens with rare plant species and vibrant flower beds.",
+                "imageUrl": "https://picsum.photos/seed/landmark-botanicalgarden/800/600",
+                "distanceFromDestination": 2,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 30,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4125,
+                    "longitude": 76.7132
+                }
+            },
+            {
+                "id": "dodabetta-peak",
+                "name": "Doddabetta Peak",
+                "description": "The highest point in the Nilgiris with panoramic views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-dodabetta/800/600",
+                "distanceFromDestination": 10,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 10,
+                    "max": 30,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 11.4108,
+                    "longitude": 76.7362
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "boating-ooty-lake",
+                "name": "Boating on Ooty Lake",
+                "description": "Enjoy paddle and row boating surrounded by misty hills.",
+                "imageUrl": "https://picsum.photos/seed/activity-boat/800/600",
+                "category": "Leisure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 150,
+                    "max": 400,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "tea-museum-tour",
+                "name": "Tea Museum Tour",
+                "description": "Learn about tea processing and taste fresh Nilgiri tea.",
+                "imageUrl": "https://picsum.photos/seed/activity-tea/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 200,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Foodies",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "toy-train-ride",
+                "name": "Nilgiri Toy Train Ride",
+                "description": "Ride the scenic UNESCO heritage railway route.",
+                "imageUrl": "https://picsum.photos/seed/activity-train/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 100,
+                    "max": 600,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Solo travelers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Ooty Lake",
+            "Botanical Garden",
+            "Doddabetta Peak"
+        ],
+        "travelTips": [
+            "Carry warm clothes",
+            "Avoid peak holiday weekends",
+            "Try local homemade chocolates"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Tamil",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Coimbatore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Carry woolens; use bottled water.",
+        "aiGeneratedSummary": "Ooty is a serene hill station nestled in the Nilgiris, offering tea gardens, colonial charm, and scenic views perfect for a relaxing getaway.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Visit Botanical Garden",
+                    "Boat ride at Ooty Lake",
+                    "Shopping at local markets"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Toy Train ride",
+                    "Tea Museum visit",
+                    "Sunset from Doddabetta Peak"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka",
+            "coorg-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Kodaikanal",
+        "country": "India",
+        "region": "Tamil Nadu",
+        "city": "Kodaikanal",
+        "description": "Known as the Princess of Hill Stations, Kodaikanal is a serene retreat with lush landscapes, lakes, and misty mountains.",
+        "latitude": 10.2381,
+        "longitude": 77.4892,
+        "imageUrl": "https://picsum.photos/seed/kodaikanal/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/kodaikanallake/800/600",
+            "https://picsum.photos/seed/coakerswalk/800/600",
+            "https://picsum.photos/seed/pillarrocks/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 9204,
+        "reviewSummary": "Peaceful and scenic, Kodaikanal is ideal for nature lovers and couples seeking a romantic getaway.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.5,
+            "valueForMoney": 4.2,
+            "familyFriendly": 4.3,
+            "localExperience": 4.6
+        },
+        "locationTag": "kodaikanal-tamilnadu",
+        "tags": [
+            "hill station",
+            "lake",
+            "romantic",
+            "nature"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "March",
+            "April",
+            "May",
+            "October"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 3
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "kodaikanal-lake",
+                "name": "Kodaikanal Lake",
+                "description": "A star-shaped manmade lake surrounded by forest, great for boating.",
+                "imageUrl": "https://picsum.photos/seed/landmark-kodalake/800/600",
+                "distanceFromDestination": 0,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 200,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2381,
+                    "longitude": 77.4892
+                }
+            },
+            {
+                "id": "coakers-walk",
+                "name": "Coaker's Walk",
+                "description": "A scenic walking path offering panoramic views of the hills.",
+                "imageUrl": "https://picsum.photos/seed/landmark-coakerswalk/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 20,
+                    "max": 40,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2357,
+                    "longitude": 77.4920
+                }
+            },
+            {
+                "id": "pillar-rocks",
+                "name": "Pillar Rocks",
+                "description": "Three giant rock pillars that stand shoulder to shoulder, offering dramatic views.",
+                "imageUrl": "https://picsum.photos/seed/landmark-pillarrocks/800/600",
+                "distanceFromDestination": 7,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 50,
+                    "max": 100,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2060,
+                    "longitude": 77.4894
+                }
+            },
+            {
+                "id": "bryant-park",
+                "name": "Bryant Park",
+                "description": "Botanical garden with a wide variety of flora, ideal for families and picnics.",
+                "imageUrl": "https://picsum.photos/seed/landmark-bryantpark/800/600",
+                "distanceFromDestination": 0.5,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 60,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 10.2352,
+                    "longitude": 77.4893
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "boating-kodaikanal",
+                "name": "Boating on Kodaikanal Lake",
+                "description": "Rent pedal boats or rowboats for a peaceful ride.",
+                "imageUrl": "https://picsum.photos/seed/activity-boating/800/600",
+                "category": "Nature",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 100,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "cycling-around-lake",
+                "name": "Cycling Around the Lake",
+                "description": "Rent a cycle and enjoy the misty breeze around the lake.",
+                "imageUrl": "https://picsum.photos/seed/activity-cycling/800/600",
+                "category": "Adventure",
+                "durationHours": 1,
+                "priceRange": {
+                    "min": 100,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Solo travelers",
+                    "Couples"
+                ]
+            },
+            {
+                "id": "flora-tour",
+                "name": "Bryant Park Flora Tour",
+                "description": "Explore native and exotic flora with a botanical guide.",
+                "imageUrl": "https://picsum.photos/seed/activity-flora/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 100,
+                    "max": 300,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Families",
+                    "Nature lovers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Kodaikanal Lake",
+            "Coaker's Walk",
+            "Pillar Rocks",
+            "Bryant Park"
+        ],
+        "travelTips": [
+            "Pack warm clothes",
+            "Carry an umbrella for unexpected showers",
+            "Avoid peak holiday weekends for a quieter experience"
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Tamil",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Madurai Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Safe for travelers; be cautious near cliffs and wild monkeys.",
+        "aiGeneratedSummary": "Kodaikanal is a tranquil hill station perfect for couples and nature lovers, with scenic lakes, misty walks, and panoramic viewpoints.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Boating on Kodaikanal Lake",
+                    "Visit Bryant Park",
+                    "Coaker's Walk"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Pillar Rocks",
+                    "Cycling around the lake",
+                    "Botanical garden tour"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ooty-tamilnadu",
+            "coorg-karnataka",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Coorg",
+        "country": "India",
+        "region": "Karnataka",
+        "city": "Madikeri",
+        "description": "Often called the Scotland of India, Coorg is a lush green hill station known for its coffee plantations, misty hills, and vibrant Kodava culture.",
+        "latitude": 12.3375,
+        "longitude": 75.8069,
+        "imageUrl": "https://picsum.photos/seed/coorg/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/rajakseat/800/600",
+            "https://picsum.photos/seed/abbeyfalls/800/600",
+            "https://picsum.photos/seed/coffeeplantation/800/600"
+        ],
+        "rating": 4.7,
+        "totalRatings": 11234,
+        "reviewSummary": "A peaceful retreat amidst the Western Ghats, Coorg is perfect for coffee lovers, trekkers, and those seeking serenity in nature.",
+        "reviewCategories": {
+            "cleanliness": 4.6,
+            "safety": 4.7,
+            "valueForMoney": 4.4,
+            "familyFriendly": 4.5,
+            "localExperience": 4.8
+        },
+        "locationTag": "coorg-karnataka",
+        "tags": [
+            "coffee",
+            "trekking",
+            "nature",
+            "hill station"
+        ],
+        "isTrending": true,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "October",
+            "November",
+            "March",
+            "April"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 3000,
+                "max": 6000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 6000,
+                "max": 15000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 15000,
+                "max": 35000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 5000,
+        "landmarks": [
+            {
+                "id": "rajas-seat",
+                "name": "Raja's Seat",
+                "description": "A scenic viewpoint with gardens and sunset views once enjoyed by Kodava kings.",
+                "imageUrl": "https://picsum.photos/seed/landmark-rajasseat/800/600",
+                "distanceFromDestination": 1,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 10,
+                    "max": 20,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4212,
+                    "longitude": 75.7391
+                }
+            },
+            {
+                "id": "abbey-falls",
+                "name": "Abbey Falls",
+                "description": "A picturesque waterfall surrounded by coffee plantations and spice estates.",
+                "imageUrl": "https://picsum.photos/seed/landmark-abbeyfalls/800/600",
+                "distanceFromDestination": 8,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 30,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4578,
+                    "longitude": 75.7087
+                }
+            },
+            {
+                "id": "namdroling-monastery",
+                "name": "Namdroling Monastery",
+                "description": "A stunning Tibetan monastery known for its golden temple and peaceful aura.",
+                "imageUrl": "https://picsum.photos/seed/landmark-namdroling/800/600",
+                "distanceFromDestination": 34,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 12.4334,
+                    "longitude": 75.9690
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "coffee-tour",
+                "name": "Coffee Plantation Tour",
+                "description": "Walk through lush coffee estates and learn about the cultivation process.",
+                "imageUrl": "https://picsum.photos/seed/activity-coffee/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 300,
+                    "max": 800,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Nature lovers",
+                    "Couples",
+                    "Families"
+                ]
+            },
+            {
+                "id": "river-rafting-barapole",
+                "name": "White Water Rafting on Barapole River",
+                "description": "Adrenaline-filled rafting experience during monsoon season.",
+                "imageUrl": "https://picsum.photos/seed/activity-rafting/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 1200,
+                    "max": 2000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Adventure seekers",
+                    "Friends"
+                ]
+            },
+            {
+                "id": "tadiandamol-trek",
+                "name": "Tadiandamol Trek",
+                "description": "Trek to the highest peak in Coorg with scenic views and rich biodiversity.",
+                "imageUrl": "https://picsum.photos/seed/activity-trek/800/600",
+                "category": "Adventure",
+                "durationHours": 6,
+                "priceRange": {
+                    "min": 0,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Trekkers",
+                    "Photographers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Raja's Seat",
+            "Abbey Falls",
+            "Namdroling Monastery",
+            "Coffee Plantations"
+        ],
+        "travelTips": [
+            "Carry insect repellent if trekking or walking through plantations.",
+            "Try local Kodava cuisine like Pandi Curry.",
+            "Avoid the monsoon for outdoor activities unless you love the rain."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Kannada",
+            "Kodava",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Mangalore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Generally safe, but be cautious during heavy rains and in remote trekking areas.",
+        "aiGeneratedSummary": "Coorg is a lush hill station offering everything from serene plantations to thrilling treks and vibrant cultural sites. Ideal for a rejuvenating escape.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Coffee Plantation Tour",
+                    "Visit Raja's Seat",
+                    "Abbey Falls"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Tadiandamol Trek",
+                    "Visit Namdroling Monastery"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "ooty-tamilnadu",
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
+    },
+    {
+        "title": "Chikmagalur",
+        "country": "India",
+        "region": "Karnataka",
+        "city": "Chikmagalur",
+        "description": "Nestled in the Western Ghats, Chikmagalur is known for its serene hills, vast coffee plantations, and cool climate—perfect for a peaceful getaway.",
+        "latitude": 13.3187,
+        "longitude": 75.7721,
+        "imageUrl": "https://picsum.photos/seed/chikmagalur/800/600",
+        "galleryImages": [
+            "https://picsum.photos/seed/mullayangiri/800/600",
+            "https://picsum.photos/seed/coffeeestate/800/600",
+            "https://picsum.photos/seed/hirekolale/800/600"
+        ],
+        "rating": 4.6,
+        "totalRatings": 9472,
+        "reviewSummary": "Chikmagalur offers a tranquil environment for nature lovers, coffee enthusiasts, and trekking aficionados, with scenic landscapes and cultural charm.",
+        "reviewCategories": {
+            "cleanliness": 4.5,
+            "safety": 4.6,
+            "valueForMoney": 4.3,
+            "familyFriendly": 4.4,
+            "localExperience": 4.7
+        },
+        "locationTag": "chikmagalur-karnataka",
+        "tags": [
+            "coffee",
+            "trekking",
+            "hill station",
+            "scenic"
+        ],
+        "isTrending": false,
+        "isFavorite": false,
+        "bestTimeToVisit": [
+            "September",
+            "October",
+            "November",
+            "March"
+        ],
+        "suggestedDuration": {
+            "min": 2,
+            "max": 4
+        },
+        "suggestedBudget": {
+            "budget": {
+                "min": 2500,
+                "max": 5000,
+                "currency": "INR"
+            },
+            "midRange": {
+                "min": 5000,
+                "max": 12000,
+                "currency": "INR"
+            },
+            "luxury": {
+                "min": 12000,
+                "max": 30000,
+                "currency": "INR"
+            }
+        },
+        "averageDailyCost": 4500,
+        "landmarks": [
+            {
+                "id": "mullayanagiri-peak",
+                "name": "Mullayanagiri",
+                "description": "The highest peak in Karnataka, offering breathtaking views and a challenging trek.",
+                "imageUrl": "https://picsum.photos/seed/landmark-mullayanagiri/800/600",
+                "distanceFromDestination": 20,
+                "visitDuration": 2,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3702,
+                    "longitude": 75.7139
+                }
+            },
+            {
+                "id": "hirekolale-lake",
+                "name": "Hirekolale Lake",
+                "description": "A peaceful lake surrounded by hills, ideal for sunsets and photography.",
+                "imageUrl": "https://picsum.photos/seed/landmark-hirekolale/800/600",
+                "distanceFromDestination": 12,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 0,
+                    "max": 0,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3456,
+                    "longitude": 75.7852
+                }
+            },
+            {
+                "id": "coffee-museum",
+                "name": "Coffee Museum",
+                "description": "Learn about the history and process of coffee making in this informative museum run by the Coffee Board of India.",
+                "imageUrl": "https://picsum.photos/seed/landmark-coffeemuseum/800/600",
+                "distanceFromDestination": 3,
+                "visitDuration": 1,
+                "entryFee": {
+                    "min": 20,
+                    "max": 50,
+                    "currency": "INR"
+                },
+                "coordinates": {
+                    "latitude": 13.3189,
+                    "longitude": 75.7845
+                }
+            }
+        ],
+        "activities": [
+            {
+                "id": "mullayanagiri-trek",
+                "name": "Mullayanagiri Trek",
+                "description": "Trek to the highest point in Karnataka with panoramic views and cool breezes.",
+                "imageUrl": "https://picsum.photos/seed/activity-mullayanagiri/800/600",
+                "category": "Adventure",
+                "durationHours": 4,
+                "priceRange": {
+                    "min": 0,
+                    "max": 500,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Trekkers",
+                    "Nature lovers"
+                ]
+            },
+            {
+                "id": "coffee-estate-tour",
+                "name": "Coffee Estate Tour",
+                "description": "Explore sprawling coffee estates and taste fresh brews.",
+                "imageUrl": "https://picsum.photos/seed/activity-coffeetour/800/600",
+                "category": "Cultural",
+                "durationHours": 2,
+                "priceRange": {
+                    "min": 300,
+                    "max": 800,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Coffee lovers",
+                    "Families"
+                ]
+            },
+            {
+                "id": "jeep-ride-bababudangiri",
+                "name": "Jeep Ride to Baba Budangiri",
+                "description": "Rugged jeep rides through hairpin bends and misty hills to the famous shrine.",
+                "imageUrl": "https://picsum.photos/seed/activity-jeep/800/600",
+                "category": "Adventure",
+                "durationHours": 3,
+                "priceRange": {
+                    "min": 1000,
+                    "max": 2000,
+                    "currency": "INR"
+                },
+                "recommendedFor": [
+                    "Adventurers",
+                    "Photographers"
+                ]
+            }
+        ],
+        "popularAttractions": [
+            "Mullayanagiri",
+            "Hirekolale Lake",
+            "Coffee Museum",
+            "Baba Budangiri"
+        ],
+        "travelTips": [
+            "Pack warm clothing for the evenings.",
+            "Carry cash for local purchases, as ATMs may be limited in rural areas.",
+            "Hire a local guide for treks to get the best experience."
+        ],
+        "timezone": "Asia/Kolkata",
+        "languages": [
+            "Kannada",
+            "Tulu",
+            "English",
+            "Hindi"
+        ],
+        "currency": "INR",
+        "nearestAirport": "Mangalore International Airport",
+        "visaRequirements": "Standard Indian visa applies.",
+        "healthAndSafety": "Safe for tourists. Take caution during monsoon treks due to slippery terrain.",
+        "aiGeneratedSummary": "Chikmagalur is a scenic escape in Karnataka’s hills, ideal for coffee connoisseurs and trekking lovers, with refreshing weather and a calming vibe.",
+        "recommendedItinerary": [
+            {
+                "day": 1,
+                "activities": [
+                    "Coffee Estate Tour",
+                    "Visit Coffee Museum",
+                    "Hirekolale Lake"
+                ]
+            },
+            {
+                "day": 2,
+                "activities": [
+                    "Mullayanagiri Trek",
+                    "Jeep Ride to Baba Budangiri"
+                ]
+            }
+        ],
+        "similarDestinations": [
+            "coorg-karnataka",
+            "kodaikanal-tamilnadu",
+            "chikmagalur-karnataka"
+        ],
+        "createdAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-04-15T12:00:00Z"
     }
 ]

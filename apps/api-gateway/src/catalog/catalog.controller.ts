@@ -3,7 +3,6 @@ import {
   Inject,
   Get,
   Param,
-  UseGuards,
   InternalServerErrorException,
   Post,
   Body,
@@ -19,11 +18,8 @@ import {
   CatalogListRequestDto,
   CatalogListResponseDto,
   CatalogSeedRequestDto,
-  ListRequestDto,
   mapToGrpcRequest,
 } from '@wayfarer/common';
-
-import { JwtAuthGuard } from '../auth/auth.guard';
 
 interface CatalogGrpcService {
   getCatalogList(
@@ -59,15 +55,12 @@ export class CatalogController {
 
   // destination API's
   @Get('destinations') // GET /catalog/destinations - This will list all catalog destinations
-  // @UseGuards(JwtAuthGuard)
   getAllDestinations(@Query() query: any): Observable<any> {
     const request = mapToGrpcRequest(query);
-    this.logger.log({ request, query }, 'MAPPED GATEWAY REQUEST');
     return this.catalogService.getAllDestinations(request);
   }
 
   @Get('destinations/:id') // GET /catalog/destinations - This will list all catalog destinations
-  // @UseGuards(JwtAuthGuard)
   getDestination(@Param('id') id: string): Observable<any> {
     return this.catalogService.getDestination({ id });
   }
@@ -75,7 +68,6 @@ export class CatalogController {
   // End destinations
 
   @Get('list') // GET /catalog/list - This will list all catalog items
-  // @UseGuards(JwtAuthGuard)
   async getCatalogList(@Query() query: CatalogListRequestDto) {
     const request = {
       type: query.type ?? '',
@@ -107,7 +99,6 @@ export class CatalogController {
   }
 
   @Post('seed') // GET /catalog/seed - This will seed the catalog
-  // @UseGuards(JwtAuthGuard)
   async seedCatalog(@Body() seedRequest: any) {
     return await lastValueFrom(
       this.catalogService.seedCatalogData({
@@ -122,7 +113,6 @@ export class CatalogController {
   }
 
   @Get(':id') // GET /catalog/:id - This will get a specific catalog item by id
-  // @UseGuards(JwtAuthGuard)
   async getCatalogItem(@Param('id') id: string) {
     const response = await lastValueFrom(
       this.catalogService.getCatalogItem({ id }),
