@@ -1,3 +1,6 @@
+// Common
+export * from './common/list.dto';
+
 export * from './auth/register.dto';
 
 // Catalog Dtos

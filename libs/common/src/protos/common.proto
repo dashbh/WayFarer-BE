@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package wayfarer.common;
+
+message Filter {
+  string field = 1;
+  string value = 2;
+  string operator = 3;
+}
+
+message Sort {
+  string field = 1;
+  string order = 2; // "asc" or "desc"
+}
+
+message GetItemRequest {
+  string id = 1;
+}
+
+message GetListRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string search = 3;
+  repeated Filter filters = 4;
+  repeated Sort sort = 5;
+}
+

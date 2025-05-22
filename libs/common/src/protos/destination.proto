@@ -2,21 +2,14 @@ syntax = "proto3";
 
 package wayfarer.destination;
 
-message DestinationRequest {
-  string id = 1;
-}
-
-message GetAllDestinationsRequest {
-  int32 limit = 1;
-  int32 offset = 2;
-}
-
-message SearchDestinationsRequest {
-  string searchTerm = 1;
-  string country = 2;
-  repeated string tags = 3;
+message GetAllDestinationsResponse {
+  repeated DestinationResponse items = 1;
+  int32 total = 2;
+  int32 page = 3;
   int32 limit = 4;
-  int32 offset = 5;
+  string search = 5;
+  repeated Filter filters = 6;
+  repeated Sort sort = 7;
 }
 
 message PriceRange {
@@ -127,7 +120,3 @@ message DestinationResponse {
   string updatedAt = 37;
 }
 
-message GetAllDestinationsResponse {
-  repeated DestinationResponse destinations = 1;
-  int32 total = 2;
-}

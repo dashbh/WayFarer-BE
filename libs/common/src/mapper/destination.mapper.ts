@@ -14,7 +14,7 @@ export function mapToDestinationDto(doc: any): DestinationDto | null {
   if (!doc) return null;
 
   return {
-    id: doc.id || doc._id?.toString(),
+    id: doc.locationTag || doc.id || doc._id?.toString(),
     title: doc.title || '',
     country: doc.country || '',
     region: doc.region || undefined,
@@ -117,14 +117,10 @@ export function mapToGrpcDestination(doc: any): any {
 /**
  * Maps all destinations to gRPC response format
  * @param docs Array of MongoDB documents
- * @param total Total count of documents
  * @returns gRPC compatible destinations response with pagination
  */
-export function mapToGrpcDestinationsResponse(docs: any[], total: number): any {
-  return {
-    destinations: docs.map(mapToGrpcDestination).filter(Boolean),
-    total,
-  };
+export function mapToGrpcDestinationsResponse(docs: any[]): any {
+  return docs.map(mapToGrpcDestination).filter(Boolean);
 }
 
 // Helper functions for mapping nested objects

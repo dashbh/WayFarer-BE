@@ -4,15 +4,15 @@ import "google/protobuf/any.proto";
 package wayfarer.catalog;
 
 import "destination.proto";
+import "common.proto";
 
 service CatalogGrpcService {
   rpc GetCatalogList (CatalogListRequest) returns (CatalogListResponse);
-  rpc GetCatalogItem (CatalogItemRequest) returns (CatalogItemResponse);
+  rpc GetCatalogItem (wayfarer.common.GetItemRequest) returns (CatalogItemResponse);
   rpc SeedCatalogData (CatalogSeedRequest) returns (CatalogSeedResponse);
 
-  rpc GetDestination(wayfarer.destination.DestinationRequest) returns (wayfarer.destination.DestinationResponse);
-  rpc GetAllDestinations(wayfarer.destination.GetAllDestinationsRequest) returns (wayfarer.destination.GetAllDestinationsResponse);
-  rpc SearchDestinations(wayfarer.destination.SearchDestinationsRequest) returns (wayfarer.destination.GetAllDestinationsResponse);
+  rpc GetDestination(wayfarer.common.GetItemRequest) returns (wayfarer.destination.DestinationResponse);
+  rpc GetAllDestinations(wayfarer.common.GetListRequest) returns (wayfarer.destination.GetAllDestinationsResponse);
 }
 
 message Empty {}
@@ -73,10 +73,6 @@ message CatalogItemWrapper {
     Accommodation accommodation = 2;
     Accessory accessory = 3;
   }
-}
-
-message CatalogItemRequest {
-  string id = 1;
 }
 
 message CatalogItemResponse {

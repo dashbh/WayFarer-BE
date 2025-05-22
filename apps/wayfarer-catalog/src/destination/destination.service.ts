@@ -1,7 +1,14 @@
 import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
-import { Destination, DestinationDocument } from '@wayfarer/common';
+import {
+  buildMongoQuery,
+  Destination,
+  DestinationDocument,
+  ListRequestDto,
+  ListResponse,
+  mapToGrcpResponse,
+} from '@wayfarer/common';
 import { DestinationDto } from '@wayfarer/common';
 import { mapToDestinationDto } from '@wayfarer/common';
 
@@ -17,11 +24,13 @@ export class DestinationService {
   async findById(id: string): Promise<DestinationDto> {
     try {
       const destination = await this.destinationModel
-        .findOne({ _id: new Types.ObjectId(id) })
+        .findOne({ locationTag: id })
         .lean();
 
       if (!destination) {
-        throw new NotFoundException(`Destination with ID ${id} not found`);
+        throw new NotFoundException(
+          `Destination with locationTag ${id} not found`,
+        );
       }
 
       return mapToDestinationDto(destination);
@@ -34,71 +43,22 @@ export class DestinationService {
     }
   }
 
-  async findAll(
-    limit = 10,
-    offset = 0,
-  ): Promise<{ destinations: DestinationDto[]; total: number }> {
-    try {
-      const [documents, total] = await Promise.all([
-        this.destinationModel.find().skip(offset).limit(limit).lean(),
-        this.destinationModel.countDocuments(),
-      ]);
+  async findAll(queryDto: ListRequestDto): Promise<ListResponse<Destination>> {
+    const { query, sort, skip, limit } = buildMongoQuery(queryDto);
+    const items = await this.destinationModel
+      .find(query)
+      .sort(sort)
+      .skip(skip)
+      .limit(limit)
+      .exec();
 
-      const destinations = documents
-        .map((doc) => mapToDestinationDto(doc))
-        .filter(Boolean);
+    // Get total count for pagination metadata
+    const totalCount = await this.destinationModel.countDocuments(query);
 
-      return { destinations, total };
-    } catch (error) {
-      this.logger.error(
-        `Error finding all destinations: ${error.message}`,
-        error.stack,
-      );
-      throw error;
-    }
-  }
-
-  async search(
-    searchTerm?: string,
-    country?: string,
-    tags?: string[],
-    limit = 10,
-    offset = 0,
-  ): Promise<{ destinations: DestinationDto[]; total: number }> {
-    try {
-      const query: any = {};
-
-      if (searchTerm) {
-        query.$or = [
-          { title: { $regex: searchTerm, $options: 'i' } },
-          { description: { $regex: searchTerm, $options: 'i' } },
-        ];
-      }
-
-      if (country) {
-        query.country = country;
-      }
-
-      if (tags && tags.length > 0) {
-        query.tags = { $in: tags };
-      }
-
-      const [documents, total] = await Promise.all([
-        this.destinationModel.find(query).skip(offset).limit(limit).lean(),
-        this.destinationModel.countDocuments(query),
-      ]);
-
-      const destinations = documents
-        .map((doc) => mapToDestinationDto(doc))
-        .filter(Boolean);
-
-      return { destinations, total };
-    } catch (error) {
-      this.logger.error(
-        `Error searching destinations: ${error.message}`,
-        error.stack,
-      );
-      throw error;
-    }
+    return mapToGrcpResponse({
+      items: items.map(mapToDestinationDto),
+      total: totalCount,
+      ...queryDto,
+    });
   }
 }

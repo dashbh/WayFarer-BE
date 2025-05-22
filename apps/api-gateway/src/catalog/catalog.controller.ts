@@ -19,6 +19,8 @@ import {
   CatalogListRequestDto,
   CatalogListResponseDto,
   CatalogSeedRequestDto,
+  ListRequestDto,
+  mapToGrpcRequest,
 } from '@wayfarer/common';
 
 import { JwtAuthGuard } from '../auth/auth.guard';
@@ -58,8 +60,10 @@ export class CatalogController {
   // destination API's
   @Get('destinations') // GET /catalog/destinations - This will list all catalog destinations
   // @UseGuards(JwtAuthGuard)
-  getAllDestinations(limit = 10, offset = 0): Observable<any> {
-    return this.catalogService.getAllDestinations({ limit, offset });
+  getAllDestinations(@Query() query: any): Observable<any> {
+    const request = mapToGrpcRequest(query);
+    this.logger.log({ request, query }, 'MAPPED GATEWAY REQUEST');
+    return this.catalogService.getAllDestinations(request);
   }
 
   @Get('destinations/:id') // GET /catalog/destinations - This will list all catalog destinations

@@ -2,6 +2,10 @@
 // Destination DTO
 // ==============================
 
+import { IsOptional, IsString } from 'class-validator';
+
+import { ListRequestDto } from '../common/list.dto';
+
 export interface DestinationDto {
   // ────────────────
   // Core Info
@@ -133,4 +137,14 @@ export interface Activity {
     timeSlots?: string[];
   };
   recommendedFor?: string[]; // e.g., ["Families", "Solo travelers"]
+}
+
+export class DestinationsListRequestDto extends ListRequestDto {
+  @IsOptional()
+  @IsString()
+  country?: string;
+
+  @IsOptional()
+  @IsString()
+  category?: string;
 }
